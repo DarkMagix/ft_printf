@@ -1,1 +1,1 @@
-gcc ft_printf.h main.c ft_printf.c -Wall -Wextra -Werror ./libft/libft.a
+gcc ft_printf.h main.c ft_printf.c output.c -Wall -Wextra -Werror ./libft/libft.a
