@@ -2,23 +2,24 @@
 
 void ft_parse(int flag, va_list arg)
 {       
-        char *s;
-        int int_num;
         if (flag == 's')
         {
-                s = va_arg(arg, char *);
-                ft_putstr(s);
+                print_str(arg);
         }
         else if (flag == 'd')
         {
-                int_num = va_arg(arg, int);
-                ft_putnbr(int_num);
+               print_integer(arg);
+        }
+        else if (flag == 'c')
+        {
+                print_char(arg);
         }
         else if (flag == '%')
                 ft_putchar('%');
-        
-
+        else if (flag == 'x' || flag == 'X')
+                print_hex(va_arg(arg, unsigned int),flag);
 }
+
 void ft_printf(char *frmt, ...)
 {
         char *ptr;
@@ -28,11 +29,9 @@ void ft_printf(char *frmt, ...)
         while (*ptr != '\0')
         {
                 if (*ptr == '%')
-                {
                     ft_parse(*(++ptr), args);
-                }
-                else if (*ptr ==' ')
-                        ft_putchar(' ');
+                else
+                        ft_putchar(*ptr);
                 ptr++;
         }
         va_end(args);
@@ -40,6 +39,6 @@ void ft_printf(char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%s %d", "Test", 1239);
+        ft_printf("%s %X", "Test", 99999);
         return (0);
 }
