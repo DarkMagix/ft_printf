@@ -6,7 +6,7 @@
 #    By: mweir <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/19 17:54:49 by mweir             #+#    #+#              #
-#    Updated: 2018/05/14 14:31:15 by mweir            ###   ########.fr        #
+#    Updated: 2018/05/22 14:33:59 by mweir            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -34,7 +34,7 @@ OBJ = 	ft_atoi.o ft_bzero.o ft_factorial.o \
 		ft_strrev.o ft_strsplit.o ft_strstr.o ft_strsub.o ft_strtrim.o ft_swap_bits.o ft_tolower.o ft_toupper.o \
 		ft_next_line.o
 
-FLAGS = -Wall -Werror -Wextra -Iincludes
+FLAGS = -Wall -Werror -Wextra
 
 CC = gcc
 

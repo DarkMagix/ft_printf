@@ -18,27 +18,31 @@ void ft_parse(int flag, va_list arg)
                 ft_putchar('%');
         else if (flag == 'x' || flag == 'X')
                 print_hex(va_arg(arg, unsigned int),flag);
+        
+      
 }
 
-void ft_printf(char *frmt, ...)
+void ft_printf(const char *frmt, ...)
 {
-        char *ptr;
+        char **data;
         va_list args;
-        va_start(args, frmt);       
-        ptr = frmt;
-        while (*ptr != '\0')
+        t_params *params;
+       params = ft_memalloc(sizeof(t_params));
+        data = NULL;
+        if(frmt)
         {
-                if (*ptr == '%')
-                    ft_parse(*(++ptr), args);
-                else
-                        ft_putchar(*ptr);
-                ptr++;
+                va_start(args, frmt);       
+                read_data(params, frmt);
+
+                va_end(args);
         }
-        va_end(args);
 }
 
 int main(void)
 {
-        ft_printf("%s %X", "Test", 99999);
+        ft_printf("%-+0d %d %s", 3, 3, "boo");
         return (0);
 }
+
+
+
