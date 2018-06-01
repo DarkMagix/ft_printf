@@ -11,4 +11,6 @@ void init_params(t_params *params)
     params->num_len = 0;
     params->p_wildcard = false;
     params->buff = NULL;
+    params->specifier = 0;
+    params->modifer = 0;
 }

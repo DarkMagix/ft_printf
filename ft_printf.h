@@ -37,6 +37,7 @@ typedef struct      s_params
 	//length
 	char *buff;
 	int modifer;
+	int specifier;
 }                   t_params;
 
 void init_params(t_params *params);
@@ -49,4 +50,9 @@ void ft_parse(int flag, va_list arg);
 int count_args(char *ptr);
 
 int parse_flags(char *str, t_params *params);
+int parse_width(char *str, t_params *params);
+int parse_precision(char *str, t_params *params);
+int parse_length(char *str, t_params *params);
+int parse_specifier(char *str, t_params *params);
+
 #endif

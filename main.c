@@ -40,7 +40,7 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%-+0d %d %s", 3, 3, "boo");
+        ft_printf("%-+0hhd %3.2llfd", 3, 3);
         return (0);
 }
 
