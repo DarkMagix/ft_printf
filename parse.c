@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int read_data(t_params* params, const char *format)
+int read_data(t_params* params, const char *format, va_list args)
 {
 	char *ptr;
 	int i;
@@ -16,9 +16,10 @@ int read_data(t_params* params, const char *format)
 			i += parse_precision(&ptr[i + 1], params);
 			i += parse_length(&ptr[i + 1], params);
 			i += parse_specifier(&ptr[i + 1], params);
-		
+			ft_parse(params->specifier, args, params);
 			//print
 		}
+		
 		i++;
 	}
 	//to shut up the compiler

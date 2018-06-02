@@ -43,10 +43,11 @@ typedef struct      s_params
 void init_params(t_params *params);
 int print_str(va_list list);
 int print_char(va_list list);
-int print_integer(va_list list);
+int print_integer(va_list list, t_params *params);
 int print_hex(unsigned int n, int flag);
-int read_data(t_params* params, const char *format);
-void ft_parse(int flag, va_list arg);
+int print_float(va_list list);
+int read_data(t_params* params, const char *format, va_list args);
+void ft_parse(int flag, va_list arg, t_params *params);
 int count_args(char *ptr);
 
 int parse_flags(char *str, t_params *params);
