@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: egoodale <egoodale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:51:18 by mweir             #+#    #+#             */
-/*   Updated: 2018/05/31 17:51:22 by mweir            ###   ########.fr       */
+/*   Updated: 2018/06/02 16:54:17 by egoodale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int		valid_arg(int c)
+{
+	return ((c == 'd' || c == 'u' || c == 'o' 
+		|| c == 'x' || c == 'X' || c == 'f' 
+		|| c == 'F' || c == 'e' || c == 'E' 
+		|| c == 'g' || c == 'G' || c == 'a' 
+		|| c == 'A' || c == 'c' || c == 's' 
+		|| c == 'p' || c == 'n' || c == '%'));
+}
+
 
 int	parse_flags(char *str, t_params *params)
 {
@@ -109,22 +120,22 @@ int	parse_length(char *str, t_params *params)
 	return (i);
 }
 
-int parse_specifier(char *str, t_params *params)
+int parse_specifier(const char *format, va_list args, t_params *params)
 {
 	int i;
 	i = 0;
-	while (true)
+	init_params(params);
+	while (*format)
 	{
-		if (str[i] == 'd' || str[i] == 'u' || str[i] == 'o' \
-		|| str[i] == 'x' || str[i] == 'X' || str[i] == 'f' \
-		|| str[i] == 'F' || str[i] == 'e' || str[i] == 'E' \
-		|| str[i] == 'g' || str[i] == 'G' || str[i] == 'a' \
-		|| str[i] == 'A' || str[i] == 'c' || str[i] == 's' \
-		|| str[i] == 'p' || str[i] == 'n' || str[i] == '%')
-				params->specifier = str[i];
-		else
-			break;
-		i++;
+		if (*format == '%')
+		{
+			if(valid_arg(*format))
+				format += read_data(params, (char *)format) + 1;
+			params->specifier = *format;
+			ft_parse(params->specifier, args, params);
+		}
+		init_params(params);
+		format++;
 	}
 	//printf("%c", params->specifier);
 	return (i);

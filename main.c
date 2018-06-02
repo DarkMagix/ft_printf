@@ -37,14 +37,14 @@ void ft_printf(const char *frmt, ...)
         if(frmt)
         {
                 va_start(args, frmt);       
-                read_data(params, frmt, args);
+                parse_specifier(frmt, args, params);
                 va_end(args);
         }
 }
 
 int main(void)
 {
-        ft_printf("%-+0.10hhd     %3.2llf %x", 3, 3, 200);
+        ft_printf("%d%", 90, 90);
         return (0);
 }
 
