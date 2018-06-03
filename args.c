@@ -6,7 +6,7 @@
 /*   By: egoodale <egoodale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:51:18 by mweir             #+#    #+#             */
-/*   Updated: 2018/06/02 16:54:17 by egoodale         ###   ########.fr       */
+/*   Updated: 2018/06/02 17:17:57 by egoodale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,8 +129,8 @@ int parse_specifier(const char *format, va_list args, t_params *params)
 	{
 		if (*format == '%')
 		{
-			if(valid_arg(*format))
-				format += read_data(params, (char *)format) + 1;
+			if(valid_arg(*(format + 1)))
+				format += read_data(params, (char *)(format + 1)) + 1;
 			params->specifier = *format;
 			ft_parse(params->specifier, args, params);
 		}
