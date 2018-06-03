@@ -44,7 +44,6 @@ int print_integer(va_list list, t_params *params)
     }
     else
     {
-        printf("Not JUstified\n");
         
         while(params->num_len > 0)
         {
