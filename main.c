@@ -32,7 +32,7 @@ void ft_printf(const char *frmt, ...)
         char **data;
         va_list args;
         t_params *params;
-       params = ft_memalloc(sizeof(t_params));
+         params = ft_memalloc(sizeof(t_params));
         data = NULL;
         if(frmt)
         {
@@ -44,7 +44,7 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%x %d, %s, %x%c", 90, 90, "hello", 10, 'l');
+        ft_printf("%-+0.10d", 10);
         return (0);
 }
 

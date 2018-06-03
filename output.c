@@ -19,7 +19,7 @@ int print_integer(va_list list, t_params *params)
     int num;
     sign = params->plus_neg;
     int length;
-    
+    length = 0;
     if(params->p_wildcard)
     {
         length = va_arg(list, int);
@@ -27,27 +27,24 @@ int print_integer(va_list list, t_params *params)
     }
     if(params->justify)
     {
-        printf("Justified\n");
         num = va_arg(list, int);
         if (params->plus_neg)
         {
             if (num >=0)
                 ft_putchar('+');
         }
-        ft_putnbr(num);
-        
+        ft_putnbr(num);   
         while(params->num_len > 0)
         {
-            ft_putchar(' ');
+            ft_putchar((params->pad == true) ? '0' : ' ');
             params->num_len--;
         }
     }
     else
     {
-        
         while(params->num_len > 0)
         {
-            ft_putchar(' ');
+            ft_putchar((params->pad == true) ? '0' : ' ');
             params->num_len--;
         }
         ft_putnbr(va_arg(list, int));

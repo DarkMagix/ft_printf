@@ -2,6 +2,7 @@
 
 int read_data(t_params* params,char *format)
 {
+	printf("Entered Read Data\n");
 	int i;
 	i = 0;
 	i += parse_flags(&format[i], params);

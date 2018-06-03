@@ -19,7 +19,9 @@ int		valid_arg(int c)
 		|| c == 'F' || c == 'e' || c == 'E' 
 		|| c == 'g' || c == 'G' || c == 'a' 
 		|| c == 'A' || c == 'c' || c == 's' 
-		|| c == 'p' || c == 'n' || c == '%'));
+		|| c == 'p' || c == 'n' || c == '%'
+		|| c == '.' || c == '-' || c == '0'
+		|| c == '+'));
 }
 
 
@@ -70,10 +72,12 @@ int	parse_precision(char *str, t_params *params)
 	int i;
 	int temp;
 	i = 0;
+	printf("Entered Precision\n");
 	while(true)
 	{
 		if (str[i] == '.')
 		{
+			printf(". Found\n");
 			params->num_len = ft_atoi(&str[i + 1]);
 			temp = params->num_len;
 			while (temp != 0)
