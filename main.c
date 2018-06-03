@@ -44,7 +44,7 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%d%", 90, 90);
+        ft_printf("%d", 90);
         return (0);
 }
 
