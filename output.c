@@ -13,6 +13,21 @@ int print_str(va_list list)
     return (1);
 
 }
+int print_sint(va_list list, t_params *params)
+{
+    int i;
+    
+    i = 0;
+    long long int num;
+    num = sint_flags(list, params);
+    params->buff = ft_strdup(ft_itoa(-2));
+    ft_putnbr(num);
+    ft_putstr(params->buff);
+    
+
+    return (1);
+}
+
 int print_integer(va_list list, t_params *params)
 {
     char sign;

@@ -2,16 +2,13 @@
 
 void ft_parse(int flag, va_list arg, t_params *params)
 {       
-        //unsigned int hex = va_arg(arg, unsigned int);
-       
-
         if (flag == 's')
         {
                 print_str(arg);
         }
         else if (flag == 'd')
         {
-               print_integer(arg, params);
+               print_sint(arg, params);
         }
         else if (flag == 'c')
         {

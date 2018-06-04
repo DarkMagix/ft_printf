@@ -28,15 +28,12 @@ static int	get_size(unsigned int nb)
 char		*ft_itoa(int n)
 {
 	char			*str;
-	unsigned int	nb;
-	unsigned int	index;
-	unsigned int	size;
+	long long	nb;
+	long long	index;
+	long long	size;
 
-	if (n < 0)
-		nb = (unsigned int)(n * -1);
-	else
-		nb = (unsigned int)n;
-	size = (unsigned int)get_size(nb);
+	nb = (n < 0) ? (long long)(n * -1) : (long long)n;
+	size = (int)get_size(nb);
 	index = 0;
 	if (!(str = (char*)malloc(sizeof(char) * (size + 1 + (n < 0 ? 1 : 0)))))
 		return (0);

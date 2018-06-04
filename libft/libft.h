@@ -6,7 +6,7 @@
 /*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 14:14:14 by mweir             #+#    #+#             */
-/*   Updated: 2018/06/02 15:55:38 by egoodale         ###   ########.fr       */
+/*   Updated: 2018/05/22 14:35:22 by mweir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 int				ft_next_line(const int fd, char **line);
+char			*ft_uitoa_base(uintmax_t nbr, int base);
+char			*ft_itoa_base(intmax_t nbr, int base);
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -90,4 +92,3 @@ unsigned char	ft_reverse_bits(unsigned char octet);
 unsigned char	ft_swap_bits(unsigned char octet);
 char			*ft_strrev(char *str);
 #endif
-
