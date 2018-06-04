@@ -22,15 +22,17 @@ void ft_parse(int flag, va_list arg, t_params *params)
         {
                 print_hex(va_arg(arg, unsigned int), flag);
         }
+	else if(flag == 'u')
+		print_uint(arg, params);
+	else if (flag == 'i')
+	  print_sint(arg, params);
 }
 
 void ft_printf(const char *frmt, ...)
 {
-        char **data;
         va_list args;
         t_params *params;
          params = ft_memalloc(sizeof(t_params));
-        data = NULL;
         if(frmt)
         {
                 va_start(args, frmt);       
@@ -41,7 +43,9 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%-+0.10d", 10);
+  //  printf("%s", ft_uitoa_base(-2, 10));
+         ft_printf("%i", -10);
+ 
         return (0);
 }
 

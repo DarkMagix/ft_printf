@@ -5,6 +5,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include "libft/libft.h"
+# include <stdint.h>
 
 typedef int t_bool;
 enum { false, true };
@@ -58,5 +59,6 @@ int parse_specifier(const char *format, va_list args, t_params *params);
 long long sint_flags(va_list list, t_params *params);
 unsigned long long	uint_flags(va_list list, t_params *params);
 int print_sint(va_list list, t_params *params);
+int print_uint(va_list list, t_params *params);
 
 #endif

@@ -1,6 +1,5 @@
 #include "ft_printf.h"
 
-
 int print_char(va_list list)
 {
     ft_putchar(va_arg(list, int));
@@ -15,24 +14,27 @@ int print_str(va_list list)
 }
 int print_sint(va_list list, t_params *params)
 {
-    int i;
-    
-    i = 0;
     long long int num;
     num = sint_flags(list, params);
-    params->buff = ft_strdup(ft_itoa(-2));
-    ft_putnbr(num);
+    params->buff = ft_strdup(ft_itoa_base(num, 10));
     ft_putstr(params->buff);
     
 
     return (1);
 }
 
+int print_uint(va_list list, t_params *params)
+{
+  int long long num;
+  num = uint_flags(list, params);
+  params->buff = ft_strdup(ft_uitoa_base(num, 10));
+  ft_putendl(params->buff);
+  return (1);
+}
+
 int print_integer(va_list list, t_params *params)
 {
-    char sign;
     int num;
-    sign = params->plus_neg;
     int length;
     length = 0;
     if(params->p_wildcard)

@@ -21,9 +21,8 @@ int		valid_arg(int c)
 		|| c == 'A' || c == 'c' || c == 's' 
 		|| c == 'p' || c == 'n' || c == '%'
 		|| c == '.' || c == '-' || c == '0'
-		|| c == '+'));
+		 || c == '+' || c == 'i'));
 }
-
 
 int	parse_flags(char *str, t_params *params)
 {
