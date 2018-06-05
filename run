@@ -1,1 +1,1 @@
-gcc -g ft_printf.h lengths.c helper.c parse.c output.c main.c ft_printf.c args.c -Wall -Wextra -Werror ./libft/libft.a
+gcc -g formatting.c ft_printf.h lengths.c helper.c parse.c output.c main.c ft_printf.c args.c -Wall -Wextra -Werror ./libft/libft.a

@@ -72,12 +72,10 @@ int	parse_precision(char *str, t_params *params)
 	int i;
 	int temp;
 	i = 0;
-	printf("Entered Precision\n");
 	while(true)
 	{
 		if (str[i] == '.')
 		{
-			printf(". Found\n");
 			params->num_len = ft_atoi(&str[i + 1]);
 			temp = params->num_len;
 			while (temp != 0)
@@ -139,6 +137,8 @@ int parse_specifier(const char *format, va_list args, t_params *params)
 			params->specifier = *format;
 			ft_parse(params->specifier, args, params);
 		}
+		else
+			ft_putchar(*format);
 		init_params(params);
 		format++;
 	}

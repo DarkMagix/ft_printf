@@ -45,7 +45,10 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%jd", 214748364800);
-        printf("%jd", 214748364800);
+        ft_printf("%-8d     %d", 21474,3);
+      //  ft_printf("%-8d     %-d", 21474,3);
+       // printf("\n<%-3.8u>     %-u", 21474,3);
+        
+        
         return (0);
 }

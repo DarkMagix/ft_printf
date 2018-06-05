@@ -55,11 +55,6 @@ intmax_t sint_flags(va_list list, t_params *params)
         printf("Z\n");
         nbr = (size_t)nbr;
     }
-    else
-    {
-        printf("?\n");
-        nbr = (int)nbr;
-    }
     return (nbr);
 }
 
