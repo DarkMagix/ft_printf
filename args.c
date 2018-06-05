@@ -25,7 +25,6 @@ int		valid_arg(int c)
 		|| c == 'j'));
 }
 
-
 int	parse_flags(char *str, t_params *params)
 {
 	int i;

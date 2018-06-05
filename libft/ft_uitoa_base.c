@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	u_fill(int nbr, int size)
 {
@@ -45,12 +46,9 @@ int		u_numsize(uintmax_t nbr, int base)
 char	*ft_uitoa_base(uintmax_t nbr, int base)
 {
 	char		*res;
-	int			i;
 	int			j;
 	static int	size;
-
 	size = 0;
-	i = 0;
 	j = u_numsize(nbr, base) - 1;
 	res = ft_memalloc(j + 3);
 	if (!nbr)

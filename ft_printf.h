@@ -5,6 +5,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include "libft/libft.h"
+# include <stdint.h>
 
 typedef int t_bool;
 enum { false, true };
@@ -59,7 +60,10 @@ intmax_t sint_flags(va_list list, t_params *params);
 uintmax_t uint_flags(va_list list, t_params *params);
 int print_sint(va_list list, t_params *params);
 int print_uint(va_list list, t_params *params);
+<<<<<<< HEAD
 
 int u_length(uintmax_t nbr);
+=======
+>>>>>>> 0238fd0674ddb3a919009ec4b2a35ac01a38cbc4
 
 #endif
