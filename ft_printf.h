@@ -55,8 +55,11 @@ int parse_width(char *str, t_params *params);
 int parse_precision(char *str, t_params *params);
 int parse_length(char *str, t_params *params);
 int parse_specifier(const char *format, va_list args, t_params *params);
-long long sint_flags(va_list list, t_params *params);
-unsigned long long	uint_flags(va_list list, t_params *params);
+intmax_t sint_flags(va_list list, t_params *params);
+uintmax_t uint_flags(va_list list, t_params *params);
 int print_sint(va_list list, t_params *params);
+int print_uint(va_list list, t_params *params);
+
+int u_length(uintmax_t nbr);
 
 #endif

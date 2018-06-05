@@ -13,10 +13,10 @@
 #include "libft.h"
 #include <stdio.h>
 
-char	fill(int nbr)
+char	fill(int nbr, int base)
 {
-	if (nbr >= 10)
-		return ('a' - 10 + nbr);
+	if (nbr >= base)
+		return ('a' - base + nbr);
 	else if (nbr < 0)
 		return (-nbr + '0');
 	else
@@ -42,6 +42,7 @@ char	*ft_itoa_base(intmax_t nbr, int base)
 	intmax_t	nb;
 	intmax_t	index;
 	intmax_t	size;
+	char *hex = "0123456789abcdef";
 
 	if (base < 2 || base > 16)
 		return (ft_strdup("0"));
@@ -57,10 +58,12 @@ char	*ft_itoa_base(intmax_t nbr, int base)
 	index = size - 1;
 	while (nb >= base)
 	{
-		res[index--] = (char)(nb % base + 48);
+		res[index--] = hex[nb % base];
 		nb /= base;
 	}
-	res[index] = (char)(nb % base + 48);
+	
+	res[index] = hex[nb % base];
+	
 	res[size] = '\0';
 	return (res);
 }

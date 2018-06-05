@@ -21,7 +21,8 @@ int		valid_arg(int c)
 		|| c == 'A' || c == 'c' || c == 's' 
 		|| c == 'p' || c == 'n' || c == '%'
 		|| c == '.' || c == '-' || c == '0'
-		|| c == '+'));
+		|| c == '+' || c == 'l' || c == 'z'
+		|| c == 'j'));
 }
 
 
@@ -121,6 +122,7 @@ int	parse_length(char *str, t_params *params)
 			break;
 		i++;
 	}
+	
 	return (i);
 }
 
@@ -141,6 +143,5 @@ int parse_specifier(const char *format, va_list args, t_params *params)
 		init_params(params);
 		format++;
 	}
-	//printf("%c", params->specifier);
 	return (i);
 }

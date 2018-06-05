@@ -10,12 +10,14 @@ void ft_parse(int flag, va_list arg, t_params *params)
         {
                print_sint(arg, params);
         }
+        else if (flag == 'u')
+        {
+                print_uint(arg, params);
+        }
         else if (flag == 'c')
         {
                 print_char(arg);
         }
-        else if (flag == 'f')
-                print_float(arg);
         else if (flag == '%')
                 ft_putchar('%');
         else if (flag == 'x' || flag == 'X')
@@ -41,9 +43,7 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%-+0.10d", 10);
+        ft_printf("%jd", 214748364800);
+        printf("%jd", 214748364800);
         return (0);
 }
-
-
-

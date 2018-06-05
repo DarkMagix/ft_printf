@@ -20,36 +20,68 @@ int count_args(char *ptr)
     return (flags);
 }
 
-long long sint_flags(va_list list, t_params *params)
+intmax_t sint_flags(va_list list, t_params *params)
 {
-    if(params->specifier == MODI_ll)
-        return (va_arg(list, long long));
-    else if (params->specifier == MODI_l)
-        return ((long long)va_arg(list, long int));
-    else if (params->specifier == MODI_HH)
-        return ((char)va_arg(list, int));
-    else if (params->specifier == MODI_H)
-        return ((short)va_arg(list, int));
-    else if (params->specifier == MODI_J)
-        return (va_arg(list, long long));
-    else if (params->specifier == MODI_Z)
-        return ((long long)va_arg(list, size_t));
-    return ((long long)va_arg(list, int));
+    intmax_t nbr;
+
+    nbr = va_arg(list, intmax_t);
+    if(params->modifer == MODI_HH)
+    {
+        printf("HH\n");
+        nbr = (char)nbr;
+    }
+    else if (params->modifer == MODI_H)
+    {
+        printf("H\n");
+        nbr = (short int)nbr;
+    }
+    else if (params->modifer == MODI_l)
+    {
+        printf("L\n");
+        nbr = (long int)nbr;
+    }
+    else if (params->modifer == MODI_ll)
+    {
+        printf("LL\n");
+        nbr = (long long int)nbr;
+    }
+    else if (params->modifer == MODI_J)
+    {
+        printf("J\n");
+        nbr =  (intmax_t)nbr;
+    }
+    else if (params->modifer == MODI_Z)
+    {
+        printf("Z\n");
+        nbr = (size_t)nbr;
+    }
+    else
+    {
+        printf("?\n");
+        nbr = (int)nbr;
+    }
+    return (nbr);
 }
 
-unsigned long long	uint_flags(va_list list, t_params *params)
+uintmax_t	uint_flags(va_list list, t_params *params)
 {
-	if (params->specifier == MODI_ll)
-		return (va_arg(list, unsigned long long));
-	else if (params->specifier == MODI_l)
-		return ((unsigned long long)va_arg(list, unsigned long));
-	else if (params->specifier == MODI_HH)
-		return ((unsigned char)va_arg(list, unsigned int));
-	else if (params->specifier == MODI_H)
-		return ((unsigned short int)va_arg(list, unsigned int));
-	else if (params->specifier == MODI_J)
-		return ((unsigned long long)va_arg(list, unsigned long long));
-	else if (params->specifier== MODI_Z)
-		return ((unsigned long long)va_arg(list, size_t));
-	return (va_arg(list, unsigned int));
+    uintmax_t nbr;
+
+    nbr = va_arg(list, uintmax_t);
+    if(params->modifer == MODI_HH)
+        nbr = (unsigned char)nbr;
+    else if (params->modifer == MODI_H)
+        nbr = (unsigned short int)nbr;
+    else if (params->modifer == MODI_l)
+        nbr = (unsigned long int)nbr;
+    else if (params->modifer == MODI_ll)
+        nbr = (unsigned long long int)nbr;
+    else if (params->modifer == MODI_J)
+        nbr =  (uintmax_t)nbr;
+    else if (params->modifer == MODI_Z)
+        nbr = (size_t)nbr;
+    else
+        nbr = (unsigned int)nbr;
+    
+    return (nbr);
 }
