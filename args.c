@@ -22,7 +22,7 @@ int		valid_arg(int c)
 		|| c == 'p' || c == 'n' || c == '%'
 		|| c == '.' || c == '-' || c == '0'
 		|| c == '+' || c == 'l' || c == 'z'
-		|| c == 'j'));
+		|| c == 'j' ||(c >='0' && c <= '9')));
 }
 
 int	parse_flags(char *str, t_params *params)
@@ -127,6 +127,7 @@ int parse_specifier(const char *format, va_list args, t_params *params)
 {
 	int i;
 	i = 0;
+
 	init_params(params);
 	while (*format)
 	{

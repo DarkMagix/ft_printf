@@ -45,7 +45,8 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%-8d     %d", 21474,3);
+        ft_printf("(%08d)(%08d)", 21474,3);
+        printf("\n(%08d)(%08d)", 21474,3);
       //  ft_printf("%-8d     %-d", 21474,3);
        // printf("\n<%-3.8u>     %-u", 21474,3);
         
