@@ -30,9 +30,9 @@ int	print_sint(va_list list, t_params *params)
 	intmax_t num;
 
 	i = 0;
+	///num = va_arg(list, intmax_t);
+
 	num = sint_flags(list, params);
-	
-	
 	params->buff = ft_strdup(ft_itoa_base(num, 10));
 	ft_format_int(params, (void *)num);
 	ft_putstr(params->buff);

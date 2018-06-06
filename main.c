@@ -52,11 +52,11 @@ int main(void)
         ft_printf("%-+5d\n",-10);
         printf("-----------------\n");
 
-        printf("%d\n", -10);
-        printf("%-5d\n", -10);
-        printf("%05d\n", -10);
-        printf("%+5d\n",-10);
-        printf("%-+5d\n",-10);
+        printf("%d\n", 10);
+        printf("%-5d\n", 10);
+        printf("%05d\n", 10);
+        printf("%+5d\n",10);
+        printf("%-+5d\n",10);
        // ft_printf("%d", -2);
         
       //  ft_printf("%-8d     %-d", 21474,3);

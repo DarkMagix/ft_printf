@@ -23,9 +23,8 @@ int count_args(char *ptr)
 intmax_t sint_flags(va_list list, t_params *params)
 {
     intmax_t nbr;
-
-    nbr = va_arg(list, intmax_t);
-    printf("%jd", nbr);
+   
+    nbr = va_arg(list, int);
     if(params->modifer == MODI_HH)
     {
         printf("HH\n");
@@ -78,6 +77,5 @@ uintmax_t	uint_flags(va_list list, t_params *params)
         nbr = (size_t)nbr;
     else
         nbr = (unsigned int)nbr;
-    
     return (nbr);
 }
