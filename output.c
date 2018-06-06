@@ -31,7 +31,7 @@ int	print_sint(va_list list, t_params *params)
 
 	i = 0;
 	num = sint_flags(list, params);
-	printf("Print_Sint: %jd\n", num);
+	
 	
 	params->buff = ft_strdup(ft_itoa_base(num, 10));
 	ft_format_int(params, (void *)num);
