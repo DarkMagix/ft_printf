@@ -34,7 +34,7 @@ void ft_printf(const char *frmt, ...)
 {
         va_list args;
         t_params *params;
-         params = ft_memalloc(sizeof(t_params));
+        params = ft_memalloc(sizeof(t_params));
         if(frmt)
         {
                 va_start(args, frmt);       
@@ -45,8 +45,20 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("(%08d)(%08d)", 21474,3);
-        printf("\n(%08d)(%08d)", 21474,3);
+        ft_printf("%d\n", -10);
+        ft_printf("%-5d\n", -10);
+        ft_printf("%05d\n", -10);
+        ft_printf("%+5d\n",-10);
+        ft_printf("%-+5d\n",-10);
+        printf("-----------------\n");
+
+        printf("%d\n", -10);
+        printf("%-5d\n", -10);
+        printf("%05d\n", -10);
+        printf("%+5d\n",-10);
+        printf("%-+5d\n",-10);
+       // ft_printf("%d", -2);
+        
       //  ft_printf("%-8d     %-d", 21474,3);
        // printf("\n<%-3.8u>     %-u", 21474,3);
         

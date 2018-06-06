@@ -25,6 +25,7 @@ intmax_t sint_flags(va_list list, t_params *params)
     intmax_t nbr;
 
     nbr = va_arg(list, intmax_t);
+    printf("%jd", nbr);
     if(params->modifer == MODI_HH)
     {
         printf("HH\n");
