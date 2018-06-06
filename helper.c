@@ -24,37 +24,22 @@ intmax_t sint_flags(va_list list, t_params *params)
 {
     intmax_t nbr;
    
-    nbr = va_arg(list, int);
+    nbr = (intmax_t)va_arg(list, intmax_t);
+    //    printf("sint_flags: %jd\n", nbr);
     if(params->modifer == MODI_HH)
-    {
-        printf("HH\n");
-        nbr = (char)nbr;
-    }
+      nbr = (char)nbr;
     else if (params->modifer == MODI_H)
-    {
-        printf("H\n");
         nbr = (short int)nbr;
-    }
     else if (params->modifer == MODI_l)
-    {
-        printf("L\n");
         nbr = (long int)nbr;
-    }
     else if (params->modifer == MODI_ll)
-    {
-        printf("LL\n");
         nbr = (long long int)nbr;
-    }
     else if (params->modifer == MODI_J)
-    {
-        printf("J\n");
         nbr =  (intmax_t)nbr;
-    }
     else if (params->modifer == MODI_Z)
-    {
-        printf("Z\n");
         nbr = (size_t)nbr;
-    }
+    else
+      nbr = (int)nbr;
     return (nbr);
 }
 

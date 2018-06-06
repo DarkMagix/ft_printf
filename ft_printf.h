@@ -62,8 +62,7 @@ int print_sint(va_list list, t_params *params);
 int print_uint(va_list list, t_params *params);
 
 int u_length(uintmax_t nbr);
-void ft_format_int(t_params *params, void *nbr);
-void ft_format_int(t_params *params, void *nbr);
+void ft_format_int(t_params *params);
 void ft_signstr(char *str, t_params *params);
 
 #endif

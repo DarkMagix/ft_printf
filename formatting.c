@@ -15,13 +15,11 @@ void ft_signstr(char *str, t_params *params)
         ft_strcat(str, "+");
    
 }
-void ft_format_int(t_params *params, void *nbr)
+void ft_format_int(t_params *params)
 {
     char *temp;
-
+    
     int size;
-    intmax_t meh;
-    meh = (intmax_t)nbr;
     temp = ft_strnew(1);
     size = params->wid_len - (int)ft_strlen(params->buff);
     if(!params->justify)

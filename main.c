@@ -45,18 +45,22 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        ft_printf("%d\n", -10);
-        ft_printf("%-5d\n", -10);
-        ft_printf("%05d\n", -10);
-        ft_printf("%+5d\n",-10);
-        ft_printf("%-+5d\n",-10);
-        printf("-----------------\n");
-
-        printf("%d\n", 10);
-        printf("%-5d\n", 10);
-        printf("%05d\n", 10);
-        printf("%+5d\n",10);
-        printf("%-+5d\n",10);
+  
+  //  printf("Size of 10 is %d\n", (int)sizeof(10));
+  //  printf("Size of int is %d\n", (int)sizeof(n2));
+  //  printf("Size of intmax_t is %d\n", (int)sizeof(n));
+  short b = 32800;
+  ft_printf("%d\n", (int)b);
+  ft_printf("%-9hd\n", b);
+  ft_printf("%09hd\n", b);
+  ft_printf("%+9hd\n", b);
+  ft_printf("%-+9hd\n", b);
+  printf("-----------------\n");
+  printf("%d\n", (int)b);
+  printf("%-9hd\n", b);
+  printf("%09hd\n", b);
+  printf("%+9hd\n", b);
+  printf("%-+9hd\n", b);
        // ft_printf("%d", -2);
         
       //  ft_printf("%-8d     %-d", 21474,3);

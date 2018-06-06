@@ -26,37 +26,33 @@ int	print_str(va_list list)
 
 int	print_sint(va_list list, t_params *params)
 {
-	int				i;
 	intmax_t num;
-
-	i = 0;
-	///num = va_arg(list, intmax_t);
 
 	num = sint_flags(list, params);
 	params->buff = ft_strdup(ft_itoa_base(num, 10));
-	ft_format_int(params, (void *)num);
+	ft_format_int(params);
 	ft_putstr(params->buff);
 	return (1);
 }
 int print_uint(va_list list, t_params *params)
 {
-	int i;
+       
 	uintmax_t num;
-	i = 0;
+
 	num = uint_flags(list, params);
 	params->buff = ft_strdup(ft_uitoa_base(num, 10));
-	ft_format_int(params, (void *)num);
+	ft_format_int(params);
 	ft_putstr(params->buff);
 	return (1);
 }
 
 int	print_integer(va_list list, t_params *params)
 {
-	char	sign;
+	
 	int		num;
 	int		length;
 
-	sign = params->plus_neg;
+      
 	length = 0;
 	if (params->p_wildcard)
 	{
