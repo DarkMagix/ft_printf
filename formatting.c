@@ -2,7 +2,7 @@
 
 void ft_add_pad(char *str, t_params *params, int size)
 {
-    if(params->is_neg)
+    if(params->is_neg || params->plus_neg)
         size--;
     while (size > 0)
     {
@@ -18,6 +18,9 @@ void ft_padstr(char *str, t_params *params, int size)
 {
     char *temp;
     temp = ft_strnew(1);
+    if(params->justify)
+      {
+	ft_strcat(temp, str);
     if(params->is_neg && params->pad)
     {
         ft_strcat(temp, "-");        
@@ -40,7 +43,35 @@ void ft_padstr(char *str, t_params *params, int size)
         if(params->plus_neg)
             ft_strcat(temp, "+");
     }
-    ft_strcat(temp, str);
+      }
+    else
+      {
+       
+	if(params->is_neg && params->pad)
+	  {
+	    ft_strcat(temp, "-");
+	    ft_add_pad(temp, params, size);
+	  }
+	else if (params->is_neg && !params->pad)
+	  {
+	    ft_add_pad(temp, params, size);
+	    ft_strcat(temp, "-");
+	  }
+	else if(!params->is_neg && params->pad)
+	  {
+	    if(params->plus_neg)
+	      ft_strcat(temp, "+");
+	    ft_add_pad(temp, params, size);
+	  }
+	else if (!params->is_neg && !params->pad)
+	  {
+	    ft_add_pad(temp, params, size);
+	    if(params->plus_neg)
+	      ft_strcat(temp, "+");
+	  }
+	ft_strcat(temp, str);	
+      }
+
     params->buff = temp;
 }
 void ft_signstr(char *str, t_params *params)
@@ -70,7 +101,6 @@ void ft_format_int(t_params *params)
     //ft_signstr(temp, params);
     
     size = ft_find_length(params->wid_len, (int)ft_strlen(params->buff));
-   
     ft_strcat(temp, params->buff);
     ft_padstr(temp, params, size);
     free(temp);
