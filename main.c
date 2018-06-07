@@ -65,11 +65,18 @@ int main(void)
 //   printf("%+9jd\n", b);
 //   printf("%-+9jd\n", b);
 //   printf("-----------------\n");
-     ft_printf("(%-25jd)\n", b);
-     printf("(%-25jd)\n", b);
+  intmax_t c = -3;
+     ft_printf("(%-+25jd)\n", b);
+     printf("(%-+25jd)\n", b);
      printf("--------------\n");
      ft_printf("(%25jd)\n", b);
      printf("(%25jd)\n", b);
+     printf("----------------\n");
+     ft_printf("(%-+3ji)\n", c);
+     printf("(%-+3ji)\n", c);
+     printf("-----------------\n");
+     ft_printf("(%3ji)\n", c);
+     printf("(%3ji)\n", c);
        // ft_printf("%d", -2);
         
       //  ft_printf("%-8d     %-d", 21474,3);

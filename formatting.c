@@ -20,28 +20,32 @@ void ft_padstr(char *str, t_params *params, int size)
     temp = ft_strnew(1);
     if(params->justify)
       {
+	//	ft_strcat(temp, str);
+    if(params->is_neg && !params->pad)
+    {
+        ft_strcat(temp, "-");
 	ft_strcat(temp, str);
-    if(params->is_neg && params->pad)
-    {
-        ft_strcat(temp, "-");        
         ft_add_pad(temp, params, size);
     }
-    else if (params->is_neg && !params->pad)
+    else if (params->is_neg && params->pad)
     {
         ft_add_pad(temp, params, size);
-        ft_strcat(temp, "-");        
+        ft_strcat(temp, "-");
+	ft_strcat(temp, str);
     }
-    else if(!params->is_neg && params->pad)
+    if(!params->is_neg && !params->pad)
     {
         if(params->plus_neg)
             ft_strcat(temp, "+");
+	ft_strcat(temp, str);
         ft_add_pad(temp, params, size);
     }
-    else if (!params->is_neg && !params->pad)
+    else if (!params->is_neg && params->pad)
     {
         ft_add_pad(temp, params, size);
         if(params->plus_neg)
             ft_strcat(temp, "+");
+	ft_strcat(temp, str);
     }
       }
     else
