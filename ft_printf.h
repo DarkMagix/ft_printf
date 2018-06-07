@@ -39,6 +39,8 @@ typedef struct      s_params
 	char *buff;
 	int modifer;
 	int specifier;
+	//Other
+	t_bool is_neg;
 }                   t_params;
 
 void init_params(t_params *params);

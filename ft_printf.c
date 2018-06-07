@@ -13,4 +13,5 @@ void init_params(t_params *params)
     params->buff = NULL;
     params->specifier = 0;
     params->modifer = 0;
+    params->is_neg = false;
 }

@@ -24,8 +24,7 @@ intmax_t sint_flags(va_list list, t_params *params)
 {
     intmax_t nbr;
    
-    nbr = (intmax_t)va_arg(list, intmax_t);
-    //    printf("sint_flags: %jd\n", nbr);
+    nbr = va_arg(list, intmax_t);
     if(params->modifer == MODI_HH)
       nbr = (char)nbr;
     else if (params->modifer == MODI_H)
@@ -38,8 +37,6 @@ intmax_t sint_flags(va_list list, t_params *params)
         nbr =  (intmax_t)nbr;
     else if (params->modifer == MODI_Z)
         nbr = (size_t)nbr;
-    else
-      nbr = (int)nbr;
     return (nbr);
 }
 
@@ -60,7 +57,5 @@ uintmax_t	uint_flags(va_list list, t_params *params)
         nbr =  (uintmax_t)nbr;
     else if (params->modifer == MODI_Z)
         nbr = (size_t)nbr;
-    else
-        nbr = (unsigned int)nbr;
     return (nbr);
 }

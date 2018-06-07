@@ -34,7 +34,7 @@ int	parse_flags(char *str, t_params *params)
 	{
 		if(str[i] == '-')
 			params->justify = true;
-		else if (str[i] == '+' || str[i] == '-')
+		else if (str[i] == '+')
 			params->plus_neg = true;
 		else if (str[i] == ' ')
 			params->spaced = true;
@@ -52,13 +52,23 @@ int	parse_flags(char *str, t_params *params)
 int	parse_width(char *str, t_params *params)
 {
 	int i;
-
+	int skip;
+	
 	i = 0;
+	skip = 0;
+	if (ft_atoi(&str[i]) > 0)
+	{
+		params->wid_len = ft_atoi(&str[i]);
+		skip = params->wid_len;
+		while(skip !=0)
+		{
+			i++;
+			skip /= 10;
+		}
+	}
 	while(true)
 	{
-		if (ft_atoi(&str[i]) > 0)
-			params->wid_len = ft_atoi(&str[i]);
-		else if (str[i] == '*')
+		if (str[i] == '*')
 			params->wid_len = -1;
 		else
 			break;
