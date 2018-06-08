@@ -98,7 +98,7 @@ void ft_format_int(t_params *params)
     char *temp;
 
     int size;
-    temp = ft_strnew(20);
+    temp = ft_strnew(((int)ft_strlen(params->buff)));
 
     //ft_signstr(temp, params);
    

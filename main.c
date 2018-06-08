@@ -35,7 +35,7 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-        intmax_t b = 30000;
+        intmax_t b = -9223372036854775807;
         ft_printf("(%+012jd) %s (%-3d)%c\n", b, "Space Between Text",999, '!');
         printf("--------------\n");
         printf("(%+012jd) %s (%-3d)%c\n", b, "Space Between Text",999, '!');
