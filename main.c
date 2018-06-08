@@ -49,7 +49,7 @@ int main(void)
   //  printf("Size of 10 is %d\n", (int)sizeof(10));
   //  printf("Size of int is %d\n", (int)sizeof(n2));
   //  printf("Size of intmax_t is %d\n", (int)sizeof(n));
-  intmax_t b = 9223372036854775807;
+  uintmax_t b = 2000000000;
 //   printf("My Behavior:\n");
 //   ft_printf("%d\n", (int)b);
 //   ft_printf("%-9jd\n", b);
@@ -65,18 +65,12 @@ int main(void)
 //   printf("%+9jd\n", b);
 //   printf("%-+9jd\n", b);
 //   printf("-----------------\n");
-  intmax_t c = -3;
-     ft_printf("(%-+25jd)\n", b);
-     printf("(%-+25jd)\n", b);
+     //ft_printf("(%-+25i%s)\n", (int)b, "This is a test of things");
+     ft_printf("(%-25ju%s)\n",   b, "This is a test of things");
      printf("--------------\n");
-     ft_printf("(%25jd)\n", b);
-     printf("(%25jd)\n", b);
-     printf("----------------\n");
-     ft_printf("(%-+3ji)\n", c);
-     printf("(%-+3ji)\n", c);
-     printf("-----------------\n");
-     ft_printf("(%3ji)\n", c);
-     printf("(%3ji)\n", c);
+       printf("(%-25ju%s)\n",   b, "This is a test of things");
+     //ft_printf("(%25jd)\n", b);
+     //printf("(%25jd)\n", b);
        // ft_printf("%d", -2);
         
       //  ft_printf("%-8d     %-d", 21474,3);
