@@ -49,7 +49,7 @@ int main(void)
   //  printf("Size of 10 is %d\n", (int)sizeof(10));
   //  printf("Size of int is %d\n", (int)sizeof(n2));
   //  printf("Size of intmax_t is %d\n", (int)sizeof(n));
-  uintmax_t b = 2000000000;
+        short int b = 32767;
 //   printf("My Behavior:\n");
 //   ft_printf("%d\n", (int)b);
 //   ft_printf("%-9jd\n", b);
@@ -66,9 +66,9 @@ int main(void)
 //   printf("%-+9jd\n", b);
 //   printf("-----------------\n");
      //ft_printf("(%-+25i%s)\n", (int)b, "This is a test of things");
-     ft_printf("(%-25ju%s)\n",   b, "This is a test of things");
+        ft_printf("(%-12hd) %s (%-3d)%c\n", b, "Space Between Text",999, '!');
      printf("--------------\n");
-       printf("(%-25ju%s)\n",   b, "This is a test of things");
+        printf("(%-12hd) %s (%-3d)%c\n", b, "Space Between Text",999, '!');
      //ft_printf("(%25jd)\n", b);
      //printf("(%25jd)\n", b);
        // ft_printf("%d", -2);

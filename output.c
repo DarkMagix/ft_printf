@@ -20,7 +20,16 @@ int	print_char(va_list list)
 
 int	print_str(va_list list)
 {
-	ft_putstr(va_arg(list, char*));
+	int i;
+
+	i = 0;
+	char *test;
+	test= va_arg(list, char*);
+	while (test[i])
+	{
+		ft_putchar(test[i]);
+		i++;
+	}
 	return (1);
 }
 
