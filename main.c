@@ -3,31 +3,21 @@
 void ft_parse(int flag, va_list arg, t_params *params)
 {       
         if (flag == 's')
-        {
                 print_str(arg);
-        }
         else if (flag == 'd')
-        {
                print_sint(arg, params);
-        }
         else if (flag == 'u')
-        {
                 print_uint(arg, params);
-        }
         else if (flag == 'c')
-        {
                 print_char(arg);
-        }
         else if (flag == '%')
                 ft_putchar('%');
         else if (flag == 'x' || flag == 'X')
-        {
                 print_hex(va_arg(arg, unsigned int), flag);
-        }
 	else if(flag == 'u')
 		print_uint(arg, params);
 	else if (flag == 'i')
-	  print_sint(arg, params);
+	        print_sint(arg, params);
 }
 
 void ft_printf(const char *frmt, ...)
@@ -45,37 +35,11 @@ void ft_printf(const char *frmt, ...)
 
 int main(void)
 {
-  
-  //  printf("Size of 10 is %d\n", (int)sizeof(10));
-  //  printf("Size of int is %d\n", (int)sizeof(n2));
-  //  printf("Size of intmax_t is %d\n", (int)sizeof(n));
-        short int b = 32767;
-//   printf("My Behavior:\n");
-//   ft_printf("%d\n", (int)b);
-//   ft_printf("%-9jd\n", b);
-//   ft_printf("%09jd\n", b);
-//   ft_printf("%+9jd\n", b);
-//   ft_printf("%-+9jd\n", b);
-//   printf("-----------------\n");
-//   printf("Expected Behavior: \n");
-//   printf("%d\n", (int)b);
-//  printf("%d\n", (int)b);
-//   printf("%-9jd\n", b);
-//   printf("%09jd\n", b);
-//   printf("%+9jd\n", b);
-//   printf("%-+9jd\n", b);
-//   printf("-----------------\n");
-     //ft_printf("(%-+25i%s)\n", (int)b, "This is a test of things");
-        ft_printf("(%-12hd) %s (%-3d)%c\n", b, "Space Between Text",999, '!');
-     printf("--------------\n");
-        printf("(%-12hd) %s (%-3d)%c\n", b, "Space Between Text",999, '!');
-     //ft_printf("(%25jd)\n", b);
-     //printf("(%25jd)\n", b);
-       // ft_printf("%d", -2);
-        
-      //  ft_printf("%-8d     %-d", 21474,3);
-       // printf("\n<%-3.8u>     %-u", 21474,3);
-        
-        
+        intmax_t b = 30000;
+        ft_printf("(%+012jd) %s (%-3d)%c\n", b, "Space Between Text",999, '!');
+        printf("--------------\n");
+        printf("(%+012jd) %s (%-3d)%c\n", b, "Space Between Text",999, '!');
+
+
         return (0);
 }

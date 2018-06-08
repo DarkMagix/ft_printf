@@ -75,7 +75,6 @@ void ft_padstr(char *str, t_params *params, int size)
         }
         ft_strcat(temp, str);
       }
-
     params->buff = temp;
 }
 void ft_signstr(char *str, t_params *params)
