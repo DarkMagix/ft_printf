@@ -30,7 +30,7 @@ void	ft_padstr(char *str, t_params *params, int size)
 {
 	char *temp;
 
-	temp = ft_strnew(1);
+	temp = ft_strnew((int)ft_strlen(params->buff));
 	if (params->justify)
 	{
 		neg_justified(temp, str, params, size);
@@ -41,7 +41,9 @@ void	ft_padstr(char *str, t_params *params, int size)
 		neg_no_justified(temp, str, params, size);
 		pos_no_justified(temp, str, params, size);
 	}
+	params->buff = ft_strnew(ft_strlen(temp));
 	params->buff = temp;
+//	free(temp);
 }
 
 void	ft_signstr(char *str, t_params *params)

@@ -1,1 +1,0 @@
-gcc -g format_int.c formatting.c ft_printf.h helper.c parse.c output.c main.c ft_printf.c args.c -Wall -Wextra -Werror ./libft/libft.a
