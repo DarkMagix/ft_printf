@@ -38,7 +38,7 @@ int		valid_arg(int c)
 		|| c == 'p' || c == 'n' || c == '%'
 		|| c == '.' || c == '-' || c == '0'
 		|| c == '+' || c == 'l' || c == 'z'
-		|| c == 'j' || (c >= '0' && c <= '9')));
+		|| c == 'j' || c == 'h' || (c >= '0' && c <= '9')));
 }
 
 void	ft_parse(int flag, va_list arg, t_params *params)
@@ -74,10 +74,10 @@ void	ft_printf(const char *frmt, ...)
 	free(params);
 }
 
-int main(void)
-{
-  unsigned char a = 131;
-  ft_printf("|%hhu|\n", a);
-  printf("|%hhu|\n", a);
-	return (0);
-}
+//int main(void)
+//{
+  //  unsigned char a = 131;
+  //  ft_printf("|%hhu|\n", a);
+  //  printf("|%hhu|\n", a);
+  //	return (0);
+  //	//}
