@@ -18,7 +18,8 @@ void	neg_justified(char *temp, char *str, t_params *params, int size)
 	{
 		ft_strcat(temp, "-");
 		ft_strcat(temp, str);
-		ft_add_pad(str, params, size);
+		
+		ft_add_pad(temp, params, size);
 	}
 	else if (params->is_neg && params->pad)
 	{

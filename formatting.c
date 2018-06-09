@@ -16,6 +16,7 @@ void	ft_add_pad(char *str, t_params *params, int size)
 {
 	if (params->is_neg || params->plus_neg)
 		size--;
+	
 	while (size > 0)
 	{
 		if (params->pad)

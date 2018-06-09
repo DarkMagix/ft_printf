@@ -78,11 +78,10 @@ void	ft_printf(const char *frmt, ...)
 
 //int main(void)
 //{
-//	uintmax_t b =  3000;
-//	printf("Size of b: %ju\n", sizeof(b));
-//	ft_printf("Size of b: %ju\n", sizeof(b));
-//	ft_printf("%ji\n", b);
-//	printf("%ji\n", b);
-//       
+//  ft_printf("|%-5d|\n", -42);
+//  printf("|%-5d|\n", -42);
+//
+//  ft_printf("|%-4d|\n", 42);
+//  printf("|%-4d|\n", 42);
 //	return (0);
 //}
