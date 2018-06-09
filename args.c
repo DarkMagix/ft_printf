@@ -12,19 +12,6 @@
 
 #include "ft_printf.h"
 
-int		valid_arg(int c)
-{
-	return ((c == 'd' || c == 'u' || c == 'o' 
-		|| c == 'x' || c == 'X' || c == 'f' 
-		|| c == 'F' || c == 'e' || c == 'E' 
-		|| c == 'g' || c == 'G' || c == 'a' 
-		|| c == 'A' || c == 'c' || c == 's' 
-		|| c == 'p' || c == 'n' || c == '%'
-		|| c == '.' || c == '-' || c == '0'
-		|| c == '+' || c == 'l' || c == 'z'
-		|| c == 'j' ||(c >='0' && c <= '9')));
-}
-
 int	parse_flags(char *str, t_params *params)
 {
 	int i;
@@ -32,7 +19,7 @@ int	parse_flags(char *str, t_params *params)
 	i = 0;
 	while (true)
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 			params->justify = true;
 		else if (str[i] == '+')
 			params->plus_neg = true;
@@ -43,7 +30,7 @@ int	parse_flags(char *str, t_params *params)
 		else if (str[i] == '0')
 			params->pad = true;
 		else
-			break;
+			break ;
 		i++;
 	}
 	return (i);
@@ -52,26 +39,26 @@ int	parse_flags(char *str, t_params *params)
 int	parse_width(char *str, t_params *params)
 {
 	int i;
-	int skip;
-	
+	int	skip;
+
 	i = 0;
 	skip = 0;
 	if (ft_atoi(&str[i]) > 0)
 	{
 		params->wid_len = ft_atoi(&str[i]);
 		skip = params->wid_len;
-		while(skip !=0)
+		while (skip != 0)
 		{
 			i++;
 			skip /= 10;
 		}
 	}
-	while(true)
+	while (true)
 	{
 		if (str[i] == '*')
 			params->wid_len = -1;
 		else
-			break;
+			break ;
 		i++;
 	}
 	return (i);
@@ -81,8 +68,9 @@ int	parse_precision(char *str, t_params *params)
 {
 	int i;
 	int temp;
+
 	i = 0;
-	while(true)
+	while (true)
 	{
 		if (str[i] == '.')
 		{
@@ -97,10 +85,9 @@ int	parse_precision(char *str, t_params *params)
 		else if (str[i] == '*')
 			params->p_wildcard = true;
 		else
-			break;
+			break ;
 		i++;
 	}
-
 	return (i);
 }
 
@@ -113,7 +100,7 @@ int	parse_length(char *str, t_params *params)
 	{
 		if (str[i] == 'h')
 			params->modifer = (str[i] == 'h' && str[i + 1] == 'h') \
-				 ? MODI_HH : MODI_H;
+				? MODI_HH : MODI_H;
 		else if (str[i] == 'l')
 			params->modifer = (str[i] == 'l' && str[i + 1] == 'l') \
 				? MODI_ll : MODI_l;
@@ -126,24 +113,23 @@ int	parse_length(char *str, t_params *params)
 		else if (str[i] == 'L')
 			params->modifer = MODI_Z;
 		else
-			break;
+			break ;
 		i++;
 	}
-	
 	return (i);
 }
 
-int parse_specifier(const char *format, va_list args, t_params *params)
+int	parse_specifier(const char *format, va_list args, t_params *params)
 {
 	int i;
-	i = 0;
 
+	i = 0;
 	init_params(params);
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			if(valid_arg(*(format + 1)))
+			if (valid_arg(*(format + 1)))
 				format += read_data(params, (char *)(format + 1)) + 1;
 			params->specifier = *format;
 			ft_parse(params->specifier, args, params);

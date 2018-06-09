@@ -52,18 +52,14 @@ char	*ft_itoa_base(intmax_t nbr, int base)
 	if (!(res = (char*)malloc(sizeof(char) * (size + 1 + (nbr < 0 ? 1 : 0)))))
 		return (0);
 	if (nbr < 0 && base == 10 && (res[index] = '-'))
-	{
 		size++;
-	}
 	index = size - 1;
 	while (nb >= base)
 	{
 		res[index--] = hex[nb % base];
 		nb /= base;
 	}
-	
 	res[index] = hex[nb % base];
-	
 	res[size] = '\0';
 	return (res);
 }

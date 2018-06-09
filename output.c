@@ -20,11 +20,11 @@ int	print_char(va_list list)
 
 int	print_str(va_list list)
 {
-	int i;
+	int		i;
+	char	*test;
 
 	i = 0;
-	char *test;
-	test= va_arg(list, char*);
+	test = va_arg(list, char*);
 	while (test[i])
 	{
 		ft_putchar(test[i]);
@@ -45,53 +45,15 @@ int	print_sint(va_list list, t_params *params)
 	ft_putstr(params->buff);
 	return (1);
 }
-int print_uint(va_list list, t_params *params)
+
+int	print_uint(va_list list, t_params *params)
 {
 	intmax_t num;
+
 	num = uint_flags(list, params);
 	params->buff = ft_strdup(ft_uitoa_base(num, 10));
 	ft_format_int(params);
 	ft_putstr(params->buff);
-	return (1);
-}
-
-int	print_integer(va_list list, t_params *params)
-{
-	
-	int		num;
-	int		length;
-
-      
-	length = 0;
-	if (params->p_wildcard)
-	{
-		length = va_arg(list, int);
-		params->num_len = length;
-	}
-	if (params->justify)
-	{
-		num = va_arg(list, int);
-		if (params->plus_neg)
-		{
-			if (num >= 0)
-				ft_putchar('+');
-		}
-		ft_putnbr(num);
-		while (params->num_len > 0)
-		{
-			ft_putchar((params->pad == true) ? '0' : ' ');
-			params->num_len--;
-		}
-	}
-	else
-	{
-		while (params->num_len > 0)
-		{
-			ft_putchar((params->pad == true) ? '0' : ' ');
-			params->num_len--;
-		}
-		ft_putnbr(va_arg(list, int));
-	}
 	return (1);
 }
 
