@@ -76,11 +76,13 @@ void	ft_printf(const char *frmt, ...)
 	free(params);
 }
 
-int main(void)
-{
-	intmax_t b =  3000;
-
-	ft_printf("%jd", b);
-       
-	return (0);
-}
+//int main(void)
+//{
+//	uintmax_t b =  3000;
+//	printf("Size of b: %ju\n", sizeof(b));
+//	ft_printf("Size of b: %ju\n", sizeof(b));
+//	ft_printf("%ji\n", b);
+//	printf("%ji\n", b);
+//       
+//	return (0);
+//}
