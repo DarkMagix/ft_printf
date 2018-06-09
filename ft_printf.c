@@ -48,15 +48,13 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	else if (flag == 'd')
 		print_sint(arg, params);
 	else if (flag == 'u')
-		print_uint(arg, params);
+		print_sint(arg, params);
 	else if (flag == 'c')
 		print_char(arg);
 	else if (flag == '%')
 		ft_putchar('%');
 	else if (flag == 'x' || flag == 'X')
 		print_hex(va_arg(arg, unsigned int), flag);
-	else if (flag == 'u')
-		print_uint(arg, params);
 	else if (flag == 'i')
 		print_sint(arg, params);
 }
@@ -76,12 +74,10 @@ void	ft_printf(const char *frmt, ...)
 	free(params);
 }
 
-//int main(void)
-//{
-//  ft_printf("|%-5d|\n", -42);
-//  printf("|%-5d|\n", -42);
-//
-//  ft_printf("|%-4d|\n", 42);
-//  printf("|%-4d|\n", 42);
-//	return (0);
-//}
+int main(void)
+{
+  unsigned char a = 131;
+  ft_printf("|%hhu|\n", a);
+  printf("|%hhu|\n", a);
+	return (0);
+}
