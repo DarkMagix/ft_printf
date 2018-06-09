@@ -72,5 +72,5 @@ void pos_no_justified(char *temp, char *str, t_params *params, int size);
 void ft_format_int(t_params *params);
 void ft_signstr(char *str, t_params *params);
 int		valid_arg(int c);
-
+void	ft_printf(const char *frmt, ...);
 #endif
