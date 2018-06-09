@@ -75,41 +75,42 @@ void	ft_printf(const char *frmt, ...)
 	free(params);
 }
 
-// int main(void)
-// {
-// 	unsigned int a;
-// 	unsigned char b;	
-// 	unsigned short int c;
-// 	unsigned long int d;
-// 	unsigned long long int e;
-// 	uintmax_t f;
-// 	size_t g;
+int main(void)
+{
+	unsigned int a;
+	unsigned char b;	
+	unsigned short int c;
+	unsigned long int d;
+	unsigned long long int e;
+	uintmax_t f;
+	size_t g;
 	
-// 	a = 4294967295;
-// 	b = 255;
-// 	c = 65535;
-// 	d = 4294967295;
-// 	e = 1844674407370955161;
-// 	f = 1844674407370955161;
-// 	g = 1844674407370955161;
+	a = 4294967295;
+	b = 255;
+	c = 65535;
+	d = 4294967295;
+	e = 1844674407370955161;
+	f = 1844674407370955161;
+	g = 1844674407370955161;
 	
 	
 
-// 	ft_printf("|%-u|\n", a);
-// 	printf("|%-u|\n", a);
-// 	ft_printf("|%-hhu|\n", b);
-// 	printf("|%-hhu|\n", b);
-// 	ft_printf("|%-hu|\n", c);
-// 	printf("|%-hu|\n", c);
-// 	ft_printf("|%-lu|\n", d);
-// 	printf("|%-lu|\n", d);
-// 	ft_printf("|%-llu|\n", e);
-// 	printf("|%-llu|\n", e);
-// 	ft_printf("|%-ju|\n", f);
-// 	printf("|%-ju|\n", f);
-// 	ft_printf("|%-zu|\n", g);
-// 	printf("|%-zu|\n", g);
+	ft_printf("|%-u|\n", a);
+	printf("|%-u|\n", a);
+	ft_printf("|%-hhu|\n", b);
+	printf("|%-hhu|\n", b);
+	ft_printf("|%-hu|\n", c);
+	printf("|%-hu|\n", c);
+	ft_printf("|%-lu|\n", d);
+	printf("|%-lu|\n", d);
+	ft_printf("|%-llu|\n", e);
+	printf("|%-llu|\n", e);
+	ft_printf("|%-ju|\n", f);
+	printf("|%-ju|\n", f);
+	ft_printf("|%-zu|\n", g);
+	printf("|%-zu|\n", g);
+	while(1)
+	;
 	
-	
-// 	return (0);
-// }
+	return (0);
+}

@@ -37,6 +37,7 @@ int	print_sint(va_list list, t_params *params)
 {
 	intmax_t num;
 	char *number;
+
 	num = sint_flags(list, params);
 	params->is_neg = (num < 0) ? true : false;
 	num = (params->is_neg) ? -num : num;
@@ -44,7 +45,7 @@ int	print_sint(va_list list, t_params *params)
 	params->buff = number;
 	ft_format_int(params);
 	ft_putstr(params->buff);
-        free(params->buff);
+    free(params->buff);
 	free(number);
 	return (1);
 }
@@ -52,12 +53,15 @@ int	print_sint(va_list list, t_params *params)
 int	print_uint(va_list list, t_params *params)
 {
 	uintmax_t num;
+	char *number;
 
 	num = uint_flags(list, params);
-	params->buff = ft_strdup(ft_uitoa_base(num, 10));
+	number = ft_uitoa_base(num, 10);
+	params->buff = number;
 	ft_format_int(params);
 	ft_putstr(params->buff);
 	free(params->buff);
+	free(number);
 	return (1);
 }
 
