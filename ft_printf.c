@@ -6,7 +6,7 @@
 /*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 17:06:56 by mweir             #+#    #+#             */
-/*   Updated: 2018/06/08 17:52:23 by mweir            ###   ########.fr       */
+/*   Updated: 2018/06/08 19:15:09 by mweir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,4 @@ void	ft_printf(const char *frmt, ...)
 		parse_specifier(frmt, args, params);
 		va_end(args);
 	}
-}
-
-int main(void)
-{
-	intmax_t b = 30000;
-	ft_printf("%jd", b);
-	return (0);
 }
