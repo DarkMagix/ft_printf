@@ -6,7 +6,7 @@
 /*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 17:08:33 by mweir             #+#    #+#             */
-/*   Updated: 2018/06/08 17:08:34 by mweir            ###   ########.fr       */
+/*   Updated: 2018/06/08 17:40:43 by mweir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	ft_printf(const char *frmt, ...)
 
 int		main(void)
 {
-	printf("Size is %d\n", (int)sizeof(128LL));
 	ft_printf("(%+012jd) %s (%-3d)%c\n", 128L, "Space Between Text", 999, '!');
 	printf("--------------\n");
 	printf("(%+012jd) %s (%-3d)%c\n", 128L, "Space Between Text", 999, '!');

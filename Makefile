@@ -6,42 +6,37 @@
 #    By: mweir <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/18 15:36:24 by mweir             #+#    #+#              #
-#    Updated: 2018/06/08 17:21:01 by mweir            ###   ########.fr        #
+#    Updated: 2018/06/08 17:30:04 by mweir            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME = ft_printf
-PATH_SRC = ./
-PATH_OBJ = ./
-PATH_INC = ./libft/
+FLAGS = -g -Wall -Wextra -Werror -I libft
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+NAME = libftprintf.a
 
-HEAD = ./ft_printf.h
+TRASH = rm -f
 
-SRC = args.c formatting.c helper.c output.c format_int.c \
-	ft_printf.c main.c parse.c
+LIBFT := libft/
+
+SRC = args.c formatting.c helper.c output.c \
+		format_int.c ft_printf.c parse.c 
 
 
-OBJ = $(patsubst %.c,%.o,$(addprefix $(PATH_SRC), $(SRC)))
-
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEAD)
-	make -C libft/
-	$(CC) $(CFLAGS) -I $(HEAD) -I $(PATH_INC) -c $(SRC)
-	$(CC) -o $(NAME) $(OBJ) -lm -L libft/ -lft
-
-.PHONY: clean fclean
+$(NAME): $(OBJ)
+	@$(MAKE) -C $(LIBFT)
+	@ar rc $(NAME) $(OBJ) libft/*.o
+	@ranlib $(NAME) libft/libft.a
 
 clean:
-	make -C libft/ clean
-	/bin/rm -f $(OBJ)
+	$(TRASH) $(OBJ)
+	@$(MAKE) -C $(LIBFT) clean
 
 fclean: clean
-	make -C libft/ fclean
-	/bin/rm -f $(NAME)
+	$(TRASH) $(NAME)
+	@$(MAKE) -C $(LIBFT) fclean
 
 re: fclean all

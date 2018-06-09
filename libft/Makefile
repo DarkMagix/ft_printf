@@ -6,7 +6,7 @@
 #    By: mweir <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/19 17:54:49 by mweir             #+#    #+#              #
-#    Updated: 2018/05/22 14:33:59 by mweir            ###   ########.fr        #
+#    Updated: 2018/06/08 17:39:29 by mweir            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -47,7 +47,6 @@ $(NAME):
 	$(CC) $(FLAGS) -c $(SRCS)
 	ar -rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-	rm -rf $(OBJ)
 
 .PHONY: clean fclean
 
