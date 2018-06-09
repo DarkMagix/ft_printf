@@ -43,7 +43,7 @@ void	ft_padstr(char *str, t_params *params, int size)
 	}
 	params->buff = ft_strnew(ft_strlen(temp));
 	params->buff = temp;
-//	free(temp);
+	
 }
 
 void	ft_signstr(char *str, t_params *params)

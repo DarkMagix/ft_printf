@@ -43,6 +43,7 @@ int	print_sint(va_list list, t_params *params)
 	params->buff = ft_strdup(ft_itoa_base(num, 10));
 	ft_format_int(params);
 	ft_putstr(params->buff);
+	free(params->buff);
 	return (1);
 }
 
@@ -54,6 +55,7 @@ int	print_uint(va_list list, t_params *params)
 	params->buff = ft_strdup(ft_uitoa_base(num, 10));
 	ft_format_int(params);
 	ft_putstr(params->buff);
+	free(params->buff);
 	return (1);
 }
 
