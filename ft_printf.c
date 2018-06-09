@@ -81,6 +81,6 @@ int main(void)
 	intmax_t b =  3000;
 
 	ft_printf("%jd", b);
-	while(1);
+       
 	return (0);
 }

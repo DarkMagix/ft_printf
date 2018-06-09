@@ -41,9 +41,8 @@ void	ft_padstr(char *str, t_params *params, int size)
 		neg_no_justified(temp, str, params, size);
 		pos_no_justified(temp, str, params, size);
 	}
-	params->buff = ft_strnew(ft_strlen(temp));
-	params->buff = temp;
-	
+	params->buff = ft_strdup(temp);
+	free(temp);
 }
 
 void	ft_signstr(char *str, t_params *params)
