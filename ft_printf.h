@@ -7,6 +7,7 @@
 # include "libft/libft.h"
 # include <stdint.h>
 
+
 typedef int t_bool;
 enum { false, true };
 

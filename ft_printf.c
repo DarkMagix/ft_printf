@@ -39,7 +39,7 @@ int		valid_arg(int c)
 		|| c == '.' || c == '-' || c == '0'
 		|| c == '+' || c == 'l' || c == 'z'
 		|| c == 'j' || c == 'h' || c == 'i'
-		|| (c >= '0' && c <= '9')));
+		|| c == 'L' || c == 't' || (c >= '0' && c <= '9')));
 }
 
 void	ft_parse(int flag, va_list arg, t_params *params)
@@ -49,7 +49,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	else if (flag == 'd')
 		print_sint(arg, params);
 	else if (flag == 'u')
-		print_sint(arg, params);
+		print_uint(arg, params);
 	else if (flag == 'c')
 		print_char(arg);
 	else if (flag == '%')
@@ -75,10 +75,41 @@ void	ft_printf(const char *frmt, ...)
 	free(params);
 }
 
-//int main(void)
-//{
-  //  unsigned char a = 131;
-  //  ft_printf("|%hhu|\n", a);
-  //  printf("|%hhu|\n", a);
-  //	return (0);
-  //	//}
+// int main(void)
+// {
+// 	unsigned int a;
+// 	unsigned char b;	
+// 	unsigned short int c;
+// 	unsigned long int d;
+// 	unsigned long long int e;
+// 	uintmax_t f;
+// 	size_t g;
+	
+// 	a = 4294967295;
+// 	b = 255;
+// 	c = 65535;
+// 	d = 4294967295;
+// 	e = 1844674407370955161;
+// 	f = 1844674407370955161;
+// 	g = 1844674407370955161;
+	
+	
+
+// 	ft_printf("|%-u|\n", a);
+// 	printf("|%-u|\n", a);
+// 	ft_printf("|%-hhu|\n", b);
+// 	printf("|%-hhu|\n", b);
+// 	ft_printf("|%-hu|\n", c);
+// 	printf("|%-hu|\n", c);
+// 	ft_printf("|%-lu|\n", d);
+// 	printf("|%-lu|\n", d);
+// 	ft_printf("|%-llu|\n", e);
+// 	printf("|%-llu|\n", e);
+// 	ft_printf("|%-ju|\n", f);
+// 	printf("|%-ju|\n", f);
+// 	ft_printf("|%-zu|\n", g);
+// 	printf("|%-zu|\n", g);
+	
+	
+// 	return (0);
+// }
