@@ -6,14 +6,14 @@
 #    By: mweir <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/18 15:36:24 by mweir             #+#    #+#              #
-#    Updated: 2018/06/08 17:18:17 by mweir            ###   ########.fr        #
+#    Updated: 2018/06/08 17:21:01 by mweir            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = ft_printf
 PATH_SRC = ./
 PATH_OBJ = ./
-PATH_INC = ./libft/includes/
+PATH_INC = ./libft/
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
