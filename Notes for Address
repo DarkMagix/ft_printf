@@ -1,0 +1,19 @@
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+int main()
+{
+   char *value = "hello";
+/* initialisation */
+char string[]="0123456789abcdef";       // array of characters corresponding to numbers from 0 to 15
+uintmax_t ptr;
+
+/* these lines go inside the loop */
+ptr = (uint16_t) &value;                // store 16-bit address of 'value'
+putchar( string[ (ptr >> 12) & 0xF ] ); // Write out highest 4-bits of memory address
+putchar( string[ (ptr >>  8) & 0xF ] );
+putchar( string[ (ptr >>  4) & 0xF ] );
+putchar( string[ (ptr >>  0) & 0xF ] ); // Write out lowest 4-bits of memory address
+printf("\n{%9p}", ptr);
+}

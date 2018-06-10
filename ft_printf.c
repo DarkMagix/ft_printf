@@ -83,7 +83,9 @@ void	ft_printf(const char *frmt, ...)
 int main (void)
 {
   intmax_t a =3;
-  ft_printf("(%*jd)", 2, a);
+  wchar_t *str = L"Hello";
+  ft_printf("(%*jd)\n", 2, a);
+  ft_wputstr(str);
         return (0);
 }
 //int main(void)
