@@ -47,7 +47,11 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	if (flag == 's')
 		print_str(arg);
 	else if (flag == 'd' || flag == 'D')
+	  {
+	    if (flag == 'D')
+	      params->modifer = MODI_L;
 		print_sint(arg, params);
+	  }
 	else if (flag == 'u')
 		print_uint(arg, params);
 	else if (flag == 'c')
