@@ -46,7 +46,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 {
 	if (flag == 's')
 		print_str(arg);
-	else if (flag == 'd')
+	else if (flag == 'd' || flag == 'D')
 		print_sint(arg, params);
 	else if (flag == 'u')
 		print_uint(arg, params);
