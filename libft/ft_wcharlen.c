@@ -8,7 +8,5 @@ size_t ft_wcharlen(wchar_t c)
 		return (2);
 	else if (c <= 0xFFFF)
 		return (3);
-	else if (c <= 0x10FFFF)
-		return (4);
-	return (0);
+    return (4);
 }

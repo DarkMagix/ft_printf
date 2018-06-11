@@ -85,6 +85,8 @@ void	ft_printf(const char *frmt, ...)
 }
 int main (void)
 {
+  wchar_t *test = L"test";
+  ft_wputstr(test);
 //   size_t a = 3000;
 // 	int x =5;
 // 	int *ptr = &x;
@@ -94,13 +96,13 @@ int main (void)
 //   ft_printf("(%-5.6zd)\n", a);
 // //ft_printf("%u", (void*)ptr);
 
-int c =2;
-int *ptr2 = &c;
+//int c =2;
+//int *ptr2 = &c;
 
-ft_printf("%p\n", ptr2);
-printf("%p\n", ptr2);
+//ft_printf("%p\n", ptr2);
+//  printf("%p\n", ptr2);
 // test = ft_uitoa_base((uintmax_t)&ptr2, 16);
-// printf("%s", test);
+/// printf("%s", test);
 // printf("\n%s", ft_uitoa_base((uintmax_t)&ptr2, 16));
 // printf("\n%p", &ptr2);
 

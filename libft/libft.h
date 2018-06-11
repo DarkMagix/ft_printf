@@ -84,6 +84,7 @@ char			*ft_itoa_base(intmax_t nbr, int base);
 void			ft_wputchar(wchar_t c);
 void			ft_wputstr(const wchar_t *str);
 size_t			ft_wstrlen(const wchar_t *str);
+size_t			ft_wcharlen(wchar_t c);
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
