@@ -85,8 +85,12 @@ void	ft_printf(const char *frmt, ...)
 }
 int main (void)
 {
-  wchar_t *test = L"test";
-  ft_wputstr(test);
+  //  wchar_t *test = L"test";
+  //  ft_wputstr(test);
+  int a = 4;
+  ft_printf("%p\n", &a);
+  printf("%p\n", &a);
+  //  printf("%p\n", &a);
 //   size_t a = 3000;
 // 	int x =5;
 // 	int *ptr = &x;
