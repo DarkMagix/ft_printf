@@ -64,6 +64,8 @@ intmax_t sint_flags(va_list list, t_params *params);
 uintmax_t uint_flags(va_list list, t_params *params);
 int print_sint(va_list list, t_params *params);
 int print_uint(va_list list, t_params *params);
+int print_ptr(va_list list, t_params *params);
+
 void ft_add_pad(char *str, t_params *params, int size);
 //Justify FUnctions
 void neg_justified(char *temp, char *str, t_params *params, int size);

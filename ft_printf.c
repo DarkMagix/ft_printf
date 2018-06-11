@@ -65,6 +65,8 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		print_hex(va_arg(arg, unsigned int), flag);
 	else if (flag == 'i')
 		print_sint(arg, params);
+	else if (flag == 'p')
+		print_ptr(arg, params);
 }
 
 void	ft_printf(const char *frmt, ...)
@@ -81,19 +83,31 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-// int main (void)
-// {
+int main (void)
+{
 //   size_t a = 3000;
+// 	int x =5;
+// 	int *ptr = &x;
+	
+// ft_printf("(%-1.3zd)\n", a);
+//   printf("(%-1.3zd)\n", a);
+//   ft_printf("(%-5.6zd)\n", a);
+// //ft_printf("%u", (void*)ptr);
 
-// ft_printf("(%1.3zd)\n", a);
-//   printf("(%1.3zd)\n", a);
-//   ft_printf("(%6zd)\n", a);
-//   printf("(%6zd)\n", a);
+int c =2;
+int *ptr2 = &c;
 
+ft_printf("%p\n", ptr2);
+printf("%p\n", ptr2);
+// test = ft_uitoa_base((uintmax_t)&ptr2, 16);
+// printf("%s", test);
+// printf("\n%s", ft_uitoa_base((uintmax_t)&ptr2, 16));
+// printf("\n%p", &ptr2);
 
-  
-//         return (0);
-// }
+	
+
+return (0);
+}
 //int main(void)
 //{
   //	unsigned int a;

@@ -19,7 +19,7 @@ TRASH = rm -f
 LIBFT := libft/
 
 SRC = args.c formatting.c helper.c output.c \
-		format_int.c ft_printf.c parse.c 
+		format_int.c ft_printf.c parse.c output2.c
 
 
 OBJ = $(SRC:.c=.o)
