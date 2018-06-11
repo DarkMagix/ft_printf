@@ -21,6 +21,7 @@ void	init_params(t_params *params)
 	params->pad = false;
 	params->wid_len = 0;
 	params->num_len = 0;
+	params->has_len = false;
 	params->p_wildcard = false;
 	params->buff = NULL;
 	params->specifier = 0;
@@ -80,14 +81,19 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-int main (void)
-{
-  intmax_t a =3;
-  wchar_t *str = L"Hello";
-  ft_printf("(%*jd)\n", 2, a);
-  ft_wputstr(str);
-        return (0);
-}
+// int main (void)
+// {
+//   size_t a = 3000;
+
+// ft_printf("(%1.3zd)\n", a);
+//   printf("(%1.3zd)\n", a);
+//   ft_printf("(%6zd)\n", a);
+//   printf("(%6zd)\n", a);
+
+
+  
+//         return (0);
+// }
 //int main(void)
 //{
   //	unsigned int a;

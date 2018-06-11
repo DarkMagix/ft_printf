@@ -6,6 +6,6 @@ void ft_wputstr(const wchar_t *str)
 
     size = ft_wstrlen(str);
     if (!str)
-        return ;
+        return;
     write(1, &str[0], size);
 }

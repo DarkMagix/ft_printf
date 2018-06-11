@@ -35,6 +35,7 @@ typedef struct      s_params
 	int wid_len;
 	//Precision
 	int num_len;
+	t_bool has_len;
 	t_bool p_wildcard;
 	//length
 	char *buff;

@@ -30,7 +30,7 @@ int	parse_flags(char *str, t_params *params)
 		else if (str[i] == '0')
 			params->pad = true;
 		else
-		       break ;
+			break ;
 		i++;
 	}
 	return (i);
@@ -75,6 +75,8 @@ int	parse_precision(char *str, t_params *params)
 		if (str[i] == '.')
 		{
 			params->num_len = ft_atoi(&str[i + 1]);
+			params->pad = (params->num_len > 0) ? true : false;
+			params->wid_len = params->num_len;
 			temp = params->num_len;
 			while (temp != 0)
 			{
