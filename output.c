@@ -65,19 +65,34 @@ int	print_uint(va_list list, t_params *params)
 	return (1);
 }
 
-int	print_hex(unsigned int n, int flag)
+int	print_hex(va_list list, t_params *params)
 {
-	char hex[16];
+    int i;
+	int j;
+    
+	i = 0;
+	j = 0;
+    uintmax_t num;
+    char *str;
 
-	ft_strcpy(hex, "0123456789abcdef");
-	if (n >= 16)
-		return (print_hex(n / 16, flag) + print_hex(n % 16, flag));
-	else
+ 
+    //    printf("%d", thing);
+    num = va_arg(list, uintmax_t);
+    str = ft_uitoa_base(num, 16);
+	if (params->hash)
 	{
-		if (flag == 'x')
-			ft_putchar(hex[n]);
-		else
-			ft_putchar(ft_toupper(hex[n]));
+		while(str[j])
+		{
+			if ((str[j] >= 'a' && str[j] <= 'f') || str[j] == 'x')
+				str[j] -= 32;
+			j++;
+		}
+		format_ptr(str, params);
 	}
-	return (1);
+	else
+		params->buff = str;
+    ft_putstr(params->buff);
+    free(params->buff);
+   // free(str);
+    return (i);
 }

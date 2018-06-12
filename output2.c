@@ -16,7 +16,7 @@ int print_ptr(va_list list, t_params *params)
     //    params->buff = str;
     //    printf("\nIn Print_Ptr\n");
     ft_putstr(params->buff);
-     free(params->buff);
+    free(params->buff);
     free(str);
     return (i);
 }
@@ -54,7 +54,10 @@ int print_octal(va_list list, t_params *params)
 
     num = va_arg(list, uintmax_t);
     number = ft_uitoa_base(num, 8);
-    params->buff = number;
+    if(params->hash)
+        format_ptr(number, params);
+    else
+        params->buff = number;
     ft_putstr(params->buff);
     free(params->buff);
    // free(number);

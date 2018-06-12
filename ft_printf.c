@@ -64,7 +64,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	else if (flag == '%')
 		ft_putchar('%');
 	else if (flag == 'x' || flag == 'X')
-		print_hex(va_arg(arg, unsigned int), flag);
+		print_hex(arg, params);
 	else if (flag == 'o' || flag == 'O')
 		print_octal(arg, params);
 	else if (flag == 'i')
@@ -91,6 +91,41 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
+// int main(void)
+// {
+// 	printf("x with #\n");
+// 	ft_printf("%#x", 10000);
+// 	printf("\n");
+// 	printf("%#x\n", 10000);
+
+// 	printf("x with no #\n");
+// 	ft_printf("%x", 10000);
+// 	printf("\n");
+// 	printf("%x\n", 10000);
+
+// 	printf("X with #\n");
+// 	ft_printf("%#X", 10000);
+// 	printf("\n");
+// 	printf("%#X\n", 10000);
+
+
+// 	printf("X with no #\n");
+// 	ft_printf("%X", 10000);
+// 	printf("\n");
+// 	printf("%X\n", 10000);
+
+// 	printf("o with #\n");
+// 	ft_printf("%#o", 10000);
+// 	printf("\n");
+// 	printf("%#o\n", 10000);
+
+// 	printf("o with no #\n");
+// 	ft_printf("%o", 10000);
+// 	printf("\n");
+// 	printf("%o\n", 10000);
+// 	return (0);
+
+// }
 // int main (void)
 // {
 
