@@ -67,6 +67,7 @@ int print_uint(va_list list, t_params *params);
 int print_ptr(va_list list, t_params *params);
 int print_wchar(va_list list, t_params *params);
 int print_wstr(va_list list, t_params *params);
+int print_octal(unsigned int n, int flag);
 
 void ft_add_pad(char *str, t_params *params, int size);
 //Justify FUnctions

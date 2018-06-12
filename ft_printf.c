@@ -42,7 +42,7 @@ int		valid_arg(int c)
 		|| c == 'j' || c == 'h' || c == 'i'
 		|| c == 'L' || c == 't' || c == 'D'
 		|| c == '*' || c == 'C' || c == 'S'
-		|| c == ' ' || (c >= '0' && c <= '9')));
+		|| c == ' ' || c == 'O' || (c >= '0' && c <= '9')));
 }
 
 void	ft_parse(int flag, va_list arg, t_params *params)
@@ -64,6 +64,8 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		ft_putchar('%');
 	else if (flag == 'x' || flag == 'X')
 		print_hex(va_arg(arg, unsigned int), flag);
+	else if (flag == 'o' || flag == 'O')
+		print_octal(va_arg(arg, unsigned int), flag);
 	else if (flag == 'i')
 		print_sint(arg, params);
 	else if (flag == 'p')
@@ -88,21 +90,23 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-// int main (void)
-// {
+//int main (void)
+//{
 
-// // int c =2;
-// // int *ptr2 = &c;
+// int c =2;
+// int *ptr2 = &c;
 
-// // ft_printf("%p\n", ptr2);
-// // printf("%p\n", ptr2);
-// 	wchar_t a = L'д';
-// 	wchar_t *b = L"дддд";
-// 	ft_printf("%C", a);
-// 	printf("\n");
-// 	ft_printf("%S", b);
-// 	return (0);
-// }
+// ft_printf("%p\n", ptr2);
+// printf("%p\n", ptr2);
+	// wchar_t a = L'à';
+	// wchar_t *b = L"дддд";
+	// ft_printf("%C", a);
+	// printf("\n");
+	// ft_printf("%S", b);
+	// unsigned int a = 23423;
+	// ft_printf("%o", a);
+	// return (0);
+//}
 //int main(void)
 //{
   //	unsigned int a;

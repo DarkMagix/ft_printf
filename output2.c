@@ -43,3 +43,20 @@ int print_wstr(va_list list, t_params *params)
     ft_wputstr(str);
     return (i);
 }
+
+int print_octal(unsigned int n, int flag)
+{
+    	char hex[16];
+
+	ft_strcpy(hex, "0123456789abcdef");
+	if (n >= 8)
+		return (print_hex(n / 8, flag) + print_hex(n % 8, flag));
+	else
+	{
+		if (flag == 'o')
+			ft_putchar(hex[n]);
+		else
+			ft_putchar(ft_toupper(hex[n]));
+	}
+	return (1);
+}
