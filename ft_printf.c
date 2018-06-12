@@ -92,6 +92,17 @@ void	ft_printf(const char *frmt, ...)
 }
 //int main (void)
 //{
+//  int a =100;
+//  char *str = "des gens qui parlent à Ly adorent Ly. Ou Presque.";
+//
+//  ft_printf("Lalalala, %d%% %s %p", a, str, &a);
+//  printf("\n");
+//  printf("Lalalala, %d%% %s %p", a, str, &a);
+//  printf("\n");
+//  
+//}
+//int main (void)
+//{
   //  ft_printf("| %      i|", 42);
   //  printf("\n");
   //  printf("| %      i|\n", 42);
