@@ -93,6 +93,15 @@ void	ft_printf(const char *frmt, ...)
 }
 // int main(void)
 // {
+// 	int a = 100;
+// 	char *d = "This is a message";
+// 	ft_printf("%d%% %s %p",a,d, &a);
+// 	printf("\n");
+// 	printf("%d%% %s %p",a,d, &a);
+// 	return (0);
+// }
+// int main(void)
+// {
 // 	printf("x with #\n");
 // 	ft_printf("%#x", 10000);
 // 	printf("\n");
