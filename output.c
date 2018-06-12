@@ -25,6 +25,7 @@ int	print_str(va_list list)
 
 	i = 0;
 	test = va_arg(list, char*);
+	ft_putchar(' ');
 	while (test[i])
 	{
 		ft_putchar(test[i]);
