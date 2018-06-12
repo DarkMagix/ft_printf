@@ -44,19 +44,16 @@ int print_wstr(va_list list, t_params *params)
     return (i);
 }
 
-int print_octal(unsigned int n, int flag)
+int print_octal(va_list list, t_params *params)
 {
-    	char hex[16];
+    uintmax_t num;
+    char  *number;
 
-	ft_strcpy(hex, "0123456789abcdef");
-	if (n >= 8)
-		return (print_hex(n / 8, flag) + print_hex(n % 8, flag));
-	else
-	{
-		if (flag == 'o')
-			ft_putchar(hex[n]);
-		else
-			ft_putchar(ft_toupper(hex[n]));
-	}
-	return (1);
+    num = va_arg(list, uintmax_t);
+    number = ft_uitoa_base(num, 8);
+    params->buff = number;
+    ft_putstr(params->buff);
+    free(params->buff);
+    free(number);
+    return (1);
 }
