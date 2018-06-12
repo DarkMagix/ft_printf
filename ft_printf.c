@@ -92,12 +92,10 @@ void	ft_printf(const char *frmt, ...)
 }
 //int main (void)
 //{
-  //printf("Mine: \n");
-  //ft_printf("|% 4i|\n", 42);
-  //  printf("Official: \n");
-  //  printf("|% 4i|", 42);
-  //  	return(0);
-	//}	
+//  uintmax_t num = 3;
+//  ft_printf("|%p|", &num);
+//    	return(0);
+//     }	
        
 //int main(void)
 //{
