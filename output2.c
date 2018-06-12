@@ -16,3 +16,29 @@ int print_ptr(va_list list, t_params *params)
     free(params->buff);
     return (i);
 }
+
+int print_wchar(va_list list, t_params *params)
+{
+    int i;
+
+    i = 0;
+    wchar_t let;
+    
+    let = va_arg(list, wchar_t);
+    params = NULL;
+    ft_wputchar(let);
+    return (i);
+}
+
+int print_wstr(va_list list, t_params *params)
+{
+    int i;
+
+    i = 0;
+    wchar_t* str;
+    
+    str = va_arg(list, wchar_t*);
+    params = NULL;
+    ft_wputstr(str);
+    return (i);
+}

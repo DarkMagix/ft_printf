@@ -41,7 +41,8 @@ int		valid_arg(int c)
 		|| c == '+' || c == 'l' || c == 'z'
 		|| c == 'j' || c == 'h' || c == 'i'
 		|| c == 'L' || c == 't' || c == 'D'
-		|| c == '*' || (c >= '0' && c <= '9')));
+		|| c == '*' || c == 'C' || c == 'S'
+		|| (c >= '0' && c <= '9')));
 }
 
 void	ft_parse(int flag, va_list arg, t_params *params)
@@ -67,6 +68,10 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		print_sint(arg, params);
 	else if (flag == 'p')
 		print_ptr(arg, params);
+	else if (flag == 'C')
+		print_wchar(arg, params);
+	else if (flag == 'S')
+		print_wstr(arg, params);
 }
 
 void	ft_printf(const char *frmt, ...)
@@ -83,31 +88,21 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-int main (void)
-{
-//   size_t a = 3000;
-// 	int x =5;
-// 	int *ptr = &x;
-	
-// ft_printf("(%-1.3zd)\n", a);
-//   printf("(%-1.3zd)\n", a);
-//   ft_printf("(%-5.6zd)\n", a);
-// //ft_printf("%u", (void*)ptr);
+// int main (void)
+// {
 
-int c =2;
-int *ptr2 = &c;
+// // int c =2;
+// // int *ptr2 = &c;
 
-ft_printf("%p\n", ptr2);
-printf("%p\n", ptr2);
-// test = ft_uitoa_base((uintmax_t)&ptr2, 16);
-// printf("%s", test);
-// printf("\n%s", ft_uitoa_base((uintmax_t)&ptr2, 16));
-// printf("\n%p", &ptr2);
-
-	
-
-return (0);
-}
+// // ft_printf("%p\n", ptr2);
+// // printf("%p\n", ptr2);
+// 	wchar_t a = L'д';
+// 	wchar_t *b = L"дддд";
+// 	ft_printf("%C", a);
+// 	printf("\n");
+// 	ft_printf("%S", b);
+// 	return (0);
+// }
 //int main(void)
 //{
   //	unsigned int a;

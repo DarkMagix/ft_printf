@@ -2,10 +2,12 @@
 
 void ft_wputstr(const wchar_t *str)
 {
-    int size;
+    int i;
 
-    size = ft_wstrlen(str);
-    if (!str)
-        return;
-    write(1, &str[0], size);
+    i = 0;
+    while (str[i] != L'\0')
+    {
+        ft_wputchar(str[i]);
+        i++;
+    }
 }
