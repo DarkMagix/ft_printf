@@ -6,7 +6,7 @@
 #    By: mweir <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/18 15:36:24 by mweir             #+#    #+#              #
-#    Updated: 2018/06/11 18:08:29 by mweir            ###   ########.fr        #
+#    Updated: 2018/06/12 14:49:52 by mweir            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -31,6 +31,7 @@ $(NAME): $(OBJ)
 	@$(MAKE) -C $(LIBFT)
 	@ar rc $(NAME) $(OBJ) libft/*.o
 	@ranlib $(NAME) libft/libft.a
+	gcc -g -fsanitize=address format_str.c output2.c format_int.c formatting.c ft_printf.h helper.c parse.c output.c ft_printf.c args.c -Wall -Wextra -Werror ./libft/libft.a
 
 clean:
 	$(TRASH) $(OBJ)
