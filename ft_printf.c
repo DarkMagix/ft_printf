@@ -92,7 +92,11 @@ void	ft_printf(const char *frmt, ...)
 }
 //int main (void)
 //{
-  //	return(0);
+  //printf("Mine: \n");
+  //ft_printf("|% 4i|\n", 42);
+  //  printf("Official: \n");
+  //  printf("|% 4i|", 42);
+  //  	return(0);
 	//}	
        
 //int main(void)
