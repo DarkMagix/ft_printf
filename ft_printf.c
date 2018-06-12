@@ -42,7 +42,8 @@ int		valid_arg(int c)
 		|| c == 'j' || c == 'h' || c == 'i'
 		|| c == 'L' || c == 't' || c == 'D'
 		|| c == '*' || c == 'C' || c == 'S'
-		|| c == ' ' || c == 'O' || (c >= '0' && c <= '9')));
+		|| c == ' ' || c == 'O' || c == '#'
+		|| (c >= '0' && c <= '9')));
 }
 
 void	ft_parse(int flag, va_list arg, t_params *params)
