@@ -103,8 +103,8 @@ void	ft_printf(const char *frmt, ...)
 // // 	ft_printf("%C", a);
 // // 	printf("\n");
 // // 	ft_printf("%S", b);
-// 	unsigned int a = 23423;
-// 	ft_printf("%o", a);
+// 	wchar_t l = L'à';
+// 	ft_printf("%C", l);
 // 	return (0);
 // }
 //int main(void)
