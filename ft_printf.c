@@ -90,23 +90,23 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-//int main (void)
-//{
+// int main (void)
+// {
 
-// int c =2;
-// int *ptr2 = &c;
+// // int c =2;
+// // int *ptr2 = &c;
 
-// ft_printf("%p\n", ptr2);
-// printf("%p\n", ptr2);
-	// wchar_t a = L'à';
-	// wchar_t *b = L"дддд";
-	// ft_printf("%C", a);
-	// printf("\n");
-	// ft_printf("%S", b);
-	// unsigned int a = 23423;
-	// ft_printf("%o", a);
-	// return (0);
-//}
+// // ft_printf("%p\n", ptr2);
+// // printf("%p\n", ptr2);
+// // 	wchar_t a = L'à';
+// // 	wchar_t *b = L"дддд";
+// // 	ft_printf("%C", a);
+// // 	printf("\n");
+// // 	ft_printf("%S", b);
+// 	unsigned int a = 23423;
+// 	ft_printf("%o", a);
+// 	return (0);
+// }
 //int main(void)
 //{
   //	unsigned int a;

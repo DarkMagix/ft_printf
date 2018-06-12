@@ -54,6 +54,6 @@ int print_octal(va_list list, t_params *params)
     params->buff = number;
     ft_putstr(params->buff);
     free(params->buff);
-    free(number);
+   // free(number);
     return (1);
 }
