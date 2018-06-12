@@ -124,6 +124,12 @@ int main (void)
 	printf("Precision Checking: \n");
 	printf("|%-5.3s|\n","LYDI");
 	ft_printf("|%-5.3s|","LYDI");
+	printf("Precision Checking 2: \n");
+	printf("|% 4.5i|\n", 42);
+	ft_printf("|% 4.5i|", 42);
+	printf("\nPrecision Checking 3: \n");
+	printf("|% 4.5d|\n", 42);
+	ft_printf("|% 4.5d|", 42);
 	return (0);
 }
 //int main(void)
