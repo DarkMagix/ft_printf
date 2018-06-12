@@ -65,8 +65,8 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		ft_putchar('%');
 	else if (flag == 'x' || flag == 'X')
 		print_hex(arg, params);
-	else if (flag == 'o' || flag == 'O')
-		print_octal(arg, params);
+//	else if (flag == 'o' || flag == 'O')
+	//	print_octal(arg, params);
 	else if (flag == 'i')
 		print_sint(arg, params);
 	else if (flag == 'p')
