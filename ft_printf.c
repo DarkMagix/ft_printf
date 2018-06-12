@@ -90,22 +90,22 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-int main (void)
-{
-  ft_printf("| %      i|", 42);
-  printf("\n");
-  printf("| %      i|\n", 42);
+//int main (void)
+//{
+  //  ft_printf("| %      i|", 42);
+  //  printf("\n");
+  //  printf("| %      i|\n", 42);
   
-  ft_printf("|% i|", -42);
-  printf("\n");
-  printf("|% i|\n", -42);
+  //  ft_printf("|% i|", -42);
+  //  printf("\n");
+  //  printf("|% i|\n", -42);
   
-  ft_printf("|% 4i|", 42 );
-  printf("\n");
-  printf("|% 4i|\n", 42 );
+  //  ft_printf("|% 4i|", 42 );
+  //  printf("\n");
+  //  printf("|% 4i|\n", 42 );
   
-  return(0);
-     }	
+  //  return(0);
+  //     }	
        
 //int main(void)
 //{
