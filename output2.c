@@ -12,9 +12,12 @@ int print_ptr(va_list list, t_params *params)
     //    printf("%d", thing);
     num = va_arg(list, uintmax_t);
     str = ft_uitoa_base(num, 16);
-    params->buff = str;
+    format_ptr(str, params);
+    //    params->buff = str;
+    //    printf("\nIn Print_Ptr\n");
     ft_putstr(params->buff);
-    free(params->buff);
+     free(params->buff);
+    free(str);
     return (i);
 }
 

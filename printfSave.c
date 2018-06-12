@@ -42,8 +42,7 @@ int		valid_arg(int c)
 		|| c == 'j' || c == 'h' || c == 'i'
 		|| c == 'L' || c == 't' || c == 'D'
 		|| c == '*' || c == 'C' || c == 'S'
-		|| c == ' ' || c == 'O' || c == '#'
-		|| (c >= '0' && c <= '9')));
+		|| c == ' ' || c == 'O' || (c >= '0' && c <= '9')));
 }
 
 void	ft_parse(int flag, va_list arg, t_params *params)
@@ -91,48 +90,64 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-// int main (void)
-// {
+int main (void)
+{
 
-// // int c =2;
-// // int *ptr2 = &c;
+// int c =2;
+// int *ptr2 = &c;
 
-// // ft_printf("%p\n", ptr2);
-// // printf("%p\n", ptr2);
-// // 	wchar_t a = L'à';
-// // 	wchar_t *b = L"дддд";
-// // 	ft_printf("%C", a);
-// // 	printf("\n");
-// // 	ft_printf("%S", b);
-// 	//wchar_t l = L'à';
-// 	wchar_t *a = L"àààà";
-// 	wchar_t b = L'à';
-
-// 	printf("Wide Char\n");
-// 	ft_printf("%C\n", b);
-// 	printf("%lc\n",b);
-// 	printf("Wide Str\n");
-// 	ft_printf("%S", a);
+// ft_printf("%p\n", ptr2);
+// printf("%p\n", ptr2);
+// 	wchar_t a = L'à';
+// 	wchar_t *b = L"дддд";
+// 	ft_printf("%C", a);
 // 	printf("\n");
-// 	printf("%ls\n", a);
-// 	printf("Number Spacing 1: \n");
-// 	printf("|%      i|\n", 42);
-// 	ft_printf("|%      i|", 42);
-// 	printf("\n");
-// 	printf("Number Spacing 2: \n");
-// 	printf("|% i|\n", -42);
-// 	ft_printf("|% i|", -42);
-// 	printf("\nPrecision Checking 1: \n");
-// 	printf("|%-5.3s|\n","LYDI");
-// 	ft_printf("|%-5.3s|","LYDI");
-// 	printf("\nPrecision Checking 2: \n");
-// 	printf("|% 4.5i|\n", 42);
-// 	ft_printf("|% 4.5i|", 42);
-// 	printf("\nPrecision Checking 3: \n");
-// 	printf("|% 4.5d|\n", 42);
-// 	ft_printf("|% 4.5d|", 42);
-// 	return (0);
-// }
+// 	ft_printf("%S", b);
+	//wchar_t l = L'à';
+	wchar_t *a = L"àààà";
+	wchar_t b = L'à';
+
+	printf("Wide Char\n");
+	ft_printf("%C\n", b);
+	printf("%lc\n",b);
+	printf("Wide Str\n");
+	ft_printf("%S", a);
+	printf("\n");
+	printf("%ls\n", a);
+	printf("Number Spacing 1: \n");
+	printf("|%      i|\n", 42);
+	ft_printf("|%      i|", 42);
+	printf("\n");
+	printf("Number Spacing 2: \n");
+	printf("|% i|\n", -42);
+	ft_printf("|% i|", -42);
+	printf("\n");
+	
+	printf("Number Space 3: \n");
+	printf("|%  i|\n", -4200);
+	ft_printf("|%  i|", -4200);
+	printf("\n");
+	printf("Number Space 4: \n");
+	printf("|%  i|\n", 4200);
+	ft_printf("|%  i|", 4200);
+	printf("\n");
+
+	printf("Number Space 5: \n");
+	printf("|% 5d|\n", -42);
+	ft_printf("|% 5d|", -42);
+	printf("\n");
+	
+	printf("\nPrecision Checking: \n");
+	printf("|%-5.3s|\n","LYDI");
+	ft_printf("|%-5.3s|","LYDI");
+	printf("\nPrecision Checking 2: \n");
+	printf("|% 4.5i|\n", 42);
+	ft_printf("|% 4.5i|", 42);
+	printf("\nPrecision Checking 3: \n");
+	printf("|% 4.5d|\n", 42);
+	ft_printf("|% 4.5d|", 42);
+	return (0);
+}
 //int main(void)
 //{
   //	unsigned int a;

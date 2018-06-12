@@ -4,8 +4,9 @@ void format_ptr(char *str, t_params *params)
 {
     char *temp;
     size_t size_str;
-
-	params = 0;
+    char *hex = "0x";
+ 
     size_str = ft_strlen(str);
-    temp = ft_memalloc(size_str + 2);
+    temp = ft_strjoin(hex, str);
+    params->buff = temp;
 }
