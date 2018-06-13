@@ -55,10 +55,13 @@ int print_octal(va_list list, t_params *params)
     num = va_arg(list, uintmax_t);
     number = ft_uitoa_base(num, 8);
     if(params->hash)
+    {
        format_ptr(number, params);
+    }
     else
         params->buff = number;
-    ft_putstr(params->buff);
+    if(params->buff)
+        ft_putstr(params->buff);
     free(params->buff);
    // free(number);
     return (1);

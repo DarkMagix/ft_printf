@@ -24,6 +24,7 @@ void format_ptr(char *str, t_params *params)
             hex = ft_strjoin(hex, str);
             temp = hex;   
         }
+        params->buff = temp;
     }
     else
     {
