@@ -67,22 +67,15 @@ int	print_uint(va_list list, t_params *params)
 
 int	print_hex(va_list list, t_params *params)
 {
-    int i;
-	int j;
-    
-	i = 0;
-	j = 0;
-    uintmax_t num;
-    char *str;
-
- 
-    //    printf("%d", thing);
-    num = va_arg(list, uintmax_t);
-    str = ft_uitoa_base(num, 16);
-	format_hex(str, params);
-	//params->buff = str;
-    ft_putstr(params->buff);
-    free(params->buff);
-   // free(str);
-    return (i);
+  uintmax_t       num;
+  char            *number;
+  
+  num = uint_flags(list, params);
+  number = ft_uitoa_base(num, 16);
+  params->buff = number;
+  format_hex(params);
+  ft_putstr(params->buff);
+  free(params->buff);
+  free(number);
+  return (1);
 }

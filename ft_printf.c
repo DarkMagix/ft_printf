@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -95,29 +96,37 @@ void	ft_printf(const char *frmt, ...)
 // {
 // 	ft_printf("%x\n", 100);
 // 	printf("%x\n", 100);
-
+//
 // 	ft_printf("%X\n", 100);
 // 	printf("%X\n", 100);
-	
-
-// 	ft_printf("%#X\n", 100);
+//	
+//	ft_printf("%#X\n", 100);
 // 	printf("%#X\n", 100);
-	
+//	
 // 	ft_printf("%#x\n", 100);
 // 	printf("%#x\n", 100);
 // }
-//  int main(void)
-//  {
-	 
-// 	ft_printf("|%5i|\n", 100);
-// 	printf("|%5i|\n", 100);
+  int main(void)
+  {
+    uintmax_t a = 2147483647;
+    ft_printf("|%x|\n", -10);
+ 	printf("|%x|\n", -10);
 
-// 	ft_printf("|%5i|\n", -100);
-// 	printf("|%5i|\n", -100);
+ 	ft_printf("|%x|\n", 10);
+ 	printf("|%x|\n", 10);
 
-// 	ft_printf("|%15X|\n", -100);
-// 	printf("|%15X|\n", -100);
+	printf("x and #\n");
+	ft_printf("|%#x|\n", (unsigned int)a);
+	printf("|%#x|\n", (unsigned int)a);
 
+	ft_printf("|%x|\n", (unsigned int)a);
+	printf("|%x|\n", (unsigned int)a);
+
+	// 	ft_printf("|%15X|\n", -100);
+	// 	printf("|%15X|\n", -100);
+      
+	return (0);
+  }
 
 // ft_printf("|%#15o|\n", -100);
 // 	printf("|%#15o|\n", -100);

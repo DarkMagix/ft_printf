@@ -1,1 +1,1 @@
-gcc -g -fsanitize=address format_str.c output2.c format_int.c formatting.c ft_printf.h helper.c parse.c output.c ft_printf.c args.c -Wall -Wextra -Werror ./libft/libft.a
+gcc -g -fsanitize=address format_str.c output2.c format_int.c formatting.c ft_printf.h helper.c parse.c output.c ft_printf.c args.c -Wall -Wextra ./libft/libft.a
