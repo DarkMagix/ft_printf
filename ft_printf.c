@@ -42,7 +42,8 @@ int		valid_arg(int c)
 		|| c == 'j' || c == 'h' || c == 'i'
 		|| c == 'L' || c == 't' || c == 'D'
 		|| c == '*' || c == 'C' || c == 'S'
-		|| c == ' ' || c == 'O' || (c >= '0' && c <= '9')));
+		|| c == ' ' || c == 'O' || c == '#'
+		|| (c >= '0' && c <= '9')));
 }
 
 void	ft_parse(int flag, va_list arg, t_params *params)
@@ -63,7 +64,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	else if (flag == '%')
 		ft_putchar('%');
 	else if (flag == 'x' || flag == 'X')
-		print_hex(va_arg(arg, unsigned int), flag);
+		print_hex(arg, params);
 	else if (flag == 'o' || flag == 'O')
 		print_octal(arg, params);
 	else if (flag == 'i')
@@ -90,23 +91,92 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-//int main (void)
-//{
-  //  ft_printf("| %      i|", 42);
-  //  printf("\n");
-  //  printf("| %      i|\n", 42);
-  
-  //  ft_printf("|% i|", -42);
-  //  printf("\n");
-  //  printf("|% i|\n", -42);
-  
-  //  ft_printf("|% 4i|", 42 );
-  //  printf("\n");
-  //  printf("|% 4i|\n", 42 );
-  
-  //  return(0);
-  //     }	
-       
+// int main(void)
+// {
+// 	int a = 100;
+// 	char *d = "This is a message";
+// 	ft_printf("%d%% %s %p",a,d, &a);
+// 	printf("\n");
+// 	printf("%d%% %s %p",a,d, &a);
+// 	return (0);
+// }
+// int main(void)
+// {
+// 	printf("x with #\n");
+// 	ft_printf("%#x", 10000);
+// 	printf("\n");
+// 	printf("%#x\n", 10000);
+
+// 	printf("x with no #\n");
+// 	ft_printf("%x", 10000);
+// 	printf("\n");
+// 	printf("%x\n", 10000);
+
+// 	printf("X with #\n");
+// 	ft_printf("%#X", 10000);
+// 	printf("\n");
+// 	printf("%#X\n", 10000);
+
+
+// 	printf("X with no #\n");
+// 	ft_printf("%X", 10000);
+// 	printf("\n");
+// 	printf("%X\n", 10000);
+
+// 	printf("o with #\n");
+// 	ft_printf("%#o", 10000);
+// 	printf("\n");
+// 	printf("%#o\n", 10000);
+
+// 	printf("o with no #\n");
+// 	ft_printf("%o", 10000);
+// 	printf("\n");
+// 	printf("%o\n", 10000);
+// 	return (0);
+
+// }
+// int main (void)
+// {
+
+// // int c =2;
+// // int *ptr2 = &c;
+
+// // ft_printf("%p\n", ptr2);
+// // printf("%p\n", ptr2);
+// // 	wchar_t a = L'à';
+// // 	wchar_t *b = L"дддд";
+// // 	ft_printf("%C", a);
+// // 	printf("\n");
+// // 	ft_printf("%S", b);
+// 	//wchar_t l = L'à';
+// 	wchar_t *a = L"àààà";
+// 	wchar_t b = L'à';
+
+// 	printf("Wide Char\n");
+// 	ft_printf("%C\n", b);
+// 	printf("%lc\n",b);
+// 	printf("Wide Str\n");
+// 	ft_printf("%S", a);
+// 	printf("\n");
+// 	printf("%ls\n", a);
+// 	printf("Number Spacing 1: \n");
+// 	printf("|%      i|\n", 42);
+// 	ft_printf("|%      i|", 42);
+// 	printf("\n");
+// 	printf("Number Spacing 2: \n");
+// 	printf("|% i|\n", -42);
+// 	ft_printf("|% i|", -42);
+// 	printf("\nPrecision Checking 1: \n");
+// 	printf("|%-5.3s|\n","LYDI");
+// 	ft_printf("|%-5.3s|","LYDI");
+// 	printf("\nPrecision Checking 2: \n");
+// 	printf("|% 4.5i|\n", 42);
+// 	ft_printf("|% 4.5i|", 42);
+// 	printf("\nPrecision Checking 3: \n");
+// 	printf("|% 4.5d|\n", 42);
+// 	ft_printf("|% 4.5d|", 42);
+// 	return (0);
+// }
 //int main(void)
 //{
   //	unsigned int a;
