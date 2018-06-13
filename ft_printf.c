@@ -93,55 +93,11 @@ void	ft_printf(const char *frmt, ...)
 }
 // int main(void)
 // {
-<<<<<<< HEAD
 // 	int a = 100;
 // 	char *d = "This is a message";
 // 	ft_printf("%d%% %s %p",a,d, &a);
 // 	printf("\n");
 // 	printf("%d%% %s %p",a,d, &a);
-=======
-// 	printf("|% 4.5i|\n", 42);// == | 00042|
-// 	ft_printf("|% 4.5i|\n", 42);// == | 00042|
-
-// 	printf("|% 4.6i|\n", 42);// == | 00042|
-// 	ft_printf("|% 4.6i|\n", 42);// == | 00042|
-
-// 	printf("|% 4.7i|\n", 42);// == | 00042|
-// 	ft_printf("|% 4.7i|\n", 42);// == | 00042
-// 	printf("\n");
-// 	printf("|% 5.4i|\n", 42);// == | 00042|
-// 	ft_printf("|% 5.4i|\n", 42);// == | 00042|
-
-// 	printf("|% 6.4i|\n", 42);// == | 00042|
-// 	ft_printf("|% 6.4i|\n", 42);// == | 00042|
-
-// 	printf(" 7 4 i\n");
-// 	printf("|% 7.4i|\n", 42);// == | 00042|
-// 	ft_printf("|% 7.4i|\n", 42);// == | 00042|
-
-// 	printf("Problem Right here:\n");
-// 	printf("|% 7.4d|\n", -42);
-// 	ft_printf("|% 7.4d|\n", -42);
-// 	printf("|% 7.4i|\n", -42);
-// 	ft_printf("|% 7.4i|\n", -42);
-
-
-// 	printf("|% 7.4d|\n", 42);
-// 	ft_printf("|% 7.4d|\n",42);
-
-// 	printf("7 4 d\n");
-// 	printf("|%7.4d|\n", 42);
-// 	ft_printf("|%7.4d|\n",42);
-// 	printf("\n");
-// 	printf("|% 4.7d|\n", 42);
-// 	ft_printf("|% 4.7d|\n",42);
-
-// 	printf("|%+4.7d|\n", 42);
-// 	ft_printf("|%+4.7d|\n",42);
-// 	printf("|%+4.7d|\n", -42);
-// 	ft_printf("|%+4.7d|\n",-42);
-// 	printf("\n");
->>>>>>> c2c5dae94d2dd123fd3ff2629b3fe5c984cbebbd
 // 	return (0);
 // }
 // int main(void)
