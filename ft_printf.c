@@ -91,25 +91,34 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
- int main(void)
- {
+//  int main(void)
+//  {
 	 
-	ft_printf("|%5i|\n", 100);
-	printf("|%5i|\n", 100);
+// 	ft_printf("|%5i|\n", 100);
+// 	printf("|%5i|\n", 100);
 
-	ft_printf("|%5i|\n", -100);
-	printf("|%5i|\n", -100);
+// 	ft_printf("|%5i|\n", -100);
+// 	printf("|%5i|\n", -100);
 
-	ft_printf("|%15X|\n", -100);
-	printf("|%15X|\n", -100);
+// 	ft_printf("|%15X|\n", -100);
+// 	printf("|%15X|\n", -100);
 
 
-ft_printf("|%#15o|\n", -100);
-	printf("|%#15o|\n", -100);
+// ft_printf("|%#15o|\n", -100);
+// 	printf("|%#15o|\n", -100);
 
-	//ft_printf("|%#15X|\n", -100);
-	//printf("|%#15X|\n", -100);
- }
+
+// ft_printf("%04i\n", 42);// == |0042|
+// printf("%04i\n", 42);// == |0042|
+// ft_printf("%05i\n", 42);// == |00042|
+// printf("%05i\n", 42);// == |00042|
+// ft_printf("%0i\n", 42);// == |42|
+// printf("%0i\n", 42);// == |42|
+// ft_printf("%0d\n", 0000042);// == |34|
+// printf("%0d\n", 0000042);// == |34|
+// 	//ft_printf("|%#15X|\n", -100);
+// 	//printf("|%#15X|\n", -100);
+//  }
 // ft_printf("%04i\n", 42);// == |0042|
 // printf("%04i\n", 42);// == |0042|
 // ft_printf("%05i\n", 42);// == |00042|
