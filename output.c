@@ -81,12 +81,14 @@ int	print_hex(va_list list, t_params *params)
     str = ft_uitoa_base(num, 16);
 	if (params->hash)
 	{
+		
 		while(str[j])
 		{
 			if ((str[j] >= 'a' && str[j] <= 'f') || str[j] == 'x')
 				str[j] -= 32;
 			j++;
 		}
+		
 		format_ptr(str, params);
 	}
 	else

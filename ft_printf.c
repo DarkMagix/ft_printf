@@ -91,11 +91,25 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-//  int main(void)
-//  {
-// 	 wchar_t a = L'à';
-// 	 ft_printf("%C\n", a);
+ int main(void)
+ {
+	 
+	ft_printf("|%5i|\n", 100);
+	printf("|%5i|\n", 100);
 
+	ft_printf("|%5i|\n", -100);
+	printf("|%5i|\n", -100);
+
+	ft_printf("|%15X|\n", -100);
+	printf("|%15X|\n", -100);
+
+
+ft_printf("|%#15o|\n", -100);
+	printf("|%#15o|\n", -100);
+
+	//ft_printf("|%#15X|\n", -100);
+	//printf("|%#15X|\n", -100);
+ }
 // ft_printf("%04i\n", 42);// == |0042|
 // printf("%04i\n", 42);// == |0042|
 // ft_printf("%05i\n", 42);// == |00042|

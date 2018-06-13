@@ -21,9 +21,7 @@ void	ft_add_pad(char *str, t_params *params, int size)
 	if (params->spaced && !params->is_neg && size <= 0)
 	{
 		  ft_strcat(str, " ");
-		
-	
-        }
+	}
 	while (size > 0)
 	{
 		if (params->pad)
