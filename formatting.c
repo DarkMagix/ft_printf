@@ -14,15 +14,21 @@
 
 void	ft_add_pad(char *str, t_params *params, int size)
 {
-  //  printf("\nSize: %d\n", size);
-	if (params->is_neg || params->plus_neg)
-		size--;
-	if (params->spaced && !params->is_neg && size <= 0)
+	int diff;
+	//if (params->is_neg || params->plus_neg)
+	//	size--;
+	diff = params->wid_len - params->num_len;
+	diff = (params->is_neg) ? diff - 1: diff;
+	if(diff < 0 && !params->plus_neg)
+		ft_strcat(str, " ");
+	else
 	{
-		  ft_strcat(str, " ");
 		
-	
-        }
+		while (diff-- > 0)
+			ft_strcat(str, " ");
+		if(params->is_neg)
+			ft_strcat(str, "-");
+	}
 	while (size > 0)
 	{
 		if (params->pad)
@@ -74,7 +80,7 @@ void	ft_format_int(t_params *params)
 	int		size;
 
 	temp = ft_strnew(((int)ft_strlen(params->buff)));
-	size = ft_find_length(params->wid_len, (int)ft_strlen(params->buff));
+	size = ft_find_length(params->num_len, (int)ft_strlen(params->buff));
 	ft_strcat(temp, params->buff);
 	ft_padstr(temp, params, size);
 	free(temp);

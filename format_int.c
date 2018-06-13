@@ -16,6 +16,7 @@ void	neg_justified(char *temp, char *str, t_params *params, int size)
 {
 	if (params->is_neg && !params->pad)
 	{
+		printf("\nIs Neg and No pad\n");
 		ft_strcat(temp, "-");
 		ft_strcat(temp, str);
 		
@@ -23,6 +24,7 @@ void	neg_justified(char *temp, char *str, t_params *params, int size)
 	}
 	else if (params->is_neg && params->pad)
 	{
+		printf("\nis neg and pad\n");
 		ft_add_pad(temp, params, size);
 		ft_strcat(temp, "-");
 		ft_strcat(temp, str);
@@ -49,14 +51,21 @@ void	pos_justified(char *temp, char *str, t_params *params, int size)
 
 void	neg_no_justified(char *temp, char *str, t_params *params, int size)
 {
-	if (params->is_neg && params->pad)
+	if (params->is_neg && params->pad && params->spaced)
 	{
-		ft_strcat(temp, "-");
 		ft_add_pad(temp, params, size);
 		ft_strcat(temp, str);
 	}
-	else if (params->is_neg && !params->pad)
+	else if (params->is_neg && params->pad == true && !params->spaced)
 	{
+	//	printf("\nIs Neg, Pad is True, Spaced is Not True\n");
+		
+		ft_add_pad(temp, params, size);
+		ft_strcat(temp, str);
+	}
+	else if (params->is_neg && params->pad == false)
+	{
+		
 		ft_add_pad(temp, params, size);
 		ft_strcat(temp, "-");
 		ft_strcat(temp, str);

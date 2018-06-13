@@ -76,7 +76,7 @@ int	parse_precision(char *str, t_params *params)
 		{
 			params->num_len = ft_atoi(&str[i + 1]);
 			params->pad = (params->num_len > 0) ? true : false;
-			params->wid_len = params->num_len;
+			//params->wid_len = params->num_len;
 			temp = params->num_len;
 			while (temp != 0)
 			{
