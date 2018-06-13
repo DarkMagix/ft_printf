@@ -6,7 +6,7 @@
 /*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 17:06:56 by mweir             #+#    #+#             */
-/*   Updated: 2018/06/08 19:26:50 by mweir            ###   ########.fr       */
+/*   Updated: 2018/06/12 18:27:42 by mweir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,15 +91,90 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-// int main(void)
-// {
-// 	int a = 100;
-// 	char *d = "This is a message";
-// 	ft_printf("%d%% %s %p",a,d, &a);
-// 	printf("\n");
-// 	printf("%d%% %s %p",a,d, &a);
-// 	return (0);
-// }
+ int main(void)
+ {
+	 wchar_t a = L'à';
+	 ft_printf("%C\n", a);
+
+ft_printf("%04i\n", 42);// == |0042|
+printf("%04i\n", 42);// == |0042|
+ft_printf("%05i\n", 42);// == |00042|
+printf("%05i\n", 42);// == |00042|
+ft_printf("%0i\n", 42);// == |42|
+printf("%0i\n", 42);// == |42|
+ft_printf("%0d\n", 0000042);// == |34|
+printf("%0d\n", 0000042);// == |34|
+
+ft_printf("%04i\n", 42);// == |0042|
+ft_printf("%05i\n", 42);// == |00042|
+ft_printf("%0i\n", 42);// == |42|
+ft_printf("%0d\n", 0000042);// == |34|
+
+	 ft_printf("%d %s %d %s %d\n",42, "Bla", 1001, "Moo",-8000);
+	 printf("%d %s %d %s %d\n",42, "Bla", 1001, "Moo",-8000);
+	ft_printf("%+i\n", 42);// == +42
+	printf("%+i\n", 42);// == +42
+	
+	ft_printf("%+d\n", 42);// == +2147483647
+	printf("%+d\n", 42);// == +2147483647
+	
+	ft_printf("%+04d\n", 42);// == +042
+	printf("%+04d\n", 42);// == +042
+
+	ft_printf("|%-4d|\n", 42);// == |42  |
+	printf("|%-4d|\n", 42);// == |42  |
+	ft_printf("|%-5d|\n", -42);// == |-42  |
+	printf("|%-5d|\n", -42);// == |-42  |
+	ft_printf("|%-4i|\n", 42);// == |42  |
+	printf("|%-4i|\n", 42);// == |42  |
+
+
+ 	// ft_printf("%d%% %s %p",a,d, &a);
+ 	// printf("\n");
+ 	// printf("%d%% %s %p",a,d, &a);
+ 	// printf("|% 4.5i|\n", 42);// == | 00042|
+ 	// ft_printf("|% 4.5i|\n", 42);// == | 00042|
+
+ 	// printf("|% 4.6i|\n", 42);// == | 00042|
+ 	// ft_printf("|% 4.6i|\n", 42);// == | 00042|
+
+ 	// printf("|% 4.7i|\n", 42);// == | 00042|
+ 	// ft_printf("|% 4.7i|\n", 42);// == | 00042
+ 	// printf("\n");
+ 	// printf("|% 5.4i|\n", 42);// == | 00042|
+ 	// ft_printf("|% 5.4i|\n", 42);// == | 00042|
+
+ 	// printf("|% 6.4i|\n", 42);// == | 00042|
+ 	// ft_printf("|% 6.4i|\n", 42);// == | 00042|
+
+ 	// printf(" 7 4 i\n");
+ 	// printf("|% 7.4i|\n", 42);// == | 00042|
+ 	// ft_printf("|% 7.4i|\n", 42);// == | 00042|
+
+ 	// printf("Problem Right here:\n");
+ 	// printf("|% 7.4d|\n", -42);
+ 	// ft_printf("|% 7.4d|\n", -42);
+ 	// printf("|% 7.4i|\n", -42);
+ 	// ft_printf("|% 7.4i|\n", -42);
+
+
+ 	// printf("|% 7.4d|\n", 42);
+ 	// ft_printf("|% 7.4d|\n",42);
+
+ 	// printf("7 4 d\n");
+ 	// printf("|%7.4d|\n", 42);
+ 	// ft_printf("|%7.4d|\n",42);
+ 	// printf("\n");
+ 	// printf("|% 4.7d|\n", 42);
+ 	// ft_printf("|% 4.7d|\n",42);
+
+ 	// printf("|%+4.7d|\n", 42);
+ 	// ft_printf("|%+4.7d|\n",42);
+ 	// printf("|%+4.7d|\n", -42);
+ 	// ft_printf("|%+4.7d|\n",-42);
+ 	// printf("\n");
+ 	return (0);
+ }
 // int main(void)
 // {
 // 	printf("x with #\n");

@@ -91,9 +91,8 @@ int	print_hex(va_list list, t_params *params)
 	}
 	else
 		params->buff = str;
-	if(params->buff)
-    	ft_putstr(params->buff);
-    //free(params->buff);
-   //free(str);
+    ft_putstr(params->buff);
+    free(params->buff);
+   // free(str);
     return (i);
 }
