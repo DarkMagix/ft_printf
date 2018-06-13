@@ -17,7 +17,7 @@ int print_ptr(va_list list, t_params *params)
     //    printf("\nIn Print_Ptr\n");
     ft_putstr(params->buff);
     free(params->buff);
-    free(str);
+ //   free(str);
     return (i);
 }
 

@@ -28,9 +28,10 @@ void format_ptr(char *str, t_params *params)
     }
     else
     {
+        
         hex = ft_strjoin(hex, "x");
         temp = ft_strjoin(hex, str);
-        params->buff = str;
+        params->buff = temp;
     }
 
 }
