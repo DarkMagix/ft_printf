@@ -91,11 +91,21 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-// int main(void)
-// {
-// 	int a =100;
-// 	ft_printf("%d %s %p", a, "Test", &a);
-// }
+int main(void)
+{
+	ft_printf("%x\n", 100);
+	printf("%x\n", 100);
+
+	ft_printf("%X\n", 100);
+	printf("%X\n", 100);
+	
+
+	ft_printf("%#X\n", 100);
+	printf("%#X\n", 100);
+	
+	ft_printf("%#x\n", 100);
+	printf("%#x\n", 100);
+}
 //  int main(void)
 //  {
 	 

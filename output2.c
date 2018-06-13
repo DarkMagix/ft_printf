@@ -54,7 +54,7 @@ int print_octal(va_list list, t_params *params)
 
     num = va_arg(list, uintmax_t);
     number = ft_uitoa_base(num, 8);
-    if(params->hash)
+    if(params->hash && num > 0)
        format_ptr(number, params);
     else
         params->buff = number;

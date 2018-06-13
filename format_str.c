@@ -36,8 +36,32 @@ void format_ptr(char *str, t_params *params)
 
 }
 
-// void format_hex(char *str, t_params *params)
-// {
-//     char *temp;
- 
-// }
+void format_hex(char *str, t_params *params)
+{
+    char *temp;
+    char *hex;
+    
+    temp = ft_strnew(0);
+    hex = ft_strnew(0);
+    int i;
+    i = 0;
+    if(params->specifier == 'X')
+    {
+        while(str[i])
+        {
+            if (str[i] >= 'a' && str[i] <= 'f')
+                str[i] -= 32;
+            i++;
+        }
+        if(params->hash)
+            hex = ft_strjoin(hex, "0X");
+    }
+    else if(params->specifier == 'x')
+    {
+        if(params->hash)
+            hex = ft_strjoin(hex, "0x");
+        
+    }
+    temp = ft_strjoin(hex, str);
+    params->buff = temp;
+}

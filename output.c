@@ -79,20 +79,8 @@ int	print_hex(va_list list, t_params *params)
     //    printf("%d", thing);
     num = va_arg(list, uintmax_t);
     str = ft_uitoa_base(num, 16);
-	if (params->hash)
-	{
-		
-		while(str[j])
-		{
-			if ((str[j] >= 'a' && str[j] <= 'f') || str[j] == 'x')
-				str[j] -= 32;
-			j++;
-		}
-		
-		format_ptr(str, params);
-	}
-	else
-		params->buff = str;
+	format_hex(str, params);
+	//params->buff = str;
     ft_putstr(params->buff);
     free(params->buff);
    // free(str);
