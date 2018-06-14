@@ -102,35 +102,35 @@ void	ft_printf(const char *frmt, ...)
 // 	ft_printf("%#x\n", 100);
 // 	printf("%#x\n", 100);
 // }
-  int main(void)
-  {
-    uintmax_t a = 2147483647;
-    ft_printf("|%x|\n", -10);
- 	printf("|%x|\n", -10);
+//   int main(void)
+//   {
+//     uintmax_t a = 2147483647;
+//     ft_printf("|%x|\n", -10);
+//  	printf("|%x|\n", -10);
 
- 	ft_printf("|%x|\n", 10);
- 	printf("|%x|\n", 10);
+//  	ft_printf("|%x|\n", 10);
+//  	printf("|%x|\n", 10);
 
-	printf("x and #\n");
-	ft_printf("|%#x|\n", (unsigned int)a);
-	printf("|%#x|\n", (unsigned int)a);
+// 	printf("x and #\n");
+// 	ft_printf("|%#x|\n", (unsigned int)a);
+// 	printf("|%#x|\n", (unsigned int)a);
 
-	ft_printf("|%x|\n", (unsigned int)a);
-	printf("|%x|\n", (unsigned int)a);
+// 	ft_printf("|%x|\n", (unsigned int)a);
+// 	printf("|%x|\n", (unsigned int)a);
 
-	ft_printf("|%5.3s|\n", "LYDI");
-	printf("|%5.3s|\n", "LYDI");
-	printf("|%-2.6s|\n", "LYDI");
-	ft_printf("|%-2.6s|\n", "LYDI");
+// 	ft_printf("|%5.3s|\n", "LYDI");
+// 	printf("|%5.3s|\n", "LYDI");
+// 	printf("|%-2.6s|\n", "LYDI");
+// 	ft_printf("|%-2.6s|\n", "LYDI");
 	
-	//printf("|%20.*s|\n", 4,"This is a test");
+// 	//printf("|%20.*s|\n", 4,"This is a test");
 
 
-	// 	ft_printf("|%15X|\n", -100);
-	// 	printfw
+// 	// 	ft_printf("|%15X|\n", -100);
+// 	// 	printfw
 
-	return (0);
-  }
+// 	return (0);
+//   }
 
 // ft_printf("|%#15o|\n", -100);
 // 	printf("|%#15o|\n", -100);
