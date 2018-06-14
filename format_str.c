@@ -5,7 +5,7 @@ void format_ptr(char *str, t_params *params)
     char *temp;
     size_t size_str;
     char *hex = "0";
-    
+    temp = ft_strnew(1);
     if(params->hash)
     {
         size_str = ft_strlen(str);
@@ -29,13 +29,11 @@ void format_ptr(char *str, t_params *params)
     }
     else
     {
-        
         hex = ft_strjoin(hex, "x");
         temp = ft_strjoin(hex, str);
         params->buff = temp;
 	free(temp);
     }
-   
 }
 
 void format_hex(t_params *params)
@@ -52,4 +50,21 @@ void format_hex(t_params *params)
     params->buff = temp;
     
 	//free(temp);
+}
+
+void format_str(t_params *params)
+{
+    int display_len;
+    int write_len;
+    int str_size;
+    char* write;
+    int k;
+
+    k = 0;
+    str_size = ft_strlen(params->buff);
+    display_len = print_length(params);
+    write = ft_strnew(display_len);
+    write_len = (params->num_len < str_size) ? params->num_len : str_size; 
+    justify_str(write, params, write_len, display_len);
+    params->buff = write;
 }

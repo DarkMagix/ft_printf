@@ -46,7 +46,7 @@ typedef struct      s_params
 }                   t_params;
 
 void init_params(t_params *params);
-int print_str(va_list list);
+int print_str(va_list list, t_params *params);
 int print_char(va_list list);
 int print_integer(va_list list, t_params *params);
 int print_hex(va_list list, t_params *params);
@@ -54,6 +54,7 @@ int print_float(va_list list);
 int read_data(t_params* params,char *format);
 void ft_parse(int flag, va_list arg, t_params *params);
 int count_args(char *ptr);
+int print_length(t_params *params);
 
 int parse_flags(char *str, t_params *params);
 int parse_width(char *str, t_params *params);
@@ -71,6 +72,8 @@ int print_octal(va_list list, t_params *params);
 
 void format_ptr(char *str, t_params *params);
 void format_hex(t_params *params);
+void format_str(t_params *params);
+void justify_str(char *write, t_params *params, int write_l, int display_l);
 
 void ft_add_pad(char *str, t_params *params, int size);
 //Justify FUnctions

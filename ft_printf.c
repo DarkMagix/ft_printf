@@ -50,16 +50,14 @@ int		valid_arg(int c)
 void	ft_parse(int flag, va_list arg, t_params *params)
 {
 	if (flag == 's')
-		print_str(arg);
-	else if (flag == 'D')
+		print_str(arg, params);
+	else if (flag == 'D' || flag == 'u')
 	  {
-	    params->modifer = MODI_L;
+	    params->modifer = (flag == 'D') ? MODI_L : params->modifer;
 	    print_uint(arg, params);
 	  }
-	else if (flag == 'd' || flag == 'D')
+	else if (flag == 'd' || flag == 'D' || flag == 'i')
 	   print_sint(arg, params);
-	else if (flag == 'u')
-		print_uint(arg, params);
 	else if (flag == 'c')
 		print_char(arg);
 	else if (flag == '%')
@@ -68,8 +66,6 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		print_hex(arg, params);
 	else if (flag == 'o' || flag == 'O')
 		print_octal(arg, params);
-	else if (flag == 'i')
-		print_sint(arg, params);
 	else if (flag == 'p')
 		print_ptr(arg, params);
 	else if (flag == 'C')
@@ -122,9 +118,17 @@ void	ft_printf(const char *frmt, ...)
 	ft_printf("|%x|\n", (unsigned int)a);
 	printf("|%x|\n", (unsigned int)a);
 
+	ft_printf("|%5.3s|\n", "LYDI");
+	printf("|%5.3s|\n", "LYDI");
+	printf("|%-2.6s|\n", "LYDI");
+	ft_printf("|%-2.6s|\n", "LYDI");
+	
+	//printf("|%20.*s|\n", 4,"This is a test");
+
+
 	// 	ft_printf("|%15X|\n", -100);
-	// 	printf("|%15X|\n", -100);
-      
+	// 	printfw
+
 	return (0);
   }
 

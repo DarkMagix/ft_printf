@@ -18,18 +18,23 @@ int	print_char(va_list list)
 	return (1);
 }
 
-int	print_str(va_list list)
+int	print_str(va_list list, t_params *params)
 {
 	int		i;
+	int		j;
 	char	*test;
 
+	j = 0;
 	i = 0;
 	test = va_arg(list, char*);
-	while (test[i])
+	params->buff = test;
+	format_str(params);
+	while (params->buff[j])
 	{
-		ft_putchar(test[i]);
-		i++;
+		ft_putchar(params->buff[j]);
+		j++;
 	}
+
 	return (1);
 }
 
