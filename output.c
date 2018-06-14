@@ -29,12 +29,7 @@ int	print_str(va_list list, t_params *params)
 	test = va_arg(list, char*);
 	params->buff = test;
 	format_str(params);
-	while (params->buff[j])
-	{
-		ft_putchar(params->buff[j]);
-		j++;
-	}
-
+	ft_putstr(params->buff);
 	return (1);
 }
 

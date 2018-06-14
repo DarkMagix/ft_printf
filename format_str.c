@@ -25,14 +25,14 @@ void format_ptr(char *str, t_params *params)
             temp = hex;   
         }
         params->buff= temp;
-	free(temp);
+	//free(temp);
     }
     else
     {
         hex = ft_strjoin(hex, "x");
         temp = ft_strjoin(hex, str);
         params->buff = temp;
-	free(temp);
+	//free(temp);
     }
 }
 
@@ -64,7 +64,11 @@ void format_str(t_params *params)
     str_size = ft_strlen(params->buff);
     display_len = print_length(params);
     write = ft_strnew(display_len);
-    write_len = (params->num_len < str_size) ? params->num_len : str_size; 
+    if (params->num_len == 0)
+        write_len = (params->num_len < str_size) ? str_size : params->num_len;
+    else    
+        write_len = (params->num_len < str_size) ? params->num_len : str_size;
     justify_str(write, params, write_len, display_len);
     params->buff = write;
+   
 }
