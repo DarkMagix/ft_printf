@@ -6,9 +6,11 @@ int print_length(t_params *params)
     int width; //params width length to show
     int str_size; //size of the string
 
-    width = params->wid_len;
+    width = params->num_len;
+    //printf("Width is %d\n", width);
     str_size = ft_strlen(params->buff);
-    print_len = (str_size > width) ? str_size : width;
+    print_len = (str_size > width) ? width : str_size;
+    //printf("Print Length %d\n", str_size);
     return (print_len);
 }
 

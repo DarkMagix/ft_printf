@@ -88,6 +88,18 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
+int main(void)
+{
+	// ft_printf("|%5.3s|\n", "LYDI");
+	// printf("|%5.3s|\n", "LYDI");
+	// printf("|%-2.6s|\n", "LYDI");
+	// ft_printf("|%-2.6s|\n", "LYDI");
+
+
+	ft_printf("|%10.50s|\n", "This is a test to see what will happen");
+	printf("|%10.50s|\n", "This is a test to see what will happen");
+	return (0);
+}
 // int main(void)
 // {
 // 	ft_printf("%x\n", 100);
