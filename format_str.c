@@ -40,15 +40,27 @@ void format_hex(t_params *params)
 {
     char *temp;
     int size;
+    int i;
 
+    i = 0;
     size = (int)ft_strlen(params->buff);
     size = (params->hash) ? size + 2 : size;
     temp = ft_strnew(size);
+    if (params->specifier == 'X')
+    {
+        while (params->buff[i])
+        {
+            params->buff[i] = ft_toupper(params->buff[i]);
+            i++;
+        }
+    }
     if(params->hash && params->specifier == 'x')
       ft_strcat(temp, "0x");
     else if(params->hash && params->specifier == 'X')
         ft_strcat(temp, "0X");
+    
     ft_strcat(temp, params->buff);
+
     params->buff = temp;
     
 	//free(temp);
