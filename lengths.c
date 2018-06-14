@@ -31,6 +31,7 @@ void justify_str(char *write, t_params *params, int write_l, int display_l)
     }
     else
     {
+       // printf("Dl: %d Wl: %d\n", display_l, write_l);
         while (k < display_l - write_l)
         {
             write[k] = ' ';

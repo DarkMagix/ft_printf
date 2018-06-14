@@ -90,6 +90,31 @@ void	ft_printf(const char *frmt, ...)
 }
 // int main(void)
 // {
+// 	ft_printf("|%5.3s|\n", "LYDI");
+// 	printf("|%5.3s|\n", "LYDI");
+// 	printf("|%-2.6s|\n", "LYDI");
+// 	ft_printf("|%-2.6s|\n", "LYDI");
+// 	printf("-------------------------\n");
+
+// 	ft_printf("|%10.4s|\n", "This is a test to see what will happen");
+// 	printf("|%10.4s|\n", "This is a test to see what will happen");
+// 	ft_printf("|%10.11s|\n", "This is a test to see what will happen");
+// 	printf("|%10.11s|\n", "This is a test to see what will happen");
+// 	printf("\n");
+// 	ft_printf("|%-10.4s|\n", "This is a test to see what will happen");
+// 	printf("|%-10.4s|\n", "This is a test to see what will happen");
+// 	ft_printf("|%-10.11s|\n", "This is a test to see what will happen");
+// 	printf("|%-10.11s|\n", "This is a test to see what will happen");
+// 	printf("-------------------------\n");
+// 	ft_printf("|%-20.20s|\n", "This is a test to see what will happen");
+// 	printf("|%-20.20s|\n", "This is a test to see what will happen");
+// 	printf("-------------------------\n");
+// 	ft_printf("|%20.20s|\n", "This is a test to see what will happen");
+// 	printf("|%20.20s|\n", "This is a test to see what will happen");
+// 	return (0);
+// }
+// int main(void)
+// {
 // 	// ft_printf("|%5.3s|\n", "LYDI");
 // 	// printf("|%5.3s|\n", "LYDI");
 // 	// printf("|%-2.6s|\n", "LYDI");
@@ -134,10 +159,6 @@ void	ft_printf(const char *frmt, ...)
 // 	printf("|%5.3s|\n", "LYDI");
 // 	printf("|%-2.6s|\n", "LYDI");
 // 	ft_printf("|%-2.6s|\n", "LYDI");
-
-// 	int test = 100;
-// 	ft_printf("%d %s %p", test, "Test", &test);
-
 	
 // 	//printf("|%20.*s|\n", 4,"This is a test");
 

@@ -62,7 +62,8 @@ void format_str(t_params *params)
 
     k = 0;
     str_size = ft_strlen(params->buff);
-    display_len = print_length(params);
+    display_len = (params->wid_len < print_length(params)) ? 
+        print_length(params) : params->wid_len ;
     write = ft_strnew(display_len);
     if (params->num_len == 0)
         write_len = (params->num_len < str_size) ? str_size : params->num_len;
