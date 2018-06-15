@@ -16,21 +16,21 @@ long long int	sint_flags(va_list list, t_params *params)
 {
 	long long int nbr;
 
-	nbr = va_arg(list, long long int);
+	//nbr = va_arg(list, long long int);
 	if (params->modifer == MODI_HH)
-		nbr = (signed char)nbr;
+		nbr = (signed char)va_arg(list, long long int);
 	else if (params->modifer == MODI_H)
-		nbr = (short int)nbr;
+		nbr = (short)va_arg(list, long long int);
 	else if (params->modifer == MODI_l)
-		nbr = (long int)nbr;
+		nbr = (long)va_arg(list, long long int);
 	else if (params->modifer == MODI_ll)
-		nbr = (long long int)nbr;
+		nbr = (long long)va_arg(list, long long int);
 	else if (params->modifer == MODI_J)
-		nbr = (intmax_t) nbr;
+		nbr = (intmax_t)va_arg(list, long long int);
 	else if (params->modifer == MODI_Z)
-		nbr = (size_t)nbr;
+		nbr = (size_t)va_arg(list, long long int);
 	else
-		nbr = (int)nbr;
+		nbr = (int)va_arg(list, long long int);
 	return (nbr);
 }
 

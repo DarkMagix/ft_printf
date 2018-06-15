@@ -28,7 +28,7 @@ char	u_fill(int nbr, int size)
 		return (nbr + '0');
 }
 
-int		u_numsize(uintmax_t nbr, int base)
+int		u_numsize(unsigned long long int nbr, int base)
 {
 	int size;
 
@@ -43,12 +43,12 @@ int		u_numsize(uintmax_t nbr, int base)
 	return (size);
 }
 
-char	*ft_uitoa_base(uintmax_t nbr, int base)
+char	*ft_uitoa_base(unsigned long long int nbr, int base)
 {
 	char		*res;
 	int			j;
 	static int	size;
-//	printf("Inside: %ju\n", nbr);
+	
 	size = 0;
 	j = u_numsize(nbr, base) - 1;
 	res = ft_memalloc(j + 3);

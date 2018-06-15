@@ -36,13 +36,13 @@ static int	get_size(intmax_t nb, int base)
 	return (size + 1);
 }
 
-char	*ft_itoa_base(intmax_t nbr, int base)
+char	*ft_itoa_base(long long int nbr, int base)
 {
-	char		*res;
-	intmax_t	nb;
-	intmax_t	index;
-	intmax_t	size;
-	char *hex = "0123456789abcdef";
+	char			*res;
+	long long int	nb;
+	long long int	index;
+	long long int	size;
+	char			*hex = "0123456789abcdef";
 
 	if (base < 2 || base > 16)
 		return (ft_strdup("0"));
