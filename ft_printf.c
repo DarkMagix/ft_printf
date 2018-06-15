@@ -88,39 +88,39 @@ void	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 }
-int main(void)
-{
-	//int a = 10000;
+// int main(void)
+// {
+// 	//int a = 10000;
 	
 
-	//ft_printf("%33.46hhi\n", a);
+// 	//ft_printf("%33.46hhi\n", a);
 
-	printf("%33.46hhi\n", (signed char)-431123122342323123);
-	ft_printf("%33.46hhi\n", (signed char)-431123122342323123);
-	//printf("%33.46hhi\n", (signed char)-43112312323123);
+// 	printf("%33.46hhi\n", (signed char)-431123122342323123);
+// 	ft_printf("%33.46hhi\n", (signed char)-431123122342323123);
+// 	//printf("%33.46hhi\n", (signed char)-43112312323123);
 	
-	// printf("|%d|\n", a);
-	// printf("-: |%-d|\n", a);
+// 	// printf("|%d|\n", a);
+// 	// printf("-: |%-d|\n", a);
 
-	// printf("' '-: |% -d|\n", a);
-	// printf("' ':|% d|\n", a);
+// 	// printf("' '-: |% -d|\n", a);
+// 	// printf("' ':|% d|\n", a);
 	
-	// printf("+: |%+d|\n", a);
-	// printf("-+: |%-+d|\n", a);
+// 	// printf("+: |%+d|\n", a);
+// 	// printf("-+: |%-+d|\n", a);
 	
-	// printf("+7.2: |%+7.2d|\n", a);
+// 	// printf("+7.2: |%+7.2d|\n", a);
 	
-	// printf("' '-7.6: |% -7.6d|\n", a);
-	// printf("' '7.6: |% 7.6d|\n", a);
+// 	// printf("' '-7.6: |% -7.6d|\n", a);
+// 	// printf("' '7.6: |% 7.6d|\n", a);
 
-	// printf("' '-7.8: |% -7.8d|\n", a);
-	// printf("--------------------\n");
-	// printf("' '-9.5: |% -9.5d|\n", a);
-	// printf("' '-9.6: |% -9.6d|\n", a);
-	// printf("' '9.5: |% 9.5d|\n", a);
-	// printf("' '9.6: |% 9.6d|\n", a);
-	return (0);
-}
+// 	// printf("' '-7.8: |% -7.8d|\n", a);
+// 	// printf("--------------------\n");
+// 	// printf("' '-9.5: |% -9.5d|\n", a);
+// 	// printf("' '-9.6: |% -9.6d|\n", a);
+// 	// printf("' '9.5: |% 9.5d|\n", a);
+// 	// printf("' '9.6: |% 9.6d|\n", a);
+// 	return (0);
+// }
 // int main(void)
 // {
 // 	ft_printf("|%#x|\n", 100);
