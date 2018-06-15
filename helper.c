@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-intmax_t	sint_flags(va_list list, t_params *params)
+long long int	sint_flags(va_list list, t_params *params)
 {
-	intmax_t nbr;
+	long long int nbr;
 
-	nbr = va_arg(list, intmax_t);
+	nbr = va_arg(list, long long int);
 	if (params->modifer == MODI_HH)
-		nbr = (char)nbr;
+		nbr = (signed char)nbr;
 	else if (params->modifer == MODI_H)
 		nbr = (short int)nbr;
 	else if (params->modifer == MODI_l)
@@ -26,32 +26,28 @@ intmax_t	sint_flags(va_list list, t_params *params)
 	else if (params->modifer == MODI_ll)
 		nbr = (long long int)nbr;
 	else if (params->modifer == MODI_J)
-		nbr = (intmax_t)nbr;
+		nbr = (intmax_t) nbr;
 	else if (params->modifer == MODI_Z)
 		nbr = (size_t)nbr;
-	else
-		nbr = (int)nbr;
 	return (nbr);
 }
 
-uintmax_t	uint_flags(va_list list, t_params *params)
+unsigned long long int	uint_flags(va_list list, t_params *params)
 {
-	uintmax_t nbr;
+	unsigned long long int nbr;
 
-	nbr = va_arg(list, uintmax_t);
+	nbr = va_arg(list, unsigned long long int);
 	if (params->modifer == MODI_HH)
 		nbr = (unsigned char)nbr;
 	else if (params->modifer == MODI_H)
-		nbr = (unsigned short int)nbr;
+		nbr = (unsigned short)nbr;
 	else if (params->modifer == MODI_l)
-		nbr = (unsigned long int)nbr;
+		nbr = (unsigned long)nbr;
 	else if (params->modifer == MODI_ll)
-		nbr = (unsigned long long int)nbr;
+		nbr = (unsigned long long)nbr;
 	else if (params->modifer == MODI_J)
 		nbr = (uintmax_t)nbr;
 	else if (params->modifer == MODI_Z)
 		nbr = (size_t)nbr;
-	else
-		nbr = (unsigned int)nbr;
 	return (nbr);
 }
