@@ -6,7 +6,7 @@
 #    By: mweir <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/18 15:36:24 by mweir             #+#    #+#              #
-#    Updated: 2018/06/12 14:49:52 by mweir            ###   ########.fr        #
+#    Updated: 2018/06/16 16:04:11 by mweir            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,9 +18,10 @@ TRASH = rm -f
 
 LIBFT := libft/
 
-SRC = args.c formatting.c helper.c output.c \
-		format_int.c ft_printf.c parse.c output2.c \
-		format_str.c lengths.c
+SRC = args.c print_help.c helper.c output.c \
+		ft_printf.c parse.c output2.c \
+		format_str.c lengths.c handle_int.c \
+		handle_uint.c
 
 
 OBJ = $(SRC:.c=.o)

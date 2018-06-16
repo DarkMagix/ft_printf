@@ -75,6 +75,11 @@ void format_str(t_params *params)
     int k;
 
     k = 0;
+    if (params->buff == NULL)
+    {
+        params->buff = "(null)";
+        return ;
+    }
     str_size = ft_strlen(params->buff);
     display_len = (params->wid_len < print_length(params)) ? 
         print_length(params) : params->wid_len ;
@@ -85,5 +90,5 @@ void format_str(t_params *params)
         write_len = (params->num_len < str_size) ? params->num_len : str_size;
     justify_str(write, params, write_len, display_len);
     params->buff = write;
-   
+    
 }

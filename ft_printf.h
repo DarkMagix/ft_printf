@@ -6,7 +6,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 # include <stdint.h>
-
+# define IS_NEG(x) (x < 0) ? (1) : (0)
 
 typedef int t_bool;
 enum { false, true };
@@ -43,6 +43,14 @@ typedef struct      s_params
 	int specifier;
 	//Other
 	t_bool is_neg;
+	//Number Things
+	unsigned long long int u;
+	long long int i;
+	int zeroes;
+	int spaces;
+	int len;
+	char sign;
+	int inc;
 }                   t_params;
 
 void init_params(t_params *params);
@@ -61,27 +69,22 @@ int parse_width(char *str, t_params *params);
 int parse_precision(char *str, t_params *params);
 int parse_length(char *str, t_params *params);
 int parse_specifier(const char *format, va_list args, t_params *params);
-long long int sint_flags(va_list list, t_params *params);
-unsigned long long int uint_flags(va_list list, t_params *params);
+void sint_flags(va_list list, t_params *params);
+void uint_flags(va_list list, t_params *params);
 int print_sint(va_list list, t_params *params);
 int print_uint(va_list list, t_params *params);
 int print_ptr(va_list list, t_params *params);
 int print_wchar(va_list list, t_params *params);
 int print_wstr(va_list list, t_params *params);
 int print_octal(va_list list, t_params *params);
-
+void setup_unint(va_list list, t_params *params);
 void format_ptr(char *str, t_params *params);
 void format_hex(t_params *params);
 void format_str(t_params *params);
 void justify_str(char *write, t_params *params, int write_l, int display_l);
-
-void ft_add_pad(char *str, t_params *params, int size);
-//Justify FUnctions
-void neg_justified(char *temp, char *str, t_params *params, int size);
-void pos_justified(char *temp, char *str, t_params *params, int size);
-void neg_no_justified(char *temp, char *str, t_params *params, int size);
-void pos_no_justified(char *temp, char *str, t_params *params, int size);
-
+void setup_int(va_list list, t_params *params);
+void print_chars(t_params *params, char c, int n);
+void print_nums(t_params *params);
 void ft_format_int(t_params *params);
 void ft_signstr(char *str, t_params *params);
 int		valid_arg(int c);

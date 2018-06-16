@@ -12,46 +12,38 @@
 
 #include "ft_printf.h"
 
-long long int	sint_flags(va_list list, t_params *params)
+void	sint_flags(va_list list, t_params *params)
 {
-	long long int nbr;
-
-	//nbr = va_arg(list, long long int);
 	if (params->modifer == MODI_HH)
-		nbr = (signed char)va_arg(list, long long int);
+		params->i = (signed char)va_arg(list, long long int);
 	else if (params->modifer == MODI_H)
-		nbr = (short)va_arg(list, long long int);
+		params->i = (short)va_arg(list, long long int);
 	else if (params->modifer == MODI_l)
-		nbr = (long)va_arg(list, long long int);
+		params->i = (long)va_arg(list, long long int);
 	else if (params->modifer == MODI_ll)
-		nbr = (long long)va_arg(list, long long int);
+		params->i = (long long)va_arg(list, long long int);
 	else if (params->modifer == MODI_J)
-		nbr = (intmax_t)va_arg(list, long long int);
+		params->i = (intmax_t)va_arg(list, long long int);
 	else if (params->modifer == MODI_Z)
-		nbr = (size_t)va_arg(list, long long int);
+		params->i = (size_t)va_arg(list, long long int);
 	else
-		nbr = (int)va_arg(list, long long int);
-	return (nbr);
+		params->i = (int)va_arg(list, long long int);
 }
 
-unsigned long long int	uint_flags(va_list list, t_params *params)
+void	uint_flags(va_list list, t_params *params)
 {
-	unsigned long long int nbr;
-
-	nbr = va_arg(list, unsigned long long int);
 	if (params->modifer == MODI_HH)
-		nbr = (unsigned char)nbr;
+		params->u = (unsigned char)va_arg(list, unsigned long long int);
 	else if (params->modifer == MODI_H)
-		nbr = (unsigned short)nbr;
+		params->u = (unsigned short)va_arg(list, unsigned long long int);
 	else if (params->modifer == MODI_l)
-		nbr = (unsigned long)nbr;
+		params->u = (unsigned long)va_arg(list, unsigned long long int);
 	else if (params->modifer == MODI_ll)
-		nbr = (unsigned long long)nbr;
+		params->u = (unsigned long long)va_arg(list, unsigned long long int);
 	else if (params->modifer == MODI_J)
-		nbr = (uintmax_t)nbr;
+		params->u = (uintmax_t)va_arg(list, unsigned long long int);
 	else if (params->modifer == MODI_Z)
-		nbr = (size_t)nbr;
+		params->u = (size_t)va_arg(list, unsigned long long int);
 	else
-		nbr = (unsigned int)nbr;
-	return (nbr);
+		params->u = (unsigned int)va_arg(list, unsigned long long int);
 }
