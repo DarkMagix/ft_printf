@@ -4,6 +4,7 @@ void prepare_octal(t_params *params)
 {
     params->buff = ft_uitoa_base(params->u, 8);
     params->len = ft_strlen(params->buff);
+    //printf("Length of Octal %d\n", params->len);
     if (params->hash && params->buff[0] != '0')
         params->zeroes++;
     if (params->num_len > params->len + params->zeroes)
@@ -33,4 +34,5 @@ void setup_octal(va_list list, t_params *params)
         print_chars(params, '0', params->zeroes);
         print_nums(params);
     }
+    
 }

@@ -50,5 +50,6 @@ int print_wstr(va_list list, t_params *params)
 int print_octal(va_list list, t_params *params)
 {
     setup_octal(list, params);
+
     return (params->inc);
 }

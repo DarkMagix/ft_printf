@@ -24,7 +24,8 @@ void print_chars(t_params *params, char c, int n)
 
 void print_nums(t_params *params)
 {
-    params->inc += write(1, params->buff, params->len);
+    write(1, params->buff, params->len);
+    params->inc += params->len;
 }
 
 

@@ -67,7 +67,10 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	else if (flag == 'c')
 		print_char(arg);
 	else if (flag == '%')
+	{
 		ft_putchar('%');
+		params->inc++;
+	}
 	else if (flag == 'x' || flag == 'X')
 		print_hex(arg, params);
 	else if (flag == 'o' || flag == 'O')
@@ -102,6 +105,33 @@ int main(void)
 	unsigned long int max = 2147483647;
 	unsigned long int min = -2147483648;
 
+
+	ft_printf("%d: ",ft_printf("%%#X 42 ==  %#X\n", 42));
+	ft_printf("%d: ",ft_printf("%%X 42 ==  %X\n", 42));
+	ft_printf("%d: ",ft_printf("%%#o 0 ==  %#o\n", 0));
+	ft_printf("%d: ",ft_printf("%%o 0 ==  %o\n", 0));
+	ft_printf("%d: ",ft_printf("%%#o max ==  %#o\n", max));
+	ft_printf("%d: ",ft_printf("%%o max ==  %o\n", max));
+	ft_printf("%d: ",ft_printf("%%#o min ==  %#o\n", min));
+	ft_printf("%d: ",ft_printf("%%o min ==  %o\n", min));
+	ft_printf("%d: ",ft_printf("%%#X min ==  %#X\n", min));
+	ft_printf("%d: ",ft_printf("%%X min ==  %X\n", min));
+	ft_printf("%d: ",ft_printf("%%#X max ==  %#X\n", max));
+	ft_printf("%d: ",ft_printf("%%X max ==  %X\n", max));
+	printf("-----------------------------------\n");
+	ft_printf("%d: ",printf("%%#X 42 ==  %#X\n", 42));
+	ft_printf("%d: ",printf("%%X 42 ==  %X\n", 42));
+	ft_printf("%d: ",printf("%%#o 0 ==  %#o\n", 0));
+	ft_printf("%d: ",printf("%%o 0 ==  %o\n", 0));
+	ft_printf("%d: ",printf("%%#o max ==  %#o\n", max));
+	ft_printf("%d: ",printf("%%o max ==  %o\n", max));
+	ft_printf("%d: ",printf("%%#o min ==  %#o\n", min));
+	ft_printf("%d: ",printf("%%o min ==  %o\n", min));
+	ft_printf("%d: ",printf("%%#X min ==  %#X\n", min));
+	ft_printf("%d: ",printf("%%X min ==  %X\n", min));
+	ft_printf("%d: ",printf("%%#X max ==  %#X\n", max));
+	ft_printf("%d: ",printf("%%X max ==  %X\n", max));
+
 	// char *b = NULL;
 	// ft_printf("|% 4.5i|\n", 42);// == | 00042|
 	// printf("|% 4.5i|\n", 42);// == | 00042|
@@ -119,7 +149,7 @@ int main(void)
 	// printf("|%s|\n", b);
 //	printf("Hex %d: \n",printf("%x\n", 42));
 	//printf("Hex %d: \n",printf("%#X\n", 0));
-	ft_printf("\nBytes Found: %d",ft_printf("This %#x %d", 42, -100));
+
 	return (0);
 }
 // int main(void)
