@@ -89,8 +89,10 @@ void ft_format_int(t_params *params);
 void to_upper(t_params *params);
 void prepare_hex(t_params *params);
 void setup_hex(va_list list, t_params *params);
+void prepare_octal(t_params *params);
+void setup_octal(va_list list, t_params *params);
 
 void ft_signstr(char *str, t_params *params);
 int		valid_arg(int c);
-void	ft_printf(const char *frmt, ...);
+int	ft_printf(const char *frmt, ...);
 #endif

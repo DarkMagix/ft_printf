@@ -80,19 +80,22 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		print_wstr(arg, params);
 }
 
-void	ft_printf(const char *frmt, ...)
+int	ft_printf(const char *frmt, ...)
 {
 	va_list		args;
 	t_params	*params;
-
+	int bytes;
+	
+	bytes = 0;
 	params = ft_memalloc(sizeof(t_params));
 	if (frmt)
 	{
 		va_start(args, frmt);
-		parse_specifier(frmt, args, params);
+		bytes += parse_specifier(frmt, args, params);
 		va_end(args);
 	}
 	free(params);
+	return (bytes);
 }
 int main(void)
 {
@@ -114,31 +117,9 @@ int main(void)
 
 	// ft_printf("|%s|\n",b);
 	// printf("|%s|\n", b);
-	ft_printf("%%#X 42 ==  %#X\n", 42);
-	ft_printf("%%X 42 ==  %X\n", 42);
-	ft_printf("%%#o 0 ==  %#o\n", 0);
-	ft_printf("%%o 0 ==  %o\n", 0);
-	ft_printf("%%#o max ==  %#o\n", max);
-	ft_printf("%%o max ==  %o\n", max);
-	ft_printf("%%#o min ==  %#o\n", min);
-	ft_printf("%%o min ==  %o\n", min);
-	ft_printf("%%#X min ==  %#X\n", min);
-	ft_printf("%%X min ==  %X\n", min);
-	ft_printf("%%#X max ==  %#X\n", max);
-	ft_printf("%%X max ==  %X\n", max);
-	printf("-------------------------------\n");
-	printf("%%#X 42 ==  %#X\n", 42);
-	printf("%%X 42 ==  %X\n", 42);
-	printf("%%#o 0 ==  %#o\n", 0);
-	printf("%%o 0 ==  %o\n", 0);
-	printf("%%#o max ==  %#o\n", max);
-	printf("%%o max ==  %o\n", max);
-	printf("%%#o min ==  %#o\n", min);
-	printf("%%o min ==  %o\n", min);
-	printf("%%#X min ==  %#X\n", min);
-	printf("%%X min ==  %X\n", min);
-	printf("%%#X max ==  %#X\n", max);
-	printf("%%X max ==  %X\n", max);
+//	printf("Hex %d: \n",printf("%x\n", 42));
+	//printf("Hex %d: \n",printf("%#X\n", 0));
+	ft_printf("\nBytes Found: %d",ft_printf("This %#x %d", 42, -100));
 	return (0);
 }
 // int main(void)

@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	parse_flags(char *str, t_params *params)
+int parse_flags(char *str, t_params *params)
 {
 	int i;
 
@@ -30,16 +30,16 @@ int	parse_flags(char *str, t_params *params)
 		else if (str[i] == '0')
 			params->pad = true;
 		else
-			break ;
+			break;
 		i++;
 	}
 	return (i);
 }
 
-int	parse_width(char *str, t_params *params)
+int parse_width(char *str, t_params *params)
 {
 	int i;
-	int	skip;
+	int skip;
 
 	i = 0;
 	skip = 0;
@@ -58,13 +58,13 @@ int	parse_width(char *str, t_params *params)
 		if (str[i] == '*')
 			params->wid_len = -1;
 		else
-			break ;
+			break;
 		i++;
 	}
 	return (i);
 }
 
-int	parse_precision(char *str, t_params *params)
+int parse_precision(char *str, t_params *params)
 {
 	int i;
 	int temp;
@@ -87,13 +87,13 @@ int	parse_precision(char *str, t_params *params)
 		else if (str[i] == '*')
 			params->p_wildcard = true;
 		else
-			break ;
+			break;
 		i++;
 	}
 	return (i);
 }
 
-int	parse_length(char *str, t_params *params)
+int parse_length(char *str, t_params *params)
 {
 	int i;
 
@@ -101,11 +101,13 @@ int	parse_length(char *str, t_params *params)
 	while (true)
 	{
 		if (str[i] == 'h')
-			params->modifer = (str[i] == 'h' && str[i + 1] == 'h') \
-				? MODI_HH : MODI_H;
+			params->modifer = (str[i] == 'h' && str[i + 1] == 'h')
+								  ? MODI_HH
+								  : MODI_H;
 		else if (str[i] == 'l')
-			params->modifer = (str[i] == 'l' && str[i + 1] == 'l') \
-				? MODI_ll : MODI_l;
+			params->modifer = (str[i] == 'l' && str[i + 1] == 'l')
+								  ? MODI_ll
+								  : MODI_l;
 		else if (str[i] == 'j')
 			params->modifer = MODI_J;
 		else if (str[i] == 'z')
@@ -115,16 +117,18 @@ int	parse_length(char *str, t_params *params)
 		else if (str[i] == 'L')
 			params->modifer = MODI_Z;
 		else
-			break ;
+			break;
 		i++;
 	}
 	return (i);
 }
 
-int	parse_specifier(const char *format, va_list args, t_params *params)
+int parse_specifier(const char *format, va_list args, t_params *params)
 {
 	int i;
+	int written;
 
+	written = 0;
 	i = 0;
 	init_params(params);
 	while (*format)
@@ -135,11 +139,15 @@ int	parse_specifier(const char *format, va_list args, t_params *params)
 				format += read_data(params, (char *)(format + 1)) + 1;
 			params->specifier = *format;
 			ft_parse(params->specifier, args, params);
+			written += params->inc;
 		}
 		else
+		{
 			ft_putchar(*format);
+			written++;
+		}
 		init_params(params);
 		format++;
 	}
-	return (i);
+	return (written);
 }

@@ -25,8 +25,9 @@ void setup_octal(va_list list, t_params *params)
     {
         print_chars(params, '0', params->zeroes);
         print_nums(params);
-        print_chars(params, ' ', params->spaces)    ;
+        print_chars(params, ' ', params->spaces);
     }
+    else
     {
         print_chars(params, ' ', params->spaces);
         print_chars(params, '0', params->zeroes);

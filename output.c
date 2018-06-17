@@ -31,18 +31,21 @@ int	print_str(va_list list, t_params *params)
 
 int	print_sint(va_list list, t_params *params)
 {
+
 	setup_int(list, params);
+	
 	return (1);
 }
 
 int	print_uint(va_list list, t_params *params)
 {
 	setup_unint(list, params);
+	
 	return (1);
 }
 
 int	print_hex(va_list list, t_params *params)
 {
  	setup_hex(list, params);
-  	return (1);
+  	return (params->inc);
 }

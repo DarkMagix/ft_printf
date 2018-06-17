@@ -49,17 +49,6 @@ int print_wstr(va_list list, t_params *params)
 
 int print_octal(va_list list, t_params *params)
 {
-    uintmax_t num;
-    char  *number;
-
-    num = va_arg(list, uintmax_t);
-    number = ft_uitoa_base(num, 8);
-    if(params->hash && num > 0)
-       format_ptr(number, params);
-    else
-        params->buff = number;
-    ft_putstr(params->buff);
-    free(params->buff);
-   // free(number);
-    return (1);
+    setup_octal(list, params);
+    return (params->inc);
 }
