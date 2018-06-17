@@ -43,6 +43,6 @@ int	print_uint(va_list list, t_params *params)
 
 int	print_hex(va_list list, t_params *params)
 {
- 	uint_flags(list, params);
+ 	setup_hex(list, params);
   	return (1);
 }
