@@ -83,12 +83,14 @@ void format_str(t_params *params)
     str_size = ft_strlen(params->buff);
     display_len = (params->wid_len < print_length(params)) ? 
         print_length(params) : params->wid_len ;
-    write = ft_strnew(display_len);
+    write = ft_memalloc(display_len);
     if (params->num_len == 0)
         write_len = (params->num_len < str_size) ? str_size : params->num_len;
     else    
         write_len = (params->num_len < str_size) ? params->num_len : str_size;
     justify_str(write, params, write_len, display_len);
     params->buff = write;
+    free(write);
+
     
 }

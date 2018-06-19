@@ -21,7 +21,8 @@ LIBFT := libft/
 SRC = args.c print_help.c helper.c output.c \
 		ft_printf.c parse.c output2.c \
 		format_str.c lengths.c handle_int.c \
-		handle_uint.c handle_hex.c handle_octal.c
+		handle_uint.c handle_hex.c handle_octal.c handle_wstring.c \
+		handle_ptrs.c
 
 
 OBJ = $(SRC:.c=.o)

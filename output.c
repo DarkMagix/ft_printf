@@ -26,6 +26,7 @@ int	print_str(va_list list, t_params *params)
 	params->buff = test;
 	format_str(params);
 	ft_putstr(params->buff);
+//	free(params->buff);
 	return (1);
 }
 

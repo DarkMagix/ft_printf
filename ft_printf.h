@@ -51,6 +51,7 @@ typedef struct      s_params
 	int len;
 	char sign;
 	int inc;
+	wchar_t *w_s;
 }                   t_params;
 
 void init_params(t_params *params);
@@ -91,6 +92,13 @@ void prepare_hex(t_params *params);
 void setup_hex(va_list list, t_params *params);
 void prepare_octal(t_params *params);
 void setup_octal(va_list list, t_params *params);
+void setup_ptr(va_list list, t_params *params);
+
+void ft_wstrlen(t_params *params);
+void print_string(t_params *params);
+void show_string(t_params *params);
+void print_spaces(t_params *params);
+void setup_wstring(va_list list, t_params *params);
 
 void ft_signstr(char *str, t_params *params);
 int		valid_arg(int c);
