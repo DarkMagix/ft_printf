@@ -103,14 +103,14 @@ int	ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
 }
-int main(void)
-{
-ft_printf("%+i\n", 42);// == +42
-printf("%+i\n", 42);// == +42
-ft_printf("%+d\n", 42);// == +2147483647
-printf("%+d\n", 42);// == +2147483647
-ft_printf("%+i\n", -42);// == -42
-printf("%+i\n", -42);// == -42
-ft_printf("%+04d\n", 42);// == +042
-printf("%+04d\n", 42);// == +042
-}
+// int main(void)
+// {
+// ft_printf("%+i\n", 42);// == +42
+// printf("%+i\n", 42);// == +42
+// ft_printf("%+d\n", 42);// == +2147483647
+// printf("%+d\n", 42);// == +2147483647
+// ft_printf("%+i\n", -42);// == -42
+// printf("%+i\n", -42);// == -42
+// ft_printf("%+04d\n", 42);// == +042
+// printf("%+04d\n", 42);// == +042
+// }
