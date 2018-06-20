@@ -111,11 +111,11 @@ int	ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
  }
-//int main(void)
-//{
+// int main(void)
+// {
 //  ft_printf("Zero\n");
 //  ft_printf("%%04i 42 == |%04i|\n", 42);
-//  ft_printf("%%04u 42 == |%04i|\n", 42);
+
 //  ft_printf("%%05i 42 == |%05i|\n", 42);
 //  ft_printf("%%0i 42 == |%0i|\n", 42);
 //  ft_printf("%%0d 0000042 == |%0d|\n", 0000042);
@@ -125,7 +125,9 @@ int	ft_printf(const char *frmt, ...)
 //  ft_printf("%%-i -42 == %-i\n", -42);
 //  ft_printf("%%-4d 42 == |%-4d|\n", 42);
 //  ft_printf("%%-5d -42 == |%-5d|\n", -42);
+//  printf("%%-5d -42 == |%-5d|\n", -42);
 //    ft_printf("|%3i|%-3i|\n", 42, 42);
+//    printf("|%3i|%-3i|\n", 42, 42);
 //    ft_printf("%%-4i 42 == |%-4i|\n", 42);
 //    ft_printf("Precision\n");
 //    ft_printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
@@ -133,10 +135,11 @@ int	ft_printf(const char *frmt, ...)
 //    ft_printf("%% 4.5i 42 == |% 4.5i|\n", 42);
 //    ft_printf("%%04.5i 42 == |%04.5i|\n", 42);
 //    ft_printf("%%04.3i 42 == |%04.3i|\n", 42);
+  
 //    ft_printf("%%04.2i 42 == |%04.2i|\n", 42);
     
 //  return (0);
-//}
+// }
 // int main(void)
 // {
 // 	char *str = NULL;

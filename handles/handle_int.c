@@ -15,7 +15,14 @@ static void prepare_int(t_params *params)
     if (params->spaced && !(IS_NEG(params->i)) && params->spaces == 0)
         params->spaces++;
 }
-
+void ft_swap(int *a, int *b)
+{
+    int temp;
+    
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
 void setup_int(va_list list, t_params *params)
 {
     if (params->specifier == 'D')
@@ -24,12 +31,9 @@ void setup_int(va_list list, t_params *params)
     prepare_int(params);
     if (params->justify && params->pad)
         params->pad = false;
- 
-    //if (!params->justify)
-   // {
-     //  printf("Width: %d", params->num_len);
-       //printf("Spaces %d\n", params->spaces);
-    
+    //printf("Wid Len %d Num Len %d\n", params->wid_len, params->num_len);
+    if(params->pad)
+        (params->wid_len >= params->num_len) ? ft_swap(&params->zeroes, &params->spaces) : 0;
     if(!params->justify)
     {
         if (params->sign && !params->pad)
