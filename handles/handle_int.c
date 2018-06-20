@@ -22,30 +22,46 @@ void setup_int(va_list list, t_params *params)
         params->modifer = MODI_ll;
     sint_flags(list, params);
     prepare_int(params);
-    if (params->justify)
+    if (params->justify && params->pad)
+        params->pad = false;
+ 
+    //if (!params->justify)
+   // {
+     //  printf("Width: %d", params->num_len);
+       //printf("Spaces %d\n", params->spaces);
+    
+    if(!params->justify)
     {
-        if (params->sign && !params->pad && params->inc++)
+        if (params->sign && !params->pad)
+        {
             ft_putchar(params->sign);
+             params->inc++;
+        }
+        print_chars(params, ' ', params->spaces);
         print_chars(params, '0', params->zeroes);
         print_nums(params);
-        print_chars(params, ' ', params->spaces);
     }
     else
     {
-      //  printf("Spacse %d: \n", params->spaces);
-//        printf("Zeroes %d: \n", params->zeroes);
-        if(params->sign)
-          ft_putchar(params->sign);
-        if (params->num_len != -1)
+        if (params->sign)
         {
-
-            print_chars(params, '0', params->spaces);
+            ft_putchar(params->sign);
+            params->inc++;
         }
-       else
-            (params->pad) ? print_chars(params, '0', params->zeroes)
-                : print_chars(params, ' ', params->spaces);
         print_chars(params, '0', params->zeroes);
         print_nums(params);
+        //printf("Spaces %d\n", params->spaces);
+        print_chars(params, ' ', params->spaces);
+        
     }
-
+   // }
+    // else
+    // {
+    //     if (params->sign && !params->pad && params->inc++)
+    //         ft_putchar(params->sign);
+    //     print_chars(params, '0', params->zeroes);
+    //     print_nums(params);
+    //     print_chars(params, ' ', params->spaces);
+    // }
+ 
 }
