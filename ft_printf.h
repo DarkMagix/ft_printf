@@ -33,7 +33,7 @@ typedef struct      s_params
 	t_bool pad;
 	//Width
 	int wid_len;
-	//Precision
+	//Precision 
 	int num_len;
 	t_bool has_len;
 	t_bool p_wildcard;
@@ -74,33 +74,33 @@ void sint_flags(va_list list, t_params *params);
 void uint_flags(va_list list, t_params *params);
 int print_sint(va_list list, t_params *params);
 int print_uint(va_list list, t_params *params);
-int print_ptr(va_list list, t_params *params);
+//int print_ptr(va_list list, t_params *params);
 int print_wchar(va_list list, t_params *params);
 int print_wstr(va_list list, t_params *params);
 int print_octal(va_list list, t_params *params);
 void setup_unint(va_list list, t_params *params);
-void format_ptr(char *str, t_params *params);
-void format_hex(t_params *params);
-void format_str(t_params *params);
-void justify_str(char *write, t_params *params, int write_l, int display_l);
+//void format_ptr(char *str, t_params *params);
+//void format_hex(t_params *params);
+//void format_str(t_params *params);
+//void justify_str(char *write, t_params *params, int write_l, int display_l);
 void setup_int(va_list list, t_params *params);
 void print_chars(t_params *params, char c, int n);
 void print_nums(t_params *params);
-void ft_format_int(t_params *params);
+//void ft_format_int(t_params *params);
 void to_upper(t_params *params);
 void prepare_hex(t_params *params);
 void setup_hex(va_list list, t_params *params);
 void prepare_octal(t_params *params);
 void setup_octal(va_list list, t_params *params);
 void setup_ptr(va_list list, t_params *params);
-
-void ft_wstrlen(t_params *params);
-void print_string(t_params *params);
-void show_string(t_params *params);
+void ft_putwstr(va_list list, t_params *params);
+//void		prt_stringify(va_list list, t_params *p);
+//void print_string(t_params *params);
+//void show_string(t_params *params);
 void print_spaces(t_params *params);
-void setup_wstring(va_list list, t_params *params);
-
-void ft_signstr(char *str, t_params *params);
+//void setup_wstring(va_list list, t_params *params);
+void ft_putstring(va_list list, t_params *params);
+//void ft_signstr(char *str, t_params *params);
 int		valid_arg(int c);
 int	ft_printf(const char *frmt, ...);
 #endif

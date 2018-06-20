@@ -31,26 +31,19 @@ void setup_hex(va_list list, t_params *params)
     if (params->justify)
     {
         if (params->hash)
-        {
             params->inc += (params->specifier == 'x') ? (write(1, "0x", 2))
                 : (write(1, "0X", 2));
-            params->spaces -=2;
-        }
         print_chars(params, '0', params->zeroes);
         print_nums(params);
-        if(params->spaces > 0)
-            print_chars(params, ' ', params->spaces);
+        params->spaces > 0 ? print_chars(params, ' ', params->spaces) : 0;
     }
     else
     {
         (params->zeroes > 0) ? (print_chars(params, '0', params->spaces))
             : (print_chars(params, ' ', params->spaces));
         if (params->hash)
-        {
             params->inc += (params->specifier == 'x') ? (write(1, "0x", 2))
                 : (write(1, "0X", 2));
-            
-        }
         print_chars(params, '0', params->zeroes);
         print_nums(params);
     }

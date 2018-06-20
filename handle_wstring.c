@@ -1,71 +1,46 @@
 #include "ft_printf.h"
 
-
-void ft_wstrlen(t_params *params)
+int ft_wstrlen(const wchar_t* str)
 {
-    size_t i;
+    int	len;
 
-    i = -1;
-    while(params->w_s[++i] != L'\0')
-        params->len++;
-
+	len = 0;
+	while (str[len] != L'\0')
+		len++;
+	return (len);
 }
-
-void print_wst(t_params *params)
+void ft_putwstr(va_list list, t_params *params)
 {
+    wchar_t *w_s;
     int i;
 
     i = -1;
-
-    while (params->w_s[++i] != L'\0' && i <= params->spaces) 
+    w_s = va_arg(list, wchar_t*);
+    params->wid_len -= (ft_wstrlen(w_s) - params->num_len);
+    params->justify ? params->pad = false : false;
+    if (params->wid_len > 0 && !params->justify)
     {
-       // printf("%d", i);
-        ft_wputchar(params->w_s[i]);
+        while(params->wid_len)
+        {
+            params->pad ? write(1, "0", 1) : write(1, " ", 1);
+            params->wid_len -=1;
+        }
+    }
+    while(w_s[++i])
+    {
+        if(params->num_len && params->num_len < ft_wstrlen(w_s))
+        {
+            while(params->num_len--)
+                ft_putchar(w_s[i]);
+            break;
+        }
+        ft_putchar(w_s[i]);
         params->inc++;
-        
     }
-}
-
-void print_string(t_params *params)
-{
-    params->spaces = (params->num_len != -1 && params->num_len < params->len)
-        ? (params->num_len) : (params->len);
-  //  printf("Spaces %d\n", params->spaces);
-  //  printf("Num Len %d and Wid Len %d\n", params->num_len, params->wid_len);
-    //printf("Spaces %d\n", params->spaces);
-    print_wst(params);
-}
-
-void print_spaces(t_params *params)
-{
-    params->spaces = (params->num_len >= 0 && params->num_len < params->len)
-    ? (params->wid_len - params->len) : (params->wid_len - params->num_len);
-    while (params->spaces > 0)
-    {
-        params->inc += write(1, "          ",
-            (params->spaces >= 10) ? 10 : params->spaces);
-        params->spaces -= (params->spaces >= 10) ? 10 : params->spaces;
-
-    }   
-}
-
-void setup_wstring(va_list list, t_params *params)
-{
-    params->w_s = va_arg(list, wchar_t*);
-    if (!params->w_s && (params->inc = write(1, "(null)", 6)))
-        return ;
-    ft_wstrlen(params);
-    
-  // printf("String Length: %d", params->len);
- //   printf("Str Len: %d\n", params->len);
-    if (params->justify)
-    {
-        print_string(params);
-        print_spaces(params);
-    }
-    else
-    {
-        print_spaces(params);
-        print_string(params);
-    }
+    if (params->wid_len > 0 && params->justify)
+        while(params->wid_len)
+        {
+            params->pad ? write(1, "0", 1) : write(1, " ", 1);
+            params->wid_len-=1;
+        }
 }

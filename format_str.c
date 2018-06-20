@@ -66,31 +66,31 @@ void format_hex(t_params *params)
 	//free(temp);
 }
 
-void format_str(t_params *params)
-{
-    int display_len;
-    int write_len;
-    int str_size;
-    char* write;
-    int k;
+// void format_str(t_params *params)
+// {
+//     int display_len;
+//     int write_len;
+//     int str_size;
+//     char* write;
+//     int k;
 
-    k = 0;
-    if (params->buff == NULL)
-    {
-        params->buff = "(null)";
-        return ;
-    }
-    str_size = ft_strlen(params->buff);
-    display_len = (params->wid_len < print_length(params)) ? 
-        print_length(params) : params->wid_len ;
-    write = ft_memalloc(display_len);
-    if (params->num_len == 0)
-        write_len = (params->num_len < str_size) ? str_size : params->num_len;
-    else    
-        write_len = (params->num_len < str_size) ? params->num_len : str_size;
-    justify_str(write, params, write_len, display_len);
-    params->buff = write;
-    free(write);
+//     k = 0;
+//     if (params->buff == NULL)
+//     {
+//         params->buff = "(null)";
+//         return ;
+//     }
+//     str_size = ft_strlen(params->buff);
+//     display_len = (params->wid_len < print_length(params)) ? 
+//         print_length(params) : params->wid_len ;
+//     write = ft_memalloc(display_len);
+//     if (params->num_len == 0)
+//         write_len = (params->num_len < str_size) ? str_size : params->num_len;
+//     else    
+//         write_len = (params->num_len < str_size) ? params->num_len : str_size;
+//     justify_str(write, params, write_len, display_len);
+//     params->buff = write;
+//     free(write);
 
     
-}
+// }

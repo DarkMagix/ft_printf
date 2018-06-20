@@ -20,13 +20,7 @@ int	print_char(va_list list)
 
 int	print_str(va_list list, t_params *params)
 {
-	char	*test;
-
-	test = va_arg(list, char*);
-	params->buff = test;
-	format_str(params);
-	ft_putstr(params->buff);
-//	free(params->buff);
+	ft_putstring(list, params);
 	return (1);
 }
 
