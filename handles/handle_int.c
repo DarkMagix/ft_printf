@@ -38,8 +38,7 @@ void setup_int(va_list list, t_params *params)
         if (params->num_len != -1 && params->pad)
             print_chars(params, '0', params->spaces);
        else
-            (params->pad) ? print_chars(params, '0', params->spaces)
-                : print_chars(params, ' ', params->spaces);
+            print_chars(params, ' ', params->spaces);
         print_chars(params, '0', params->zeroes);
         print_nums(params);
     }
