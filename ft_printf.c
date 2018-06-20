@@ -103,26 +103,26 @@ int	ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
 }
-int main(void)
-{
-	int a;
-	int b;
-	char *foo = "This is a string";
+// int main(void)
+// {
+// 	int a;
+// 	int b;
+// 	char *foo = "This is a string";
 
-	a = ft_printf("|%20.4s|\n", foo);
-	b = printf("|%20.4s|\n", foo);
+// 	a = ft_printf("|%20.4s|\n", foo);
+// 	b = printf("|%20.4s|\n", foo);
 
-	a = ft_printf("|%20s|\n", foo);
-	b = printf("|%20s|\n", foo);
+// 	a = ft_printf("|%20s|\n", foo);
+// 	b = printf("|%20s|\n", foo);
 
-	a = ft_printf("|%20.14s|\n", foo); 
-	b = printf("|%20.14s|\n", foo);
+// 	a = ft_printf("|%20.14s|\n", foo); 
+// 	b = printf("|%20.14s|\n", foo);
 
-	a = ft_printf("|%20.21s|\n", foo); 
-	b = printf("|%20.21s|\n", foo);
+// 	a = ft_printf("|%20.21s|\n", foo); 
+// 	b = printf("|%20.21s|\n", foo);
 
-	a = ft_printf("This is a test |%20.21s|\n", foo); 
-	b = printf("This is a test |%20.21s|\n", foo);
+// 	a = ft_printf("This is a test |%20.21s|\n", foo); 
+// 	b = printf("This is a test |%20.21s|\n", foo);
 	
-	return (0);
-}
+// 	return (0);
+// }
