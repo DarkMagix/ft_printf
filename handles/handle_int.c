@@ -24,18 +24,20 @@ void setup_int(va_list list, t_params *params)
     prepare_int(params);
     if (params->justify && params->pad)
         params->pad = false;
+ 
+    //if (!params->justify)
+   // {
+     //  printf("Width: %d", params->num_len);
+       //printf("Spaces %d\n", params->spaces);
+    
     if(!params->justify)
     {
-        if (params->sign && params->pad)
+        if (params->sign && !params->pad)
         {
             ft_putchar(params->sign);
              params->inc++;
         }
-        print_chars(params, ' ', params->zeroes);
-        //printf("Zeroes: %d\n", params->spaces);
-        params->zeroes = params->wid_len - ft_strlen(params->buff);
-        params->zeroes -= (params->sign) ? 1: 0;
-
+        print_chars(params, ' ', params->spaces);
         print_chars(params, '0', params->zeroes);
         print_nums(params);
     }
@@ -46,9 +48,20 @@ void setup_int(va_list list, t_params *params)
             ft_putchar(params->sign);
             params->inc++;
         }
-      
         print_chars(params, '0', params->zeroes);
         print_nums(params);
+        //printf("Spaces %d\n", params->spaces);
         print_chars(params, ' ', params->spaces);
+        
     }
+   // }
+    // else
+    // {
+    //     if (params->sign && !params->pad && params->inc++)
+    //         ft_putchar(params->sign);
+    //     print_chars(params, '0', params->zeroes);
+    //     print_nums(params);
+    //     print_chars(params, ' ', params->spaces);
+    // }
+ 
 }
