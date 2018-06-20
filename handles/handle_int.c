@@ -52,8 +52,9 @@ void setup_int(va_list list, t_params *params)
         print_nums(params);
         //printf("Spaces %d\n", params->spaces);
         print_chars(params, ' ', params->spaces);
-        
+	//	free(params->buff);
     }
+    free(params->buff);
    // }
     // else
     // {
