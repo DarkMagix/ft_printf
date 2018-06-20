@@ -113,21 +113,6 @@ int	ft_printf(const char *frmt, ...)
  }
 // int main(void)
 // {
-// ft_printf("Zero\n");
-// ft_printf("%%04i 42 == |%04i|\n", 42);
-
-// ft_printf("%%05i 42 == |%05i|\n", 42);
-// ft_printf("%%0i 42 == |%0i|\n", 42);
-// ft_printf("%%0d 0000042 == |%0d|\n", 0000042);
-// ft_printf("Plus\n");
-// ft_printf("%%+i 42 == %+i\n", 42);
-// ft_printf("%%+d 42 == %+d\n", INT_MAX);
-// ft_printf("%%+i -42 == %+i\n", -42);
-// ft_printf("%%+04d 42 == %0+04d\n", 42);
-//  return (0);
-// }
-// int main(void)
-// {
 // 	char *str = NULL;
 // 	ft_printf("%s", "pouet");
 // 	ft_printf(" pouet %s !!\n", "camembert");

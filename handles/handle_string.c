@@ -17,9 +17,9 @@ void print_spaces(t_params *params)
     {
         while(params->wid_len)
         {
-	  write(1, " ", 1);
-	  params->wid_len -=1;
-	  params->inc++;
+        write(1, " ", 1);
+        params->wid_len -=1;
+        params->inc++;
         }
     }
 }
@@ -37,8 +37,7 @@ void ft_putstring(va_list list, t_params *params)
         return ;
     }
     get_printlen(params, s);
-    if(!params->justify)
-      print_spaces(params);
+    print_spaces(params);
     while(s[++i])
     {
         if(params->num_len && params->num_len < ft_strlen(s))
@@ -54,5 +53,4 @@ void ft_putstring(va_list list, t_params *params)
         params->inc++;
     }
    print_spaces(params);
-   //   free(params->buff);
 }
