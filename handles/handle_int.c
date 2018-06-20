@@ -35,8 +35,7 @@ void setup_int(va_list list, t_params *params)
     {
         if(params->sign)
           ft_putchar(params->sign);
-        
-        if (params->num_len != -1)
+        if (params->num_len != -1 && params->pad)
             print_chars(params, '0', params->spaces);
        else
             (params->pad) ? print_chars(params, '0', params->spaces)
