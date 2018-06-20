@@ -102,7 +102,7 @@ int	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 	return (bytes);
-// }
+ }
 // int main(void)
 // {
 // ft_printf("%+i\n", 42);// == +42
