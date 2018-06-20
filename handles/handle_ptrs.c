@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 void setup_ptr(va_list list, t_params *params)
 {
