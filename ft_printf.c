@@ -86,31 +86,31 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		//print_wstr(arg, params);
 }
 
-int	ft_printf(const char *frmt, ...)
-{
-	va_list		args;
-	t_params	*params;
-	int bytes;
+// int	ft_printf(const char *frmt, ...)
+// {
+// 	va_list		args;
+// 	t_params	*params;
+// 	int bytes;
 	
-	bytes = 0;
-	params = ft_memalloc(sizeof(t_params));
-	if (frmt)
-	{
-		va_start(args, frmt);
-		bytes += parse_specifier(frmt, args, params);
-		va_end(args);
-	}
-	free(params);
-	return (bytes);
-}
-int main(void)
-{
-ft_printf("%+i\n", 42);// == +42
-printf("%+i\n", 42);// == +42
-ft_printf("%+d\n", 42);// == +2147483647
-printf("%+d\n", 42);// == +2147483647
-ft_printf("%+i\n", -42);// == -42
-printf("%+i\n", -42);// == -42
-ft_printf("%+04d\n", 42);// == +042
-printf("%+04d\n", 42);// == +042
-}
+// 	bytes = 0;
+// 	params = ft_memalloc(sizeof(t_params));
+// 	if (frmt)
+// 	{
+// 		va_start(args, frmt);
+// 		bytes += parse_specifier(frmt, args, params);
+// 		va_end(args);
+// 	}
+// 	free(params);
+// 	return (bytes);
+// }
+// int main(void)
+// {
+// ft_printf("%+i\n", 42);// == +42
+// printf("%+i\n", 42);// == +42
+// ft_printf("%+d\n", 42);// == +2147483647
+// printf("%+d\n", 42);// == +2147483647
+// ft_printf("%+i\n", -42);// == -42
+// printf("%+i\n", -42);// == -42
+// ft_printf("%+04d\n", 42);// == +042
+// printf("%+04d\n", 42);// == +042
+// }
