@@ -8,7 +8,7 @@ static void prepare_int(t_params *params)
         params->zeroes = params->num_len - params->len;
     if (params->wid_len > params->len + params->zeroes)
         params->spaces = params->wid_len -(params->len + params->zeroes);
-    if (params->plus_neg && !(params->i > 0))
+    if (params->plus_neg && !(IS_NEG(params->i)))
         params->sign = '+';
     if (params->plus_neg && params->pad)
         params->spaces--;
@@ -25,6 +25,7 @@ void setup_int(va_list list, t_params *params)
     prepare_int(params);
     if (params->justify)
     {
+       
         if (params->sign && !params->pad && params->inc++)
             ft_putchar(params->sign);
         print_chars(params, '0', params->zeroes);
@@ -33,11 +34,12 @@ void setup_int(va_list list, t_params *params)
     }
     else
     {
-        if(params->sign && (params->inc++))
-            ft_putchar(params->sign);
-      //  printf("Zeroes: %d\n", params->spaces);
+       
+        if(params->sign)
+          ft_putchar(params->sign);
+        
         if (params->num_len != -1)
-            print_chars(params, ' ', params->spaces);
+            print_chars(params, '0', params->spaces);
        else
             (params->pad) ? print_chars(params, '0', params->spaces)
                 : print_chars(params, ' ', params->spaces);
