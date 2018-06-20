@@ -53,14 +53,14 @@ int parse_width(char *str, t_params *params)
 			skip /= 10;
 		}
 	}
-	while (true)
-	{
-		if (str[i] == '*')
-			params->wid_len = -1;
-		else
-			break;
-		i++;
-	}
+	// while (true)
+	// {
+	// 	if (str[i] == '*')
+	// 		params->wid_len = -1;
+	// 	else
+	// 		break;
+	// 	i++;
+	// }
 	return (i);
 }
 
