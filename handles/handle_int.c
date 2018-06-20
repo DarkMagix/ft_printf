@@ -32,11 +32,11 @@ void setup_int(va_list list, t_params *params)
     if (params->justify && params->pad)
         params->pad = false;
     //printf("Wid Len %d Num Len %d\n", params->wid_len, params->num_len);
-    if(params->pad)
+    if(params->num_len == 0)
         (params->wid_len >= params->num_len) ? ft_swap(&params->zeroes, &params->spaces) : 0;
     if(!params->justify)
     {
-        if (params->sign && !params->pad)
+        if (params->sign && params->pad)
         {
             ft_putchar(params->sign);
              params->inc++;
