@@ -102,7 +102,7 @@ int	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 	return (bytes);
-}
+// }
 // int main(void)
 // {
 // ft_printf("%+i\n", 42);// == +42
@@ -113,4 +113,14 @@ int	ft_printf(const char *frmt, ...)
 // printf("%+i\n", -42);// == -42
 // ft_printf("%+04d\n", 42);// == +042
 // printf("%+04d\n", 42);// == +042
+
+// //ft_printf("%-5.3s LYDI == |LYD  |
+// ft_printf("% 4.5i\n", 42);// == | 00042|
+// printf("% 4.5i\n", 42);// == | 00042|
+// ft_printf("%04.5i\n", 42);// == |00042|
+// printf("%04.5i\n", 42);// == |00042|
+// ft_printf("%04.3i\n", 42);// == | 042|
+// printf("%04.3i\n", 42);// == | 042|
+// ft_printf("%04.2i\n", 42);// == |  42|
+// printf("%04.2i\n", 42);// == |  42|
 // }

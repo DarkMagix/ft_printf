@@ -24,7 +24,6 @@ void setup_int(va_list list, t_params *params)
     prepare_int(params);
     if (params->justify)
     {
-       
         if (params->sign && !params->pad && params->inc++)
             ft_putchar(params->sign);
         print_chars(params, '0', params->zeroes);
@@ -33,10 +32,15 @@ void setup_int(va_list list, t_params *params)
     }
     else
     {
+      //  printf("Spacse %d: \n", params->spaces);
+//        printf("Zeroes %d: \n", params->zeroes);
         if(params->sign)
           ft_putchar(params->sign);
-        if (params->num_len != -1 && params->pad)
-            print_chars(params, '0', params->zeroes);
+        if (params->num_len != -1)
+        {
+
+            print_chars(params, '0', params->spaces);
+        }
        else
             (params->pad) ? print_chars(params, '0', params->zeroes)
                 : print_chars(params, ' ', params->spaces);
