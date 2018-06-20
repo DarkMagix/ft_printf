@@ -10,24 +10,30 @@ static void prepare_int(t_params *params)
     //plus_neg = + flag
     //space flag = spaced flag
     //3 > 2 then 3 - 2
-    if (params->wid_len > params->len && !params->justify && params->num_len)
-        params->zeroes = params->wid_len - params->len;
+    if (params->wid_len < params->num_len && !params->justify && params->num_len) //4 < 5 && 5
+    {
+        params->zeroes = params->num_len - params->len;
+    }
+    else if (params->wid_len > params->len && !params->justify && params->num_len)
+    {
+       if (params->num_len > params->len)
+            params->zeroes = params->num_len - params->len;
+        if (params->wid_len == params->len)
+            params->zeroes = 0;
+    }
+    
         //printf("Wid Len %d > Str Len %d && Justify && Num Len %d\n", params->wid_len, params->len, !params->justify, !params->num_len);
     if (params->wid_len > params->len && !params->justify && !params->num_len)
     {
-        //printf("Zeroes %d\n", params->wid_len - params->len);
+      
         if (!params->pad)
             params->spaces = params->wid_len - params->len;
         if (params->pad)
             params->zeroes = params->wid_len - params->len;
-       // printf("Spaces %d Zeroes %d", params->spaces, params->zeroes);
-        //params->spaces = params->zeroes;
-        //params->zeroes = 0;
     }
-   // printf("Zeroes: %d", params->zeroes);
+
     if (params->plus_neg)
         params->zeroes--;
-    //printf("0's %d", params->zeroes);
     if (params->wid_len > params->len + params->zeroes)// 3 > 2 + 1
         params->spaces = params->wid_len -(params->len + params->zeroes);
     if (params->plus_neg && !(IS_NEG(params->i)))
@@ -36,11 +42,6 @@ static void prepare_int(t_params *params)
         params->spaces-=2;
     if (params->spaced && !(IS_NEG(params->i)) && params->spaces == 0)
         params->spaces++;
- //   printf("Spaces: %d\n", params->spaces);
-    // if (params->pad)
-    // {
-    //     params->zeroes = params->wid_len - ft_strlen(params->buff);
-    // }
 }
 
 void setup_int(va_list list, t_params *params)

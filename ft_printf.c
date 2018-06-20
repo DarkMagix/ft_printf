@@ -144,6 +144,16 @@ int	ft_printf(const char *frmt, ...)
 // 	printf("%%-5d -42 == |%-5d|\n", -42);
 // 	ft_printf("|%3i|%-3i|\n", 42, 42);
 // 	printf("|%3i|%-3i|\n", 42, 42);
+// 	printf("\n\nPrecision: \n\n");
+
+// 	ft_printf("% 4.5i\n", 42);// == | 00042|
+// 	printf("% 4.5i\n", 42);// == | 00042|
+// 	ft_printf("%04.5i\n", 42);// == |00042|
+// 	printf("%04.5i\n", 42);// == |00042|
+// 	ft_printf("%04.3i\n", 42);// == | 042|
+// 	printf("%04.3i\n", 42);// == | 042|
+// 	ft_printf("%04.2i\n", 42);// == |  42|
+// 	printf("%04.2i\n", 42);// == |  42|
 // 	//printf("|%3i|%-3i|\n", 42, 42);
 // //	ft_printf("%%-4i 42 == |%-4i|\n", 42);
 //  return (0);
