@@ -21,7 +21,6 @@ void setup_int(va_list list, t_params *params)
     if (params->specifier == 'D')
         params->modifer = MODI_ll;
     sint_flags(list, params);
-    
     prepare_int(params);
     if (params->justify)
     {
@@ -34,7 +33,6 @@ void setup_int(va_list list, t_params *params)
     }
     else
     {
-       
         if(params->sign)
           ft_putchar(params->sign);
         
