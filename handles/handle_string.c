@@ -31,6 +31,11 @@ void ft_putstring(va_list list, t_params *params)
 
     i = -1;
     s = va_arg(list, char*);
+    if (!s)
+    {
+        write(1, "(null)", 6);
+        return ;
+    }
     get_printlen(params, s);
     print_spaces(params);
     while(s[++i])

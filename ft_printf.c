@@ -58,7 +58,15 @@ int		valid_arg(int c)
 void	ft_parse(int flag, va_list arg, t_params *params)
 {
 	if (flag == 's')
+	{
+		if(params->modifer == MODI_l)
+		{
+			print_wstr(arg, params);
+			return ;
+		}
 		print_str(arg, params);
+		
+	}
 	else if (flag == 'D' || flag == 'u')
 	  {
 	    params->modifer = (flag == 'D') ? MODI_L : params->modifer;
@@ -105,41 +113,50 @@ int	ft_printf(const char *frmt, ...)
  }
 // int main(void)
 // {
-// // ft_printf("%+i\n", 42);// == +42
-// // printf("%+i\n", 42);// == +42
-// // ft_printf("%+d\n", 42);// == +2147483647
-// // printf("%+d\n", 42);// == +2147483647
-// // ft_printf("%+i\n", -42);// == -42
-// // printf("%+i\n", -42);// == -42
-// // ft_printf("%+04d\n", 42);// == +042
-// // printf("%+04d\n", 42);// == +042
+// 	char *str = NULL;
+// 	ft_printf("%s", "pouet");
+// 	ft_printf(" pouet %s !!\n", "camembert");
+// 	ft_printf("%s !\n", "Ceci n'est pas un \0 exercice !");
+// 	ft_printf("%s!\n", "Ceci n'est toujours pas un exercice !");
+// 	ft_printf("%s!\n", str);
+// 	ft_printf("%s", "Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Etalafinilla*bip*");
+// 	wchar_t wz [3] = L"@@";
+// 	ft_printf("%ls", wz);
+// // // ft_printf("%+i\n", 42);// == +42
+// // // printf("%+i\n", 42);// == +42
+// // // ft_printf("%+d\n", 42);// == +2147483647
+// // // printf("%+d\n", 42);// == +2147483647
+// // // ft_printf("%+i\n", -42);// == -42
+// // // printf("%+i\n", -42);// == -42
+// // // ft_printf("%+04d\n", 42);// == +042
+// // // printf("%+04d\n", 42);// == +042
 
-// //ft_printf("%-5.3s LYDI == |LYD  |
+// // //ft_printf("%-5.3s LYDI == |LYD  |
 
-// // ft_printf("Me: % 4.5i\n", 42);// == | 00042|
-// // printf("Them: % 4.5i\n", 42);// == | 00042|
+// // // ft_printf("Me: % 4.5i\n", 42);// == | 00042|
+// // // printf("Them: % 4.5i\n", 42);// == | 00042|
+// // // printf("Justified\n");
+// // // ft_printf("Me: %-4.5i\n", 42);// == |00042|
+// // // printf("Them: %-4.5i\n", 42);// == |00042|
+// // // ft_printf("Me %-4.3i\n", 42);// == | 042|
+// // // printf("Them %-4.3i\n", 42);// == | 042|
+// // // ft_printf("Me %-4.2i\n", 42);// == |  42|
+// // // printf("Them %-4.2i\n", 42);// == |  42|
+
+
+// // ft_printf("|% 4.5i|\n", 42);// == | 00042|
+// // printf("|% 4.5i|\n", 42);// == | 00042|
+// // printf("Not Justified\n");
+// // ft_printf("|%04.5i|\n", 42);// == |00042|
+// // printf("|%04.5i|\n", 42);// == |00042|
+// // ft_printf("|%04.3i|\n", 42);// == | 042|
+// // printf("|%04.3i|\n", 42);// == | 042|
+// // ft_printf("|%04.2i|\n", 42);// == |  42|
+// // printf("|%04.2i|\n", 42);// == |  42|
 // // printf("Justified\n");
-// // ft_printf("Me: %-4.5i\n", 42);// == |00042|
-// // printf("Them: %-4.5i\n", 42);// == |00042|
-// // ft_printf("Me %-4.3i\n", 42);// == | 042|
-// // printf("Them %-4.3i\n", 42);// == | 042|
-// // ft_printf("Me %-4.2i\n", 42);// == |  42|
-// // printf("Them %-4.2i\n", 42);// == |  42|
-
-
-// ft_printf("|% 4.5i|\n", 42);// == | 00042|
-// printf("|% 4.5i|\n", 42);// == | 00042|
-// printf("Not Justified\n");
-// ft_printf("|%04.5i|\n", 42);// == |00042|
-// printf("|%04.5i|\n", 42);// == |00042|
-// ft_printf("|%04.3i|\n", 42);// == | 042|
-// printf("|%04.3i|\n", 42);// == | 042|
-// ft_printf("|%04.2i|\n", 42);// == |  42|
-// printf("|%04.2i|\n", 42);// == |  42|
-// printf("Justified\n");
-// ft_printf("|%-4.2i|\n", 42);// == |  42|
-// printf("|%-4.2i|\n", 42);// == |  42|
-// ft_printf("|%-+4.2i|\n", 42);// == |  42|
-// printf("|%-+4.2i|\n", 42);// == |  42|
-// // printf("%-10.5d", 100);
+// // ft_printf("|%-4.2i|\n", 42);// == |  42|
+// // printf("|%-4.2i|\n", 42);// == |  42|
+// // ft_printf("|%-+4.2i|\n", 42);// == |  42|
+// // printf("|%-+4.2i|\n", 42);// == |  42|
+// // // printf("%-10.5d", 100);
 // }
