@@ -100,6 +100,7 @@ void ft_putwstr(va_list list, t_params *params);
 void print_spaces(t_params *params);
 //void setup_wstring(va_list list, t_params *params);
 void ft_putstring(va_list list, t_params *params);
+static void	ft_addpad(t_params *params);
 //void ft_signstr(char *str, t_params *params);
 void ft_print_pers(t_params *params);
 int		valid_arg(int c);

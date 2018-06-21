@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int parse_flags(char *str, t_params *params)
+int	parse_flags(char *str, t_params *params)
 {
 	int i;
 
@@ -30,13 +30,13 @@ int parse_flags(char *str, t_params *params)
 		else if (str[i] == '0')
 			params->pad = true;
 		else
-			break;
+			break ;
 		i++;
 	}
 	return (i);
 }
 
-int parse_width(char *str, t_params *params)
+int	parse_width(char *str, t_params *params)
 {
 	int i;
 	int skip;
@@ -64,7 +64,7 @@ int parse_width(char *str, t_params *params)
 	return (i);
 }
 
-int parse_precision(char *str, t_params *params)
+int	parse_precision(char *str, t_params *params)
 {
 	int i;
 	int temp;
@@ -76,7 +76,6 @@ int parse_precision(char *str, t_params *params)
 		{
 			params->num_len = ft_atoi(&str[i + 1]);
 			params->pad = (params->num_len > 0) ? true : false;
-			//params->wid_len = params->num_len;
 			temp = params->num_len;
 			while (temp != 0)
 			{
@@ -87,13 +86,13 @@ int parse_precision(char *str, t_params *params)
 		else if (str[i] == '*')
 			params->p_wildcard = true;
 		else
-			break;
+			break ;
 		i++;
 	}
 	return (i);
 }
 
-int parse_length(char *str, t_params *params)
+int	parse_length(char *str, t_params *params)
 {
 	int i;
 
@@ -115,13 +114,13 @@ int parse_length(char *str, t_params *params)
 		else if (str[i] == 'L')
 			params->modifer = MODI_Z;
 		else
-			break;
+			break ;
 		i++;
 	}
 	return (i);
 }
 
-int parse_specifier(const char *format, va_list args, t_params *params)
+int	parse_specifier(const char *format, va_list args, t_params *params)
 {
 	int i;
 	int written;

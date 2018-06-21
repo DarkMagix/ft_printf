@@ -1,42 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lengths.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/20 17:32:23 by mweir             #+#    #+#             */
+/*   Updated: 2018/06/20 17:32:26 by mweir            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int print_length(t_params *params)
+int		print_length(t_params *params)
 {
-    int print_len;//print length
-    int width; //params width length to show
-    int str_size; //size of the string
+	int print_len;
+	int width;
+	int str_size;
 
-    width = params->num_len;
-    //printf("Width is %d\n", width);
-    str_size = ft_strlen(params->buff);
-    print_len = (str_size > width) ? width : str_size;
-    //printf("Print Length %d\n", str_size);
-    return (print_len);
+	width = params->num_len;
+	str_size = ft_strlen(params->buff);
+	print_len = (str_size > width) ? width : str_size;
+	return (print_len);
 }
 
-void justify_str(char *write, t_params *params, int write_l, int display_l)
+void	justify_str(char *write, t_params *params, int write_l, int display_l)
 {
-    int k;
+	int k;
 
-    k = 0;
-    if(params->justify)
-    {  
-        ft_strncat(write, params->buff, write_l);
-        k = ft_strlen(write);
-        while (k < display_l)
-        {
-            write[k] = ' ';
-            k++;
-        }
-    }
-    else
-    {
-       // printf("Dl: %d Wl: %d\n", display_l, write_l);
-        while (k < display_l - write_l)
-        {
-            write[k] = ' ';
-            k++;
-        }
-        ft_strncat(write, params->buff, write_l);
-    }
+	k = 0;
+	if (params->justify)
+	{
+		ft_strncat(write, params->buff, write_l);
+		k = ft_strlen(write);
+		while (k < display_l)
+		{
+			write[k] = ' ';
+			k++;
+		}
+	}
+	else
+	{
+		while (k < display_l - write_l)
+		{
+			write[k] = ' ';
+			k++;
+		}
+		ft_strncat(write, params->buff, write_l);
+	}
 }

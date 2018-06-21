@@ -12,20 +12,18 @@
 
 #include "ft_printf.h"
 
-void print_chars(t_params *params, char c, int n)
+void	print_chars(t_params *params, char c, int n)
 {
-    params->inc += n;
-    while (n > 0)
-    {
-        ft_putchar(c);
-        n--;
-    }
+	params->inc += n;
+	while (n > 0)
+	{
+		ft_putchar(c);
+		n--;
+	}
 }
 
-void print_nums(t_params *params)
+void	print_nums(t_params *params)
 {
-    write(1, params->buff, params->len);
-    params->inc += params->len;
+	write(1, params->buff, params->len);
+	params->inc += params->len;
 }
-
-

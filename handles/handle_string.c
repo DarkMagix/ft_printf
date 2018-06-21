@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_string.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/20 17:33:14 by mweir             #+#    #+#             */
+/*   Updated: 2018/06/20 17:33:15 by mweir            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
 void get_printlen(t_params *params, char *s)
@@ -59,7 +71,6 @@ void ft_putstring(va_list list, t_params *params)
         params->inc++;
     }
    print_spaces(params);
-   //   free(params->buff);
 }
 
 void ft_print_pers(t_params *params)

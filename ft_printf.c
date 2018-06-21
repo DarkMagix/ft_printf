@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,9 +6,10 @@
 /*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 17:06:56 by mweir             #+#    #+#             */
-/*   Updated: 2018/06/12 18:27:42 by mweir            ###   ########.fr       */
+/*   Updated: 2018/06/20 17:32:11 by mweir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <limits.h>
 #include "ft_printf.h"
 #include <locale.h>
@@ -77,15 +77,14 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		setup_ptr(arg, params);
 	else if (flag == 'C')
 		print_wchar(arg, params);
-	
 }
 
-int	ft_printf(const char *frmt, ...)
+int		ft_printf(const char *frmt, ...)
 {
 	va_list		args;
 	t_params	*params;
-	int bytes;
-	
+	int			bytes;
+
 	bytes = 0;
 	params = ft_memalloc(sizeof(t_params));
 	if (frmt)
@@ -96,5 +95,4 @@ int	ft_printf(const char *frmt, ...)
 	}
 	free(params);
 	return (bytes);
- }
- 
+}
