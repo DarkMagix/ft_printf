@@ -67,24 +67,29 @@ int	parse_precision(char *str, t_params *params,va_list list)
 	int temp;
 
 	i = 0;
-	if (str[i] == '.' && str[i + 1] != '*')
+	while (true)
 	{
-		params->num_len = ft_atoi(&str[i + 1]);
-		params->pad = (params->num_len > 0) ? true : false;
-		temp = params->num_len;
-		i += (temp ==0 ) ? 1 :0;
-		while (temp != 0)
+		if (str[i] == '.' && str[i + 1] != '*')
 		{
-			i++;
-			temp /= 10;
+			params->num_len = ft_atoi(&str[i + 1]);
+			params->pad = (params->num_len > 0) ? true : false;
+			temp = params->num_len;
+			i += (temp ==0 ) ? 1 :0;
+			while (temp != 0)
+			{
+				i++;
+				temp /= 10;
+			}
 		}
-	}
-	else if(str[i] == '.' && str[i + 1] == '*')
-	{
-		params->num_len = va_arg(list, int);
+		else if(str[i] == '.' && str[i + 1] == '*')
+		{
+			params->num_len = va_arg(list, int);
+			i++;
+		}
+		else
+			break ;
 		i++;
 	}
-	i++;
 	return (i);
 }
 
