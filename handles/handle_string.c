@@ -2,6 +2,11 @@
 
 void get_printlen(t_params *params, char *s)
 {
+    if (!s)
+    {
+        params->wid_len = 0;
+        return ;
+    }
     if(params->wid_len > ft_strlen(s) + params->num_len)
     {
         params->wid_len -= ft_strlen(s);
