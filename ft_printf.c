@@ -57,7 +57,9 @@ int		valid_arg(int c)
 
 void	ft_parse(int flag, va_list arg, t_params *params)
 {
-	if (flag == 's')
+	if (flag == 'S' || (flag == 's' && params->modifer == MODI_l))
+		print_wstr(arg, params);
+	else if (flag == 's')
 		print_str(arg, params);
 	else if (flag == 'u' || flag == 'U')
 		print_uint(arg, params);
@@ -75,9 +77,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		setup_ptr(arg, params);
 	else if (flag == 'C')
 		print_wchar(arg, params);
-	else if (flag == 'S' || (flag == 's' && params->modifer == MODI_l))
-		print_wstr(arg, params);
-		//print_wstr(arg, params);
+	
 }
 
 int	ft_printf(const char *frmt, ...)
