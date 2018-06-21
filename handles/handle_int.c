@@ -16,7 +16,11 @@ static void prepare_int(t_params *params)
 {
     params->buff = ft_itoa_base(params->i, 10);
     params->len = ft_strlen(params->buff);
-    if (params->wid_len < params->num_len && !params->justify && params->num_len) //4 < 5 && 5
+    if (params->num_len > params->len && params->justify)
+      {
+	params->zeroes = params->num_len - params->len;
+      }
+    else if (params->wid_len < params->num_len && !params->justify && params->num_len) //4 < 5 && 5
         params->zeroes = params->num_len - params->len;
     else if (params->wid_len > params->len && !params->justify && params->num_len)
     {
@@ -39,6 +43,8 @@ static void prepare_int(t_params *params)
     (params->plus_neg && params->pad) ? params->spaces-=2 : 0;
     (params->spaced && !(IS_NEG(params->i)) && params->spaces == 0) ?
         params->spaces++ : 0;
+    //    if(params->justify)
+    //      printf("(Zeroes: %d)\n", params->zeroes);
 }
 
 void setup_int(va_list list, t_params *params)
@@ -56,6 +62,7 @@ void setup_int(va_list list, t_params *params)
             ft_putchar(params->sign);
              params->inc++;
         }
+	//	printf("Spaces: %d Zeroes: %d", params->spaces, params->zeroes);
         print_chars(params, ' ', params->spaces);
         print_chars(params, '0', params->zeroes);
         print_nums(params);
@@ -67,6 +74,8 @@ void setup_int(va_list list, t_params *params)
             ft_putchar(params->sign);
             params->inc++;
         }
+	//	printf("Spaces: %d Zeroes: %d\n", params->spaces, params->zeroes);
+	print_chars(params, '0', params->zeroes);
         print_nums(params);
         print_chars(params, ' ', params->spaces);
     }

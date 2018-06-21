@@ -22,7 +22,7 @@ int		ft_wstrlen(const wchar_t *str)
 	return (len);
 }
 
-static void	ft_addpad(t_params *params)
+void	ft_addpad(t_params *params)
 {
 	if (params->wid_len > 0 && !params->justify)
 	{
@@ -51,7 +51,7 @@ void	ft_putwstr(va_list list, t_params *params)
 	w_s = va_arg(list, wchar_t*);
 	params->wid_len -= (ft_wstrlen(w_s) - params->num_len);
 	params->justify ? params->pad = false : false;
-	ft_addpadd(params);
+	ft_addpad(params);
 	while (w_s[++i])
 	{
 		if (params->num_len && params->num_len < ft_wstrlen(w_s))
@@ -63,5 +63,5 @@ void	ft_putwstr(va_list list, t_params *params)
 		ft_putchar(w_s[i]);
 		params->inc++;
 	}
-	ft_addpadd(params);
+	ft_addpad(params);
 }

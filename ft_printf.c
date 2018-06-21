@@ -76,7 +76,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	else if (flag == 'p')
 		setup_ptr(arg, params);
 	else if (flag == 'C')
-		print_wchar(arg, params);
+		print_wchar(arg);
 }
 
 int		ft_printf(const char *frmt, ...)
@@ -96,3 +96,4 @@ int		ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
 }
+

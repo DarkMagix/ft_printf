@@ -47,4 +47,5 @@ void setup_unint(va_list list, t_params *params)
         print_chars(params, '0', params->zeroes);
         print_nums(params);
     }
+    free(params->buff);
 }

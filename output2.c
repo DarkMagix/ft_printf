@@ -12,14 +12,13 @@
 
 #include "ft_printf.h"
 
-int	print_wchar(va_list list, t_params *params)
+int	print_wchar(va_list list)
 {
 	int		i;
 	wchar_t	let;
 
 	i = 0;
 	let = va_arg(list, wchar_t);
-	params = NULL;
 	ft_wputchar(let);
 	return (i);
 }

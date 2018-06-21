@@ -122,11 +122,9 @@ int	parse_length(char *str, t_params *params)
 
 int	parse_specifier(const char *format, va_list args, t_params *params)
 {
-	int i;
 	int written;
 
 	written = 0;
-	i = 0;
 	init_params(params);
 	while (*format)
 	{
