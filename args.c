@@ -101,13 +101,11 @@ int parse_length(char *str, t_params *params)
 	while (true)
 	{
 		if (str[i] == 'h')
-			params->modifer = (str[i] == 'h' && str[i + 1] == 'h')
-								  ? MODI_HH
-								  : MODI_H;
+			params->modifer = (str[i] == 'h' && str[i + 1] == 'h') ? MODI_HH
+				: MODI_H;
 		else if (str[i] == 'l')
-			params->modifer = (str[i] == 'l' && str[i + 1] == 'l')
-								  ? MODI_ll
-								  : MODI_l;
+			params->modifer = (str[i] == 'l' && str[i + 1] == 'l') ? MODI_ll
+				: MODI_l;
 		else if (str[i] == 'j')
 			params->modifer = MODI_J;
 		else if (str[i] == 'z')

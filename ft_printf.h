@@ -72,7 +72,7 @@ int parse_length(char *str, t_params *params);
 int parse_specifier(const char *format, va_list args, t_params *params);
 void sint_flags(va_list list, t_params *params);
 void uint_flags(va_list list, t_params *params);
-int print_sint(va_list list, t_params *params);
+int print_sint(va_list list, t_params *params, int flag);
 int print_uint(va_list list, t_params *params);
 //int print_ptr(va_list list, t_params *params);
 int print_wchar(va_list list, t_params *params);
@@ -101,6 +101,7 @@ void print_spaces(t_params *params);
 //void setup_wstring(va_list list, t_params *params);
 void ft_putstring(va_list list, t_params *params);
 //void ft_signstr(char *str, t_params *params);
+void ft_print_pers(t_params *params);
 int		valid_arg(int c);
 int	ft_printf(const char *frmt, ...);
 #endif

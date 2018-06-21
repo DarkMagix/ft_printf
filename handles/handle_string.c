@@ -61,3 +61,9 @@ void ft_putstring(va_list list, t_params *params)
    print_spaces(params);
    //   free(params->buff);
 }
+
+void ft_print_pers(t_params *params)
+{
+    ft_putchar('%');
+	params->inc++;
+}

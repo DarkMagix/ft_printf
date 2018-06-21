@@ -58,29 +58,15 @@ int		valid_arg(int c)
 void	ft_parse(int flag, va_list arg, t_params *params)
 {
 	if (flag == 's')
-	{
-		if(params->modifer == MODI_l)
-		{
-			print_wstr(arg, params);
-			return ;
-		}
 		print_str(arg, params);
-		
-	}
 	else if (flag == 'u' || flag == 'U')
-	    print_uint(arg, params);
+		print_uint(arg, params);
 	else if (flag == 'd' || flag == 'D' || flag == 'i')
-	{
-		params->modifer = (flag == 'D') ? MODI_L : params->modifer;
-		print_sint(arg, params);
-	}
+		print_sint(arg, params, flag);
 	else if (flag == 'c')
 		print_char(arg);
 	else if (flag == '%')
-	{
-		ft_putchar('%');
-		params->inc++;
-	}
+		ft_print_pers(params);
 	else if (flag == 'x' || flag == 'X')
 		print_hex(arg, params);
 	else if (flag == 'o' || flag == 'O')
@@ -89,7 +75,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 		setup_ptr(arg, params);
 	else if (flag == 'C')
 		print_wchar(arg, params);
-	else if (flag == 'S')
+	else if (flag == 'S' || (flag == 's' && params->modifer == MODI_l))
 		print_wstr(arg, params);
 		//print_wstr(arg, params);
 }
@@ -111,220 +97,4 @@ int	ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
  }
-//  int main(void)
-//  {
-// 	int localerr;
-
-// 	printf("Fixing Moulinete\n ============================\n");
-// 	ft_printf("@moulitest: %#.x %#.0x", 0, 0);
-// 	ft_printf("%zO, %zO\n", 0, USHRT_MAX);
-// 	printf("%zO, %zO\n", 0, USHRT_MAX);
-// 	ft_printf("%jO, %jO\n", 0, USHRT_MAX);
-// 	printf("%jO, %jO\n", 0, USHRT_MAX);
-// 	ft_printf("%zD, %zD\n", 0, USHRT_MAX);
-// 	printf("%zD, %zD\n", 0, USHRT_MAX);
-// 	ft_printf("%15.4i\n", 42);
-// 	printf("%15.4i\n", 42);
-	
-// 	ft_printf("%.d, %.0d\n", 0, 0);
-// 	printf("%.d, %.0d\n", 0, 0);
-
-// 	ft_printf("%O\n", LONG_MAX);
-// 	printf("%O\n", LONG_MAX);
-// 	ft_printf("%U\n", ULONG_MAX);
-// 	printf("%U\n", ULONG_MAX);
-// 	ft_printf("|.o, .0o| %.o, %.0o\n", 0, 0);
-// 	printf("%.o, %.0o\n", 0, 0);
-// 	ft_printf("%.x, %.0x\n", 0, 0);
-// 	printf("%.x, %.0x\n", 0, 0);
-// 	ft_printf("|#.x, #.0x| %#.x, %#.0x\n", 0, 0);
-// 	printf("%#.x, %#.0x\n", 0, 0);
-// 	ft_printf("%#o\n", 0);
-// 	printf("%#o\n", 0);
-// 	ft_printf("%#.o\n", 0);
-// 	printf("%#.o\n", 0);
-// 	ft_printf("%hhu, %hhu\n", 0, UCHAR_MAX + 42);
-// 	printf("%hhu, %hhu\n", 0, UCHAR_MAX + 42);
-	
-// 	ft_printf("%hhD, %hhD\n", 0, USHRT_MAX);
-// 	printf("%hhD, %hhD\n", 0, USHRT_MAX);
-// 	ft_printf("%#O\n", 1);
-// 	printf("%#O\n", 1);
-// 	ft_printf("%#.3o\n", 1);
-// 	printf("%#.3o\n", 1);
-// 	printf("%15.4d\n", -42);
-// 	ft_printf("%15.4d\n", -42);
-// 	ft_printf("{%10R}\n");
-// 	printf("{%10R}\n");
-// 	ft_printf("%\n");
-// 	printf("%\n");
-// 	ft_printf("%.5p\n", 0);
-// 	printf("%.5p\n", 0);
-// 	ft_printf("%#.o\n", 42);
-// 	printf("%#.o\n", 42);
-// 	ft_printf("%#.x\n", 42);
-// 	printf("%#.x\n", 42);
-// 	ft_printf("%#.3o\n", 1);
-// 	printf("%#.3o\n", 1);
-// 	ft_printf("%#.3x\n", 1);
-// 	printf("%#.3x\n", 1);
-// 	ft_printf("{% 03d}\n", 0);
-// 	printf("{% 03d}\n", 0);
-// 	printf("|%|\n");
-	
-// 	ft_printf("%zO, %zO\n", 0, USHRT_MAX);
-// 	printf("%zO, %zO\n", 0, USHRT_MAX);
-// 	ft_printf("%jO, %jO\n", 0, USHRT_MAX);
-// 	printf("%jO, %jO\n", 0, USHRT_MAX);
-// 	ft_printf("%zD, %zD\n", 0, USHRT_MAX);
-// 	printf("%zD, %zD\n", 0, USHRT_MAX);
-// 	ft_printf("%15.4u\n", 42);
-// 	printf("%15.4u\n", 42);
-
-// 	ft_printf("%.d, %.0d\n", 0, 0);
-// 	printf("%.d, %.0d\n", 0, 0);
-	
-// 	ft_printf("%O\n", LONG_MAX);
-// 	printf("%O\n", LONG_MAX);
-// 	ft_printf("%U\n", ULONG_MAX);
-// 	printf("%U\n", ULONG_MAX);
-// 	ft_printf("|.o, .0o| %.o, %.0o\n", 0, 0);
-// 	printf("%.o, %.0o\n", 0, 0);
-// 	ft_printf("%.x, %.0x\n", 0, 0);
-// 	printf("%.x, %.0x\n", 0, 0);
-// 	ft_printf("|#.x, #.0x| %#.x, %#.0x\n", 0, 0);
-// 	printf("%#.x, %#.0x\n", 0, 0);
-// 	ft_printf("%#o\n", 0);
-// 	printf("%#o\n", 0);
-// 	ft_printf("%#.o\n", 0);
-// 	printf("%#.o\n", 0);
-// 	ft_printf("%hhu, %hhu\n", 0, UCHAR_MAX + 42);
-// 	printf("%hhu, %hhu\n", 0, UCHAR_MAX + 42);
-
-	
-// 	ft_printf("%hhD, %hhD\n", 0, USHRT_MAX);
-// 	printf("%hhD, %hhD\n", 0, USHRT_MAX);
-// 	ft_printf("%#O\n", 1);
-// 	printf("%#O\n", 1);
-// 	ft_printf("%#.3o\n", 1);
-// 	printf("%#.3o\n", 1);
-// 	printf("%15.4d\n", -42);
-// 	ft_printf("%15.4d\n", -42);
-// 	ft_printf("{%10R}\n");
-// 	printf("{%10R}\n");
-// 	ft_printf("%\n");
-// 	printf("%\n");
-// 	ft_printf("%.5p\n", 0);
-// 	printf("%.5p\n", 0);
-// 	ft_printf("%#.o\n", 42);
-// 	printf("%#.o\n", 42);
-// 	ft_printf("%#.x\n", 42);
-// 	printf("%#.x\n", 42);
-// 	ft_printf("%#.3o\n", 1);
-// 	printf("%#.3o\n", 1);
-// 	ft_printf("%#.3x\n", 1);
-// 	printf("%#.3x\n", 1);
-// 	ft_printf("{% 03d}\n", 0);
-// 	printf("{% 03d}\n", 0);
-// 	printf("|%|\n");
-	
-// 	ft_printf("{%}");
-	
-// 	return (0);
-//  }
-// int main(void)
-// {
-// 	printf("Plus\n");
-// 	ft_printf("%%+i 42 == %+i\n", 42);
-// 	printf("%%+i 42 == %+i\n", 42);
-// 	ft_printf("%%+d 42 == %+d\n", INT_MAX);
-// 	printf("%%+d 42 == %+d\n", INT_MAX);
-// 	ft_printf("%%+i -42 == %+i\n", -42);
-// 	printf("%%+i -42 == %+i\n", -42);
-// 	ft_printf("%%+04d 42 == %0+04d\n", 42);
-// 	printf("%%+04d 42 == %0+04d\n", 42);
-// 	printf("Zero\n");
-// 	ft_printf("%%04i 42 == |%04i|\n", 42);
-// 	printf("%%04i 42 == |%04i|\n", 42);
-// 	ft_printf("%%05i 42 == |%05i|\n", 42);
-// 	printf("%%05i 42 == |%05i|\n", 42);
-// 	ft_printf("%%0i 42 == |%0i|\n", 42);
-// 	printf("%%0i 42 == |%0i|\n", 42);
-// 	ft_printf("%%0d 0000042 == |%0d|\n", 0000042);
-// 	printf("%%0d 0000042 == |%0d|\n", 0000042);
-// 	printf("Minus\n");
-// 	ft_printf("%%-i 42 == %-i\n", 42);
-// 	printf("%%-i 42 == %-i\n", 42);
-// 	ft_printf("%%-d 42 == %-d\n", INT_MIN);
-// 	printf("%%-d 42 == %-d\n", INT_MIN);
-// 	ft_printf("%%-i -42 == %-i\n", -42);
-// 	printf("%%-i -42 == %-i\n", -42);
-// 	ft_printf("%%-4d 42 == |%-4d|\n", 42);
-// 	printf("%%-4d 42 == |%-4d|\n", 42);
-// 	ft_printf("%%-5d -42 == |%-5d|\n", -42);
-// 	printf("%%-5d -42 == |%-5d|\n", -42);
-// 	ft_printf("|%3i|%-3i|\n", 42, 42);
-// 	printf("|%3i|%-3i|\n", 42, 42);
-// 	printf("\n\nPrecision: \n\n");
-
-// 	ft_printf("% 4.5i\n", 42);// == | 00042|
-// 	printf("% 4.5i\n", 42);// == | 00042|
-// 	ft_printf("%04.5i\n", 42);// == |00042|
-// 	printf("%04.5i\n", 42);// == |00042|
-// 	ft_printf("%04.3i\n", 42);// == | 042|
-// 	printf("%04.3i\n", 42);// == | 042|
-// 	ft_printf("%04.2i\n", 42);// == |  42|
-// 	printf("%04.2i\n", 42);// == |  42|
-// 	//printf("|%3i|%-3i|\n", 42, 42);
-// //	ft_printf("%%-4i 42 == |%-4i|\n", 42);
-//  return (0);
-// }
-// int main(void)
-// {
-// 	char *str = NULL;
-// 	ft_printf("%s", "pouet");
-// 	ft_printf(" pouet %s !!\n", "camembert");
-// 	ft_printf("%s !\n", "Ceci n'est pas un \0 exercice !");
-// 	ft_printf("%s!\n", "Ceci n'est toujours pas un exercice !");
-// 	ft_printf("%s!\n", str);
-// 	ft_printf("%s", "Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une\"atelierderéflexion\"entreOliviaetRichardCrossquicommençaitàêtrepasmalconnudanslemilieuencemomentàcausedequelquesémissionsdeteréalité.J'aibienrigoleavecOliviaRuizcesoirlà,jeluiparlaitdemonrêved'écritetunechansondepirate,elledelafaçonqu'elleavaitd'écriredeschansons\"commeellessortaient\"etdes'étonnerparfoisqued'autrestrouventcabien.Brefçac'étaitunechouettesoirée/nuitquis'estterminéeauxalentoursde7hdumatinenprenantuncaféauChaidel'AbbayeprèsdeMabillon.Avantqu'ellenedisparaissepourtoujoursdemonexistence.JesuissouventrepasséauChaitôtlematinenespérantlarevoirmaisniet.Rien.JusteChristineScottThomasaperçuunjeudimatinoùilfaisaitchaud.Etalafinilla*bip*");
-// 	wchar_t wz [3] = L"@@";
-// 	ft_printf("%ls", wz);
-// // // ft_printf("%+i\n", 42);// == +42
-// // // printf("%+i\n", 42);// == +42
-// // // ft_printf("%+d\n", 42);// == +2147483647
-// // // printf("%+d\n", 42);// == +2147483647
-// // // ft_printf("%+i\n", -42);// == -42
-// // // printf("%+i\n", -42);// == -42
-// // // ft_printf("%+04d\n", 42);// == +042
-// // // printf("%+04d\n", 42);// == +042
-
-// // //ft_printf("%-5.3s LYDI == |LYD  |
-
-// // // ft_printf("Me: % 4.5i\n", 42);// == | 00042|
-// // // printf("Them: % 4.5i\n", 42);// == | 00042|
-// // // printf("Justified\n");
-// // // ft_printf("Me: %-4.5i\n", 42);// == |00042|
-// // // printf("Them: %-4.5i\n", 42);// == |00042|
-// // // ft_printf("Me %-4.3i\n", 42);// == | 042|
-// // // printf("Them %-4.3i\n", 42);// == | 042|
-// // // ft_printf("Me %-4.2i\n", 42);// == |  42|
-// // // printf("Them %-4.2i\n", 42);// == |  42|
-
-
-// // ft_printf("|% 4.5i|\n", 42);// == | 00042|
-// // printf("|% 4.5i|\n", 42);// == | 00042|
-// // printf("Not Justified\n");
-// // ft_printf("|%04.5i|\n", 42);// == |00042|
-// // printf("|%04.5i|\n", 42);// == |00042|
-// // ft_printf("|%04.3i|\n", 42);// == | 042|
-// // printf("|%04.3i|\n", 42);// == | 042|
-// // ft_printf("|%04.2i|\n", 42);// == |  42|
-// // printf("|%04.2i|\n", 42);// == |  42|
-// // printf("Justified\n");
-// // ft_printf("|%-4.2i|\n", 42);// == |  42|
-// // printf("|%-4.2i|\n", 42);// == |  42|
-// // ft_printf("|%-+4.2i|\n", 42);// == |  42|
-// // printf("|%-+4.2i|\n", 42);// == |  42|
-// // // printf("%-10.5d", 100);
-// }
+ 

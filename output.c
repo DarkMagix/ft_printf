@@ -24,9 +24,9 @@ int	print_str(va_list list, t_params *params)
 	return (1);
 }
 
-int	print_sint(va_list list, t_params *params)
+int	print_sint(va_list list, t_params *params, int flag)
 {
-
+	params->modifer = (flag == 'D') ? MODI_L : params->modifer;
 	setup_int(list, params);
 	
 	return (1);
