@@ -52,7 +52,7 @@ int		valid_arg(int c)
 		|| c == 'L' || c == 't' || c == 'D'
 		|| c == 'C' || c == 'S' || c == 'U'
 		|| c == ' ' || c == 'O' || c == '#'
-		|| (c >= '0' && c <= '9')));
+		|| c == '*' || (c >= '0' && c <= '9')));
 }
 
 void	ft_parse(int flag, va_list arg, t_params *params)
@@ -97,3 +97,36 @@ int		ft_printf(const char *frmt, ...)
 	return (bytes);
 }
 
+// int		main(void)
+// {
+// 	printf("Numbers\n");
+// 	printf("|----Wild Card----|\n");
+// 	ft_printf("|%5.*d|\n", 7, 42);
+// 	printf("|%5.*d|\n", 7, 42);
+// 	ft_printf("|%5.*s|\n", 3, "LYDI");
+// 	printf("|%5.*s|\n", 3, "LYDI");
+// 	ft_printf("|%3.*s|\n", 0, "LYDI");
+// 	printf("|%3.*s|\n", 0, "LYDI");
+// 	ft_printf("|%*.3s|\n", 0, "LYDI");
+// 	printf("|%*.3s|\n", 0, "LYDI");
+// 	printf("|----No Wild Card----|\n");
+// 	ft_printf("|%5.7d|\n", 42);
+// 	printf("|%5.7d|\n", 42);
+// 	ft_printf("|%5.3s|\n", "LYDI");
+// 	printf("|%5.3s|\n", "LYDI");
+	
+// 	// ft_printf("%6.2u\n", 42);
+// 	// printf("%6.2u\n", 42);
+// 	// ft_printf("|%-5.3s|\n", "Heck");
+// 	// printf("|%-5.3s|\n", "Heck");
+// 	// ft_printf("|%5.6s|\n", "Heck");
+// 	// printf("|%5.6s|\n", "Heck");
+// 	// ft_printf("|%1.0s|\n", "Heck");
+// 	// printf("|%1.0s|\n", "Heck");
+// 	// ft_printf("|%-9.8s|\n", "Heck Me Rotten");
+// 	// printf("|%-9.8s|\n", "Heck Me Rotten");
+// 	// ft_printf("|%12.8s|\n", "Heck Me Rotten");
+// 	// printf("|%12.8s|\n", "Heck Me Rotten");
+// 	// ft_printf("|%16.28s|\n", "Heck Me Rotten");
+// 	// printf("|%16.28s|\n", "Heck Me Rotten");
+// }

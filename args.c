@@ -36,14 +36,19 @@ int	parse_flags(char *str, t_params *params)
 	return (i);
 }
 
-int	parse_width(char *str, t_params *params)
+int	parse_width(char *str, t_params *params, va_list list)
 {
 	int i;
 	int skip;
 
 	i = 0;
 	skip = 0;
-	if (ft_atoi(&str[i]) > 0)
+	if (str[i] == '*')
+	{
+		params->wid_len = va_arg(list, int);
+		i++;
+	}
+	else if (ft_atoi(&str[i]) > 0)
 	{
 		params->wid_len = ft_atoi(&str[i]);
 		skip = params->wid_len;
@@ -53,42 +58,33 @@ int	parse_width(char *str, t_params *params)
 			skip /= 10;
 		}
 	}
-	// while (true)
-	// {
-	// 	if (str[i] == '*')
-	// 		params->wid_len = -1;
-	// 	else
-	// 		break;
-	// 	i++;
-	// }
 	return (i);
 }
 
-int	parse_precision(char *str, t_params *params)
+int	parse_precision(char *str, t_params *params,va_list list)
 {
 	int i;
 	int temp;
 
 	i = 0;
-	while (true)
+	if (str[i] == '.' && str[i + 1] != '*')
 	{
-		if (str[i] == '.')
+		params->num_len = ft_atoi(&str[i + 1]);
+		params->pad = (params->num_len > 0) ? true : false;
+		temp = params->num_len;
+		i += (temp ==0 ) ? 1 :0;
+		while (temp != 0)
 		{
-			params->num_len = ft_atoi(&str[i + 1]);
-			params->pad = (params->num_len > 0) ? true : false;
-			temp = params->num_len;
-			while (temp != 0)
-			{
-				i++;
-				temp /= 10;
-			}
+			i++;
+			temp /= 10;
 		}
-		else if (str[i] == '*')
-			params->p_wildcard = true;
-		else
-			break ;
+	}
+	else if(str[i] == '.' && str[i + 1] == '*')
+	{
+		params->num_len = va_arg(list, int);
 		i++;
 	}
+	i++;
 	return (i);
 }
 
@@ -131,7 +127,7 @@ int	parse_specifier(const char *format, va_list args, t_params *params)
 		if (*format == '%')
 		{
 			if (valid_arg(*(format + 1)))
-				format += read_data(params, (char *)(format + 1)) + 1;
+				format += read_data(params, (char *)(format + 1), args) + 1;
 			params->specifier = *format;
 			ft_parse(params->specifier, args, params);
 			written += params->inc;
