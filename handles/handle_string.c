@@ -62,12 +62,13 @@ void ft_putstring(va_list list, t_params *params)
 
     i = -1;
     s = va_arg(list, char*);
+    
     if (!s)
     {
         write(1, "(null)", 6);
         return ;
     }
-    if(params->num_len == 0)
+    if(params->num_len == 0 && params->has_num_len == true)
     {
         while(params->wid_len--)
             write(1, " ", 1);
@@ -75,7 +76,8 @@ void ft_putstring(va_list list, t_params *params)
     }
     get_printlen(params, s);
     if(!params->justify)
-      print_spaces(params);
+        print_spaces(params);
+
     print_words(params, s, i);
     print_spaces(params);
 }

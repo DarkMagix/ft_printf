@@ -23,7 +23,7 @@ void	init_params(t_params *params)
 	params->pad = false;
 	params->wid_len = 0;
 	params->num_len = 0;
-	params->has_len = false;
+	params->has_num_len = false;
 	params->p_wildcard = false;
 	params->buff = NULL;
 	params->specifier = 0;
@@ -98,35 +98,13 @@ int		ft_printf(const char *frmt, ...)
 }
 // int main(void)
 // {
-// 	ft_printf("%c", 42);
-// 	ft_printf("Kashim a %c histoires à raconter", 1001);
-// 	ft_printf("Il fait au moins %c\n", -8000);
-// 	ft_printf("%c", -0);
-// 	ft_printf("%c", 0);
-// 	ft_printf("%c\n", INT_MAX);
-// 	ft_printf("%c\n", 'c');
-// 	ft_printf("%c\n", '\n');
-// 	ft_printf("%c", 'l');
-// 	ft_printf("%c", 'y');
-// 	ft_printf("%c", ' ');
-// 	ft_printf("%c", 'e');
-// 	ft_printf("%c", 's');
-// 	ft_printf("%c", 't');
-// 	ft_printf("%c", ' ');
-// 	ft_printf("%c", 'f');
-// 	ft_printf("%c", 'a');
-// 	ft_printf("%c", 'n');
-// 	ft_printf("%c", 't');
-// 	ft_printf("%c", 'a');
-// 	ft_printf("%c", 's');
-// 	ft_printf("%c", 't');
-// 	ft_printf("%c", 'i');
-// 	ft_printf("%c", 'q');
-// 	ft_printf("%c", 'u');
-// 	ft_printf("%c", 'e');
-// 	ft_printf("%c\n", '!');
-// 	ft_printf("%c\n", '\r');
-// 	ft_printf("%c\n", '\t');
+
+// ft_printf("%%-*.3s LYDI == |%-*.3s|\n", 5, "LYDI");
+// 	ft_printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
+// 	ft_printf("%%*i 42 == |%*i|\n", 5, 42);
+// 	ft_printf("%%*i 42 == |%*i|\n", 3, 42);
+// 	ft_printf("%%*i 42 == |%*i|\n", 2, 42);
+
 // 	return (0);
 // }
 // int		main(void)

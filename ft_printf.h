@@ -44,7 +44,7 @@ typedef struct	s_params
 	t_bool					pad;
 	int						wid_len;
 	int						num_len;
-	t_bool					has_len;
+	t_bool					has_num_len;
 	t_bool					p_wildcard;
 	char					*buff;
 	int						modifer;

@@ -74,6 +74,7 @@ int	parse_precision(char *str, t_params *params,va_list list)
 			params->num_len = ft_atoi(&str[i + 1]);
 			params->pad = (params->num_len > 0) ? true : false;
 			temp = params->num_len;
+			params->has_num_len = true;
 			i += (temp ==0 ) ? 1 :0;
 			while (temp != 0)
 			{
@@ -84,6 +85,7 @@ int	parse_precision(char *str, t_params *params,va_list list)
 		else if(str[i] == '.' && str[i + 1] == '*')
 		{
 			params->num_len = va_arg(list, int);
+			params->has_num_len = true;
 			i++;
 		}
 		else

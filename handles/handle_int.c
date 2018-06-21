@@ -46,6 +46,7 @@ static void	prepare_int(t_params *params)
 		if (params->pad)
 			params->zeroes = params->wid_len - params->len;
 	}
+	handle_extra(params);
 }
 
 void		check_sign(t_params *params)
