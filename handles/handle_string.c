@@ -38,6 +38,7 @@ void print_spaces(t_params *params)
         }
     }
 }
+
 void print_words(t_params *params, char *s, int i)
 {
   while(s[++i])
@@ -55,6 +56,7 @@ void print_words(t_params *params, char *s, int i)
         params->inc++;
     }
 }
+
 void ft_putstring(va_list list, t_params *params)
 {
     char *s;
@@ -63,27 +65,24 @@ void ft_putstring(va_list list, t_params *params)
     i = -1;
     s = va_arg(list, char*);
     
-    if (!s)
+    if (s == NULL)
     {
         write(1, "(null)", 6);
+        params->inc+= 6;
         return ;
     }
     if(params->num_len == 0 && params->has_num_len == true)
     {
         while(params->wid_len--)
+        {
             write(1, " ", 1);
+            params->inc++;
+        }
         return ;
     }
     get_printlen(params, s);
-    if(!params->justify)
-        print_spaces(params);
-
+    (!params->justify) ? print_spaces(params) : 0;
     print_words(params, s, i);
     print_spaces(params);
 }
 
-void ft_print_pers(t_params *params)
-{
-    ft_putchar('%');
-	params->inc++;
-}

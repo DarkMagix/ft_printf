@@ -34,3 +34,9 @@ int	print_octal(va_list list, t_params *params)
 	setup_octal(list, params);
 	return (params->inc);
 }
+
+void ft_print_pers(t_params *params)
+{
+    ft_putchar('%');
+	params->inc++;
+}

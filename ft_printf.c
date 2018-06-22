@@ -99,6 +99,22 @@ int		ft_printf(const char *frmt, ...)
 }
 // int main(void)
 // {
+// 	int left;
+// 	int right; 
+// 	left = ft_printf("@moulitest: %s", NULL);
+// 	right = printf("@moulitest: %s", NULL);
+
+// 	if (left == right)
+// 	{
+// 		printf("\nMatch!\n");
+// 	}
+	
+
+
+// 	return (0);
+// }
+// int main(void)
+// {
 // 	ft_printf("|%10x|\n", 42);
 // 	printf("|%10x|\n", 42);
 // 	ft_printf("|%010x|\n", 42);

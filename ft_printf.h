@@ -77,6 +77,7 @@ int				parse_length(char *str, t_params *params);
 int				parse_specifier(const char *format,
 					va_list args, t_params *params);
 void			sint_flags(va_list list, t_params *params);
+void			display_wchars(t_params *params, wchar_t *w_s, int i);
 void			uint_flags(va_list list, t_params *params);
 int				print_sint(va_list list, t_params *params, int flag);
 int				print_uint(va_list list, t_params *params);
