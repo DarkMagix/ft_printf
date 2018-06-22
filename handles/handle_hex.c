@@ -32,6 +32,7 @@ void	prepare_hex(t_params *params)
 		params->zeroes = params->num_len - params->len;
 	if (params->wid_len > params->len + params->zeroes)
 		params->spaces = params->num_len - (params->len + params->zeroes);
+	free(params->buff);
 }
 
 void	setup_hex(va_list list, t_params *params)
