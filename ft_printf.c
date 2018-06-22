@@ -91,11 +91,26 @@ int		ft_printf(const char *frmt, ...)
 	{
 		va_start(args, frmt);
 		bytes += parse_specifier(frmt, args, params);
+		params->inc +=bytes;
 		va_end(args);
 	}
 	free(params);
 	return (bytes);
 }
+
+//t main(void)
+//
+  //char *str = "This is a test of things, and it should be going well\nDont you agreee?";
+  //ft_printf("%d\n", ft_printf("|% 7.3d|\n", 42));
+  //ft_printf("%d\n" ,printf("|% 7.3d|\n", 42));
+  //  ft_printf("%d\n", ft_printf("%*.*s\n", ft_strlen(str), ft_strlen(str), str));
+  //  printf("%d\n", printf("%*.*s\n", ft_strlen(str), ft_strlen(str), str));
+  //  ft_printf("(%d)\n", ft_printf("|%#*.*o|\n", 3, 3, 10000));
+  //  printf("(%d)", printf("|%#*.*o|\n",3, 3, 10000));
+  //  ft_printf("(%d)\n", ft_printf("|%#*.*o|\n", 3, 3, 1000000));
+  //  printf("(%d)", printf("|%#*.*o|\n",3, 3, 1000000));
+  //  return (0);
+  //}
 // int main (void)
 // {
 // 	ft_printf("\n");

@@ -14,10 +14,11 @@
 
 void	print_chars(t_params *params, char c, int n)
 {
-	params->inc += n;
+  //	params->inc += n;
 	while (n > 0)
 	{
 		ft_putchar(c);
+		params->inc++;
 		n--;
 	}
 }

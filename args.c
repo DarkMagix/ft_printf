@@ -138,12 +138,15 @@ int	parse_specifier(const char *format, va_list args, t_params *params)
 			params->specifier = *format;
 			ft_parse(params->specifier, args, params);
 			written += params->inc;
+			//			printf("\nWriten %d\n", written);
 		}
 		else
 		{
 			ft_putchar(*format);
+			//			printf("Written %d\n", written);
 			written++;
 		}
+		//		printf("\nWritten %d: \n", written);
 		init_params(params);
 		format++;
 	}
