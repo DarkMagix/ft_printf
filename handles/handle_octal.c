@@ -14,7 +14,7 @@ void prepare_octal(t_params *params)
     else
         (params->pad) ? (params->zeroes += params->wid_len - (params->zeroes + params->len))
             : (params->spaces = params->wid_len - (params->zeroes + params->len));
-    free(params->buff);
+   
 }
 
 void setup_octal(va_list list, t_params *params)
@@ -35,5 +35,5 @@ void setup_octal(va_list list, t_params *params)
         print_chars(params, '0', params->zeroes);
         print_nums(params);
     }
-    
+     free(params->buff);
 }
