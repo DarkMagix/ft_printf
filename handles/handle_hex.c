@@ -21,6 +21,16 @@ void	to_upper(t_params *params)
 		if (ft_isalpha(params->buff[i]))
 			params->buff[i] -= 32;
 }
+void handle_extra_hex(t_params *params)
+{
+	(params->plus_neg) ? params->zeroes-- : 0;
+	(params->wid_len > params->len + params->zeroes) ?
+		params->spaces = params->wid_len - (params->len + params->zeroes) : 0;
+	(params->plus_neg && params->pad) ? params->spaces -= 2 : 0;
+	(params->spaced && !(IS_NEG(params->u)) && params->spaces == 0) ?
+		params->spaces++ : 0;
+	(params->hash) ? params->spaces -=2 : 0;
+}
 
 void	prepare_hex(t_params *params)
 {
@@ -28,11 +38,26 @@ void	prepare_hex(t_params *params)
 	if (params->specifier == 'X')
 		to_upper(params);
 	params->len = ft_strlen(params->buff);
-	if (params->num_len > params->len)
+	if (params->num_len > params->len && params->justify)
 		params->zeroes = params->num_len - params->len;
-	if (params->wid_len > params->len + params->zeroes)
-		params->spaces = params->num_len - (params->len + params->zeroes);
-	
+	else if (params->wid_len < params->num_len &&
+		!params->justify && params->num_len)
+		params->zeroes = params->num_len - params->len;
+	else if (params->wid_len > params->len
+		&& !params->justify && params->num_len)
+	{
+		if (params->num_len > params->len)
+			params->zeroes = params->num_len - params->len;
+		if (params->wid_len == params->len)
+			params->zeroes = 0;
+	}
+	if (params->wid_len > params->len && !params->justify && !params->num_len)
+	{
+		(!params->pad) ? params->spaces = params->wid_len - params->len : 0;
+		if (params->pad)
+			params->zeroes = params->wid_len - params->len;
+	}
+	handle_extra_hex(params);	
 }
 
 void	setup_hex(va_list list, t_params *params)
@@ -50,8 +75,7 @@ void	setup_hex(va_list list, t_params *params)
 	}
 	else
 	{
-		(params->zeroes > 0) ? (print_chars(params, '0', params->spaces))
-			: (print_chars(params, ' ', params->spaces));
+		print_chars(params, ' ', params->spaces);
 		if (params->hash)
 			params->inc += (params->specifier == 'x') ? (write(1, "0x", 2))
 				: (write(1, "0X", 2));

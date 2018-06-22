@@ -12,8 +12,13 @@
 
 #include "ft_printf.h"
 
-int	print_char(va_list list)
+int	print_char(va_list list, t_params *params)
 {
+	if (params->num_len == 0)
+	{
+		write(1, " ", 1);
+		return (1);
+	}
 	ft_putchar(va_arg(list, int));
 	return (1);
 }

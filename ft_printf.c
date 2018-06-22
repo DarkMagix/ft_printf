@@ -66,7 +66,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	else if (flag == 'd' || flag == 'D' || flag == 'i')
 		print_sint(arg, params, flag);
 	else if (flag == 'c')
-		print_char(arg);
+		print_char(arg, params);
 	else if (flag == '%')
 		ft_print_pers(params);
 	else if (flag == 'x' || flag == 'X')
@@ -98,19 +98,73 @@ int		ft_printf(const char *frmt, ...)
 	return (bytes);
 }
 
-//t main(void)
-//
-  //char *str = "This is a test of things, and it should be going well\nDont you agreee?";
-  //ft_printf("%d\n", ft_printf("|% 7.3d|\n", 42));
-  //ft_printf("%d\n" ,printf("|% 7.3d|\n", 42));
-  //  ft_printf("%d\n", ft_printf("%*.*s\n", ft_strlen(str), ft_strlen(str), str));
-  //  printf("%d\n", printf("%*.*s\n", ft_strlen(str), ft_strlen(str), str));
-  //  ft_printf("(%d)\n", ft_printf("|%#*.*o|\n", 3, 3, 10000));
-  //  printf("(%d)", printf("|%#*.*o|\n",3, 3, 10000));
-  //  ft_printf("(%d)\n", ft_printf("|%#*.*o|\n", 3, 3, 1000000));
-  //  printf("(%d)", printf("|%#*.*o|\n",3, 3, 1000000));
-  //  return (0);
-  //}
+// int main(void)
+// {
+// 	printf("Decimal\n");
+// 	ft_printf("|%10d|\n", 42);
+// 	printf("|%10d|\n", 42);
+// 	ft_printf("|%-10d|\n", 42);
+// 	printf("|%-10d|\n", 42);
+// 	ft_printf("|%10d|\n", 42);
+// 	printf("|%10d|\n", 42);
+// 	ft_printf("|%-10d|\n", 42);
+// 	printf("|%-10d|\n", 42);
+// 	ft_printf("|%010.5d|\n", 542);
+// 	printf("|%010.5d|\n", 542);
+// 	printf("Hex\n");
+// 	ft_printf("|%10x|\n", 42);
+// 	printf("|%10x|\n", 42);
+// 	ft_printf("|%-#10x|\n", 42);
+// 	printf("|%-#10x|\n", 42);
+// 	ft_printf("|%#10x|\n", 42);
+// 	printf("|%#10x|\n", 42);
+// 	ft_printf("|%-10x|\n", 42);
+// 	printf("|%-10x|\n", 42);
+// 	ft_printf("|%010.5x|\n", 542);
+// 	printf("|%010.5x|\n", 542);
+// 	printf("Moulinette Hex\n");
+// 	ft_printf("%x", 42);
+// 	ft_printf("Kashim a %x histoires à raconter", 1001);
+// 	ft_printf("Il fait au moins %x\n", -8000);
+// 	ft_printf("%x", -0);
+// 	ft_printf("%x", 0);
+// 	ft_printf("%x", INT_MAX);
+// 	ft_printf("%x", INT_MIN);
+// 	ft_printf("%x", INT_MIN - 1);
+// 	ft_printf("%x", INT_MAX + 1);
+// 	ft_printf("%%x 0000042 == |%x|\n", 0000042);
+// 	ft_printf("%%x \t == |%x|\n", '\t');
+// 	ft_printf("%%x Lydie == |%x|\n", 'L'+'y'+'d'+'i'+'e');
+// 	int r00 = 0;
+// 	ft_printf("Mix 1\n");
+// 	ft_printf("Lalalala, %d%% des gens qui parlent à Ly adorent %s. Ou Presque. %p", 100, "Ly", &r00);
+// 	ft_printf("Sharp \n");
+// 	ft_printf("%%#X 42 ==  %#X\n", 42);
+// 	ft_printf("%%X 42 ==  %X\n", 42);
+// 	ft_printf("%%#o 0 ==  %#o\n", 0);
+// 	ft_printf("%%o 0 ==  %o\n", 0);
+// 	ft_printf("%%#o INT_MAX ==  %#o\n", INT_MAX);
+// 	ft_printf("%%o INT_MAX ==  %o\n", INT_MAX);
+// 	ft_printf("%%#o INT_MIN ==  %#o\n", INT_MIN);
+// 	ft_printf("%%o INT_MIN ==  %o\n", INT_MIN);
+// 	ft_printf("%%#X INT_MIN ==  %#X\n", INT_MIN);
+// 	ft_printf("%%X INT_MIN ==  %X\n", INT_MIN);
+// 	ft_printf("%%#X INT_MAX ==  %#X\n", INT_MAX);
+// 	ft_printf("%%X INT_MAX ==  %X\n", INT_MAX);
+// 	printf("%%#X 42 ==  %#X\n", 42);
+// 	printf("%%X 42 ==  %X\n", 42);
+// 	printf("%%#o 0 ==  %#o\n", 0);
+// 	printf("%%o 0 ==  %o\n", 0);
+// 	printf("%%#o INT_MAX ==  %#o\n", INT_MAX);
+// 	printf("%%o INT_MAX ==  %o\n", INT_MAX);
+// 	printf("%%#o INT_MIN ==  %#o\n", INT_MIN);
+// 	printf("%%o INT_MIN ==  %o\n", INT_MIN);
+// 	printf("%%#X INT_MIN ==  %#X\n", INT_MIN);
+// 	printf("%%X INT_MIN ==  %X\n", INT_MIN);
+// 	printf("%%#X INT_MAX ==  %#X\n", INT_MAX);
+// 	printf("%%X INT_MAX ==  %X\n", INT_MAX);
+// 	return (0);
+//   }
 // int main (void)
 // {
 // 	ft_printf("\n");

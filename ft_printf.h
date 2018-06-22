@@ -62,7 +62,7 @@ typedef struct	s_params
 
 void			init_params(t_params *params);
 int				print_str(va_list list, t_params *params);
-int				print_char(va_list list);
+int				print_char(va_list list, t_params *params);
 int				print_integer(va_list list, t_params *params);
 int				print_hex(va_list list, t_params *params);
 int				print_float(va_list list);
@@ -100,6 +100,7 @@ void			ft_addpad(t_params *params);
 void			check_sign(t_params *params);
 void			print_words(t_params *params, char *s, int i);
 void			ft_print_pers(t_params *params);
+void			handle_extra_hex(t_params *params);
 int				valid_arg(int c);
 int				ft_printf(const char *frmt, ...);
 #endif
