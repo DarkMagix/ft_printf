@@ -97,7 +97,14 @@ int		ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
 }
-
+// int main(void)
+// {
+// 	ft_printf("|%10x|\n", 42);
+// 	printf("|%10x|\n", 42);
+// 	ft_printf("|%010x|\n", 42);
+// 	printf("|%010x|\n", 42);
+	
+// }
 // int main(void)
 // {
 // 	printf("Decimal\n");

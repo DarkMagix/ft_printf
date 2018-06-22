@@ -26,10 +26,11 @@ void handle_extra_hex(t_params *params)
 	(params->plus_neg) ? params->zeroes-- : 0;
 	(params->wid_len > params->len + params->zeroes) ?
 		params->spaces = params->wid_len - (params->len + params->zeroes) : 0;
-	(params->plus_neg && params->pad) ? params->spaces -= 2 : 0;
-	(params->spaced && !(IS_NEG(params->u)) && params->spaces == 0) ?
-		params->spaces++ : 0;
+	//(params->plus_neg && params->pad) ? params->spaces -= 2 : 0;
+	// (params->spaced && !(IS_NEG(params->u)) && params->spaces == 0) ?
+	// 	params->spaces++ : 0;
 	(params->hash) ? params->spaces -=2 : 0;
+//	(params->hash) ? params->zeroes +=2 : 0;
 }
 
 void	prepare_hex(t_params *params)
