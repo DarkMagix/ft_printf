@@ -42,7 +42,7 @@ void	ft_addpad(t_params *params)
 	}
 }
 
-void display_wchars(t_params *params, wchar_t *w_s, int i)
+void	display_wchars(t_params *params, wchar_t *w_s, int i)
 {
 	while (w_s[++i])
 	{
@@ -52,8 +52,8 @@ void display_wchars(t_params *params, wchar_t *w_s, int i)
 				ft_putchar(w_s[i]);
 			break ;
 		}
-	ft_putchar(w_s[i]);
-	params->inc++;
+		ft_putchar(w_s[i]);
+		params->inc++;
 	}
 }
 
@@ -65,11 +65,11 @@ void	ft_putwstr(va_list list, t_params *params)
 	i = -1;
 	w_s = va_arg(list, wchar_t*);
 	if (!w_s)
-    {
-        write(1, "(null)", 6);
-        params->inc+= 6;
-        return ;
-    }
+	{
+		write(1, "(null)", 6);
+		params->inc += 6;
+		return ;
+	}
 	params->wid_len -= (ft_wstrlen(w_s) - params->num_len);
 	params->justify ? params->pad = false : false;
 	ft_addpad(params);

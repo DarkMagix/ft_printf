@@ -21,16 +21,13 @@ void	to_upper(t_params *params)
 		if (ft_isalpha(params->buff[i]))
 			params->buff[i] -= 32;
 }
-void handle_extra_hex(t_params *params)
+
+void	handle_extra_hex(t_params *params)
 {
 	(params->plus_neg) ? params->zeroes-- : 0;
 	(params->wid_len > params->len + params->zeroes) ?
 		params->spaces = params->wid_len - (params->len + params->zeroes) : 0;
-	//(params->plus_neg && params->pad) ? params->spaces -= 2 : 0;
-	// (params->spaced && !(IS_NEG(params->u)) && params->spaces == 0) ?
-	// 	params->spaces++ : 0;
-	(params->hash) ? params->spaces -=2 : 0;
-//	(params->hash) ? params->zeroes +=2 : 0;
+	(params->hash) ? params->spaces -= 2 : 0;
 }
 
 void	prepare_hex(t_params *params)
@@ -58,7 +55,7 @@ void	prepare_hex(t_params *params)
 		if (params->pad)
 			params->zeroes = params->wid_len - params->len;
 	}
-	handle_extra_hex(params);	
+	handle_extra_hex(params);
 }
 
 void	setup_hex(va_list list, t_params *params)

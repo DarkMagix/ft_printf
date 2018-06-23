@@ -61,7 +61,7 @@ int	parse_width(char *str, t_params *params, va_list list)
 	return (i);
 }
 
-int	parse_precision(char *str, t_params *params,va_list list)
+int	parse_precision(char *str, t_params *params, va_list list)
 {
 	int i;
 	int temp;
@@ -75,14 +75,9 @@ int	parse_precision(char *str, t_params *params,va_list list)
 			params->pad = (params->num_len > 0) ? true : false;
 			temp = params->num_len;
 			params->has_num_len = true;
-			i += (temp ==0 ) ? 1 :0;
-			while (temp != 0)
-			{
-				i++;
-				temp /= 10;
-			}
+			count_index(temp, &i);
 		}
-		else if(str[i] == '.' && str[i + 1] == '*')
+		else if (str[i] == '.' && str[i + 1] == '*')
 		{
 			params->num_len = va_arg(list, int);
 			params->has_num_len = true;
@@ -138,15 +133,12 @@ int	parse_specifier(const char *format, va_list args, t_params *params)
 			params->specifier = *format;
 			ft_parse(params->specifier, args, params);
 			written += params->inc;
-			//			printf("\nWriten %d\n", written);
 		}
 		else
 		{
 			ft_putchar(*format);
-			//			printf("Written %d\n", written);
 			written++;
 		}
-		//		printf("\nWritten %d: \n", written);
 		init_params(params);
 		format++;
 	}
