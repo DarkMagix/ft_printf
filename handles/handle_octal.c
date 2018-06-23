@@ -34,6 +34,7 @@ void	setup_octal(va_list list, t_params *params)
 	if (params->specifier == 'O')
 		params->modifer = MODI_l;
 	uint_flags(list, params);
+	//	printf("Num Len:\t%d\t Wid Len\t%d\t\n", params->num_len, params->wid_len);
 	prepare_octal(params);
 	if (params->justify)
 	{
