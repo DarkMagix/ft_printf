@@ -23,7 +23,7 @@ SRC = args.c print_help.c helper.c output.c \
 		lengths.c 
 SRC2 = handles/handle_int.c \
 		handles/handle_uint.c handles/handle_hex.c handles/handle_octal.c handles/handle_wstring.c \
-		handles/handle_ptrs.c handles/handle_string.c main.c
+		handles/handle_ptrs.c handles/handle_string.c
 
 
 OBJ = $(SRC:.c=.o)
