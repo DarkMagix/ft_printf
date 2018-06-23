@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
 #include "ft_printf.h"
-#include <locale.h>
+
 
 void	init_params(t_params *params)
 {
