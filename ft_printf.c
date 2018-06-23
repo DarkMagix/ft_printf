@@ -98,29 +98,29 @@ int		ft_printf(const char *frmt, ...)
 	return (bytes);
 }
 
-int		main(void)
-{
-	printf("Decimal\n");
-	ft_printf("|%10d|\n", 42);
-	printf("|%10d|\n", 42);
-	ft_printf("|%-10d|\n", 42);
-	printf("|%-10d|\n", 42);
-	ft_printf("|%10d|\n", 42);
-	printf("|%10d|\n", 42);
-	ft_printf("|%-10d|\n", 42);
-	printf("|%-10d|\n", 42);
-	ft_printf("|%010.5d|\n", 542);
-	printf("|%010.5d|\n", 542);
-	printf("Hex\n");
-	ft_printf("|%10x|\n", 42);
-	printf("|%10x|\n", 42);
-	ft_printf("|%-#10x|\n", 42);
-	printf("|%-#10x|\n", 42);
-	ft_printf("|%#10x|\n", 42);
-	printf("|%#10x|\n", 42);
-	ft_printf("|%-10x|\n", 42);
-	printf("|%-10x|\n", 42);
-	ft_printf("|%010.5x|\n", 542);
-	printf("|%010.5x|\n", 542);
-	return (0);
-}
+// int		main(void)
+// {
+// 	printf("Decimal\n");
+// 	ft_printf("|%10d|\n", 42);
+// 	printf("|%10d|\n", 42);
+// 	ft_printf("|%-10d|\n", 42);
+// 	printf("|%-10d|\n", 42);
+// 	ft_printf("|%10d|\n", 42);
+// 	printf("|%10d|\n", 42);
+// 	ft_printf("|%-10d|\n", 42);
+// 	printf("|%-10d|\n", 42);
+// 	ft_printf("|%010.5d|\n", 542);
+// 	printf("|%010.5d|\n", 542);
+// 	printf("Hex\n");
+// 	ft_printf("|%10x|\n", 42);
+// 	printf("|%10x|\n", 42);
+// 	ft_printf("|%-#10x|\n", 42);
+// 	printf("|%-#10x|\n", 42);
+// 	ft_printf("|%#10x|\n", 42);
+// 	printf("|%#10x|\n", 42);
+// 	ft_printf("|%-10x|\n", 42);
+// 	printf("|%-10x|\n", 42);
+// 	ft_printf("|%010.5x|\n", 542);
+// 	printf("|%010.5x|\n", 542);
+// 	return (0);
+// }
