@@ -97,7 +97,18 @@ int		ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
 }
-
+//int main(void)
+//{
+  //  ft_printf("%+d\n", -42);// == -42
+  //  printf("%+d\n", -42);
+  //  ft_printf("%+04d\n", 42);// == +042
+  //  printf("%+04d\n", 42);
+  //  ft_printf("%-+04d\n", -42);
+  //  printf("%-+04d\n", -42);
+  //  ft_printf("%-+04d\n", 42);
+  //  printf("%-+04d\n", 42);
+  //  return (0);
+  // }
 //int main(void)
 //{
 //  ft_printf("|%07.4d|\n", 42);

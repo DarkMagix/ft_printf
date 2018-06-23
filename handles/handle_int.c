@@ -17,19 +17,20 @@ void		handle_extra(t_params *params)
 	(params->plus_neg) ? params->zeroes-- : 0;
 	(params->wid_len > params->len + params->zeroes) ?
 		params->spaces = params->wid_len - (params->len + params->zeroes) : 0;
-	(params->plus_neg && !(IS_NEG(params->i))) ? params->sign = '+' : 0;
+	(params->plus_neg && !(params->is_neg)) ? params->sign = '+' : 0;
+	(params->plus_neg && (params->is_neg)) ? params->sign = '-' : 0;
 	(params->plus_neg && params->pad) ? params->spaces -= 2 : 0;
 	(params->spaced && !(IS_NEG(params->i)) && params->spaces == 0) ?
 		params->spaces++ : 0;
 	if (params->sign == '-')
 	    params->spaces--;
-	else if (params->sign == '+')
-	  params->zeroes++;
+	//	else if (params->sign == '+')
+	//	  params->zeroes
 }
 
 static void	prepare_int(t_params *params)
 {
-  params->sign = (IS_NEG(params->i)) ? '-' : 0;
+  params->is_neg = (IS_NEG(params->i)) ? true : false;
   params->i *= (IS_NEG(params->i)) ? -1 : 1;
 	params->buff = ft_itoa_base(params->i, 10);
 	params->len = ft_strlen(params->buff);
