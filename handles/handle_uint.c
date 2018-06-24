@@ -14,7 +14,8 @@
 
 void			uint_justify(t_params *params)
 {
-	if (params->num_len >= params->len && params->justify && params->has_num_len)
+	if (params->num_len >= params->len
+		&& params->justify && params->has_num_len)
 	{
 		params->zeroes = params->num_len - params->len;
 		params->spaces = (params->num_len > params->len) ?
@@ -23,7 +24,8 @@ void			uint_justify(t_params *params)
 		if (params->num_len == params->len)
 			params->spaces = params->wid_len - params->len;
 	}
-	else if (params->wid_len >= params->len && params->justify && !params->has_num_len)
+	else if (params->wid_len >= params->len
+		&& params->justify && !params->has_num_len)
 		params->spaces = params->wid_len - params->len;
 }
 

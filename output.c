@@ -16,7 +16,14 @@ int	print_char(va_list list, t_params *params)
 {
 	if (params->num_len == 0 && params->wid_len == 0)
 		params->inc++;
+	else if (params->wid_len > 0)
+	{
+		while (params->wid_len-- > 1)
+			params->inc += write(1, " ", 1);
+		params->inc++;
+	}
 	ft_putchar(va_arg(list, int));
+	
 	return (1);
 }
 

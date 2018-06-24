@@ -16,8 +16,7 @@ void	prepare_octal(t_params *params)
 {
 	params->buff = ft_uitoa_base(params->u, 8);
 	params->len = ft_strlen(params->buff);
-	if (params->hash && params->buff[0] != '0')
-		params->zeroes++;
+	(params->hash && params->buff[0] != '0') ? params->zeroes++ : 0;
 	if (params->num_len > params->len + params->zeroes)
 		params->zeroes = params->num_len - params->len;
 	if (params->justify)

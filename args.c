@@ -51,6 +51,8 @@ int	parse_width(char *str, t_params *params, va_list list)
 	else if (ft_atoi(&str[i]) > 0)
 	{
 		params->wid_len = ft_atoi(&str[i]);
+		params->justify = (params->wid_len < 0) ? true : false;
+		params->wid_len *= (params->wid_len < 0) ? -1 : 1;
 		skip = params->wid_len;
 		while (skip != 0)
 		{
@@ -78,11 +80,10 @@ int	parse_precision(char *str, t_params *params, va_list list)
 			params->has_num_len = true;
 			count_index(temp, &i);
 		}
-		else if (str[i] == '.' && str[i + 1] == '*')
+		else if (str[i] == '.' && str[i + 1] == '*' && (i++))
 		{
 			params->num_len = va_arg(list, int);
 			params->has_num_len = true;
-			i++;
 		}
 		else
 			break ;

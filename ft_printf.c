@@ -101,8 +101,15 @@ int		ft_printf(const char *frmt, ...)
 // {
 // 	// ft_printf("%S\n",L"Á±≥");
 // 	// printf("%lsn",L"Á±≥");
-// 	ft_printf("%d", ft_printf("|%.c|", 97));
-// 	printf("%d", printf("|%.c|", 97));
+// 	//char c = NULL;
+// 	ft_printf("%d\t\n", ft_printf("{%.c}\n", 97));
+// 	ft_printf("%d\t\n" ,printf("{%.c}\n", 97));
+	
+
+// 	ft_printf("{%*.*d}\n", 3,-5, 4200);
+// 	printf("{%*.*d}\n",3, -5, 4200);
+// 	ft_printf("{%*.*d}\n", 6,-5, 4200);
+// 	printf("{%*.*d}\n",6, -5, 4200);
 // 	//printf("|%1.d|\n", 0);
 // // printf("Non Justified u and o\n");
 // // ft_printf("Me\t7u\t|%7u|\n",42);
