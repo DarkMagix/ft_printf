@@ -106,6 +106,35 @@ int		ft_printf(const char *frmt, ...)
 	
 // 	printf("{% +d}\n", 42);
 // 	ft_printf("{% +d}\n", 42);
+// 	ft_printf("Star\n");
+// 	ft_printf("%%-*.3s LYDI == |%-*.3s|\n", 5, "LYDI");
+// 	ft_printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
+// 	printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
+// 	ft_printf("%%*i 42 == |%*i|\n", 5, 42);
+// 	printf("%%*i 42 == |%*i|\n", 5, 42);
+// 	ft_printf("%%*i 42 == |%*i|\n", 3, 42);
+// 	printf("%%*i 42 == |%*i|\n", 3, 42);
+// 	ft_printf("%%*i 42 == |%*i|\n", 2, 42);
+// 	printf("%%*i 42 == |%*i|\n", 2, 42);
+// 	ft_printf("Space\n");
+// 	ft_printf("%%      i 42 == |%      i|\n", 42);
+// 	printf("%%      i 42 == |%      i|\n", 42);
+// 	ft_printf("%% i -42 == |% i|\n", -42);
+// 	printf("%% i -42 == |% i|\n", -42);
+// 	ft_printf("%% 4i 42 == |% 4i|\n", 42);
+// 	printf("%% 4i 42 == |% 4i|\n", 42);
+// 	ft_printf("Precision\n");
+// 	ft_printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+// 	printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+// 	ft_printf("%% 4.5i 42 == |% 4.5i|\n", 42);
+// 	printf("%% 4.5i 42 == |% 4.5i|\n", 42);
+// 	ft_printf("%%04.5i 42 == |%04.5i|\n", 42);
+// 	printf("%%04.5i 42 == |%04.5i|\n", 42);
+// 	ft_printf("%%04.3i 42 == |%04.3i|\n", 42);
+// 	printf("%%04.3i 42 == |%04.3i|\n", 42);
+// 	ft_printf("%%04.2i 42 == |%04.2i|\n", 42);
+// 	printf("%%04.2i 42 == |%04.2i|\n", 42);
+
 // 	//printf("|%1.d|\n", 0);
 // // printf("Non Justified u and o\n");
 // // ft_printf("Me\t7u\t|%7u|\n",42);

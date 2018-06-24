@@ -23,7 +23,7 @@ void		handle_extra(t_params *params)
 	(params->plus_neg && params->pad) ? params->spaces -= 2 : 0;
 	(params->spaced && !(IS_NEG(params->i))&& params->spaces == 0) ?
 		params->spaces++ : 0;
-	params->spaces += (params->spaced) ? -1 :0;
+	params->spaces += (params->spaced && params->num_len == params->len) ? 1 : 0;
 	if (params->sign == '-')
 		params->spaces--;
 }
