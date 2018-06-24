@@ -49,7 +49,8 @@ void			n_justify_hash(t_params *params)
 			? params->spaces++ : 0;
 		(params->has_num_len) ? (params->spaces = params->wid_len
 			- params->len - params->zeroes) : params->spaces--;
-		(params->len > params->num_len) ? params->zeroes++ : 0;
+		(params->len > params->num_len &&
+			params->wid_len > 0) ? params->zeroes++ : 0;
 		(params->len > params->num_len &&
 			params->has_num_len) ? params->spaces-- : 0;
 	}
