@@ -12,40 +12,83 @@
 
 #include "../ft_printf.h"
 
-void	prepare_octal(t_params *params)
+void			oct_justify(t_params *params)
 {
-	params->buff = ft_uitoa_base(params->u, 8);
-	params->len = ft_strlen(params->buff);
-	(params->hash && params->buff[0] != '0') ? params->zeroes++ : 0;
-	if (params->num_len > params->len + params->zeroes)
-		params->zeroes = params->num_len - params->len;
-	if (params->justify)
-		params->spaces = params->wid_len - (params->zeroes + params->len);
-	else
+	if (params->num_len >= params->len
+		&& params->justify && params->has_num_len)
 	{
-		if (params->num_len < params->wid_len + params->zeroes)
-		{
-			params->spaces = (params->num_len >= params->len) ?
-				params->wid_len - params->len
-				: params->wid_len - params->num_len;
-			if (params->len > params->num_len
-			|| params->num_len == params->len + 1)
-				params->spaces--;
-		}
-		if (params->wid_len > params->len && !params->has_num_len)
+		params->zeroes = params->num_len - params->len;
+		params->spaces = (params->num_len > params->len) ?
+			params->wid_len - params->num_len :
+				params->num_len - params->wid_len;
+		if (params->num_len == params->len)
 			params->spaces = params->wid_len - params->len;
-		else if (params->wid_len + params->zeroes > params->num_len)
+	}
+	else if (params->wid_len >= params->len
+		&& params->justify && !params->has_num_len)
+		params->spaces = params->wid_len - params->len;
+	if (params->hash)
+	{
+		(params->len < params->wid_len &&
+			!params->has_num_len) ? params->zeroes++ : 0;
+		(params->len < params->wid_len &&
+			!params->has_num_len) ? params->spaces-- : 0;
+		if (params->len > params->num_len && params->has_num_len)
 		{
-			params->spaces = (params->num_len + params->len < params->wid_len)
-				 ? params->wid_len - params->len
-				 	 : params->wid_len - params->len - params->zeroes;
+			params->spaces++;
+			params->zeroes = params->wid_len - params->spaces - params->len;
 		}
-		else if (params->num_len >= params->wid_len + params->len)
-			params->spaces = 0;
 	}
 }
 
-void	setup_octal(va_list list, t_params *params)
+void			n_justify_hash(t_params *params)
+{
+	if (params->hash)
+	{
+		(params->has_num_len && params->num_len < params->wid_len)
+			? params->spaces++ : 0;
+		(params->has_num_len) ? (params->spaces = params->wid_len
+			- params->len - params->zeroes) : params->spaces--;
+		(params->len > params->num_len) ? params->zeroes++ : 0;
+		(params->len > params->num_len &&
+			params->has_num_len) ? params->spaces-- : 0;
+	}
+}
+
+void			oct_njustify(t_params *params)
+{
+	if (params->wid_len < params->num_len && params->num_len)
+		params->zeroes = params->num_len - params->len;
+	else if (params->wid_len > params->len
+	&& !params->justify && params->num_len)
+	{
+		(params->num_len > params->len) ? params->zeroes =
+			params->num_len - params->len : 0;
+		(params->wid_len == params->len) ? params->zeroes = 0 : 0;
+		if (params->wid_len > params->num_len + params->zeroes)
+			params->spaces = params->wid_len - params->num_len;
+	}
+	if (params->wid_len > params->len && !params->justify && !params->num_len)
+	{
+		(!params->pad) ? params->spaces = params->wid_len - params->len : 0;
+		(params->pad) ? params->zeroes = params->wid_len - params->len : 0;
+	}
+	n_justify_hash(params);
+}
+
+void			prepare_octal(t_params *params)
+{
+	if (params->plus_neg)
+		params->sign = '+';
+	params->buff = ft_uitoa_base(params->u, 8);
+	params->len = ft_strlen(params->buff);
+	if (params->justify)
+		oct_justify(params);
+	else
+		oct_njustify(params);
+}
+
+void			setup_octal(va_list list, t_params *params)
 {
 	uint_flags(list, params);
 	prepare_octal(params);

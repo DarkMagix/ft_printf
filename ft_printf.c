@@ -97,103 +97,22 @@ int		ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
 }
-// int main(void)
+
+// int		main(void)
 // {
-
-// 	printf("Them\t|%15.9o|\n", 424242);
-// 	ft_printf("Me\t|%15.9o|\n", 424242);
-// 	// // ft_printf("%S\n",L"Á±≥");
-// 	// // printf("%lsn",L"Á±≥");
-// 	// //char c = NULL;
-// 	// //int a = 10;
-// 	// printf("{%*d}\n", -5, 42);
-// 	// ft_printf("{%*d}\n", -5, 42);
-// 	// printf("{%*c}\n", -15, 42);
-// 	// ft_printf("{%*c}\n", -15, 42);
-// 	// printf("{%*c}\n", 15, 42);
-// 	// ft_printf("{%*c}\n", 15, 42);
-// 	// // printf("them\t%d\t\n", printf("{% +d}", 42));
-// 	// // ft_printf("me\t%d\n", ft_printf("{% +d}", 42));
-
-// 	// ft_printf("Star\n");
-// 	// ft_printf("%%-*.3s LYDI == |%-*.3s|\n", 5, "LYDI");
-// 	// printf("%%-*.3s LYDI == |%-*.3s|\n", 5, "LYDI");
-// 	// ft_printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
-// 	// printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
-// 	// ft_printf("%%*i 42 == |%*i|\n", 5, 42);
-// 	// printf("%%*i 42 == |%*i|\n", 5, 42);
-// 	// ft_printf("%%*i 42 == |%*i|\n", 3, 42);
-// 	// printf("%%*i 42 == |%*i|\n", 3, 42);
-// 	// ft_printf("%%*i 42 == |%*i|\n", 2, 42);
-// 	// printf("%%*i 42 == |%*i|\n", 2, 42);
-// 	// ft_printf("Space\n");
-// 	// ft_printf("%%      i 42 == |%      i|\n", 42);
-// 	// printf("%%      i 42 == |%      i|\n", 42);
-// 	// ft_printf("%% i -42 == |% i|\n", -42);
-// 	// printf("%% i -42 == |% i|\n", -42);
-// 	// ft_printf("%% 4i 42 == |% 4i|\n", 42);
-// 	// printf("%% 4i 42 == |% 4i|\n", 42);
-// 	// ft_printf("Precision\n");
-// 	// ft_printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
-// 	// printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
-// 	// ft_printf("%% 4.5i 42 == |% 4.5i|\n", 42);
-// 	// printf("%% 4.5i 42 == |% 4.5i|\n", 42);
-// 	// ft_printf("%%04.5i 42 == |%04.5i|\n", 42);
-// 	// printf("%%04.5i 42 == |%04.5i|\n", 42);
-// 	// ft_printf("%%04.3i 42 == |%04.3i|\n", 42);
-// 	// printf("%%04.3i 42 == |%04.3i|\n", 42);
-// 	// ft_printf("%%04.2i 42 == |%04.2i|\n", 42);
-// 	// printf("%%04.2i 42 == |%04.2i|\n", 42);
-
-// 	//printf("|%1.d|\n", 0);
-// // printf("Non Justified u and o\n");
-// // ft_printf("Me\t7u\t|%7u|\n",42);
-// // printf("Them\t7u\t|%7u|\n",42);
-// // ft_printf("Me\t7o\t|%7o|\n",42);
-// // printf("Them\t7o\t|%7o|\n",42);
-// // printf("Non JUstified u and o\n");
-// // ft_printf("Me\t-7u\t|%-7u|\n",42);
-// // printf("Them\t-7u\t|%-7u|\n",42);
-// // ft_printf("Me\t-7o\t|%-7o|\n",42);
-// // printf("Them\t-7o\t|%-7o|\n",42);
-// // printf("Precision u and o\n");
-// // ft_printf("Me\t7.3o\t|%7.3o|\n", 42);
-// // printf("Them\t7.3o\t|%7.3o|\n", 42);
-// // ft_printf("Me\t7.9o\t|%7.9o|\n", 42);
-// // printf("Them\t7.9o\t|%7.9o|\n", 42);
-// // ft_printf("Me\t0.9o\t|%0.9o|\n", 42);
-// // printf("Them\t0.9o\t|%0.9o|\n", 42);
-// // ft_printf("Me\t15.9o\t|%15.9o|\n", 42);
-// // printf("Them\t15.9o\t|%15.9o|\n", 42);
-// // ft_printf("Me\t9.15o\t|%9.15o|\n", 42);
-// // printf("Them\t9.15o\t|%9.15o|\n", 42);
-
-// // unsigned long int a = 42;
-// // printf("|\tNon Justified U and O\t|\n");
-// // ft_printf("Me\t7U\t|%7U|\n",42);
-// // printf("Them\t7U\t|%7lu|\n",a);
-// // ft_printf("Me\t7.3O\t|%7.3O|\n", 42);
-// // printf("Them\t7.3lo\t|%7.3lo|\n", a);
-// // ft_printf("Me\t7.9O\t|%7.9O|\n", 42);
-// // printf("Them\t7.9lo\t|%7.9lo|\n", a);
-// // ft_printf("Me\t0.9O\t|%0.9lo|\n", 42);
-// // printf("Them\t0.9lo\t|%0.9lo|\n", a);
-// // ft_printf("Me\t15.9O\t|%15.9O|\n", 42);
-// // printf("Them\t15.9lo\t|%15.9lo|\n", a);
-// // ft_printf("Me\t9.15O\t|%9.15O|\n", 42);
-// // printf("Them\t9.15lo\t|%9.15lo|\n", a);
-
-// // printf("\nJustified U and O\n");
-// // ft_printf("Me\t-7u\t|%-7u|\n",42);
-// // printf("Them\t-7u\t|%-7u|\n",42);
-// // ft_printf("Me\t-7.3o\t|%-7.3o|\n", 42);
-// // printf("Them\t-7.3o\t|%-7.3o|\n", 42);
-// // ft_printf("Me\t-7.9o\t|%-7.9o|\n", 42);
-// // printf("Them\t-7.9o\t|%-7.9o|\n", 42);
-// // ft_printf("Me\t-15.9o\t|%-15.9o|\n", 42);
-// // printf("Them\t-15.9o\t|%-15.9o|\n", 42);
-// // ft_printf("Me\t-9.15o\t|%-9.15o|\n", 42);
-// // printf("Them\t-9.15o\t|%-9.15o|\n", 42);
-
-//  return (0);
+// 	ft_printf("Me\t#6o\t|%#6o|\n", 2500);
+// 	printf("Them\t#6o\t|%#6o|\n", 2500);
+// 	ft_printf("Me\t#3o\t|%#3o|\n", 2500);
+// 	printf("Them\t#3o\t|%#3o|\n", 2500);
+// 	ft_printf("Me\t#6.3o\t|%#6.3o|\n", 2500);
+// 	printf("Them\t#6.3o\t|%#6.3o|\n", 2500);
+// 	ft_printf("Me\t-#6o\t|%-#6o|\n", 2500);
+// 	printf("Them\t-#6o\t|%-#6o|\n", 2500);
+// 	ft_printf("Me\t-#6.3o\t|%-#6.3o|\n", 2500);
+// 	printf("Them\t-#6.3o\t|%-#6.3o|\n", 2500);
+// 	ft_printf("Me\t-#6.7o\t|%-#6.7o|\n", 2500);
+// 	printf("Them\t-#6.7o\t|%-#6.7o|\n", 2500);
+// 	ft_printf("Me\t#6.7o\t|%#6.7o|\n", 2500);
+// 	printf("Them\t#6.7o\t|%#6.7o|\n", 2500);
+// 	return (0);
 // }

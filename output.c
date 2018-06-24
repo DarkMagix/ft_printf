@@ -15,9 +15,8 @@
 int	print_char(va_list list, t_params *params)
 {
 	char c;
-	
+
 	c = va_arg(list, int);
-	//printf("C %c", c);
 	if (params->wid_len < 0)
 	{
 		params->justify = true;

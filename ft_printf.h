@@ -108,4 +108,6 @@ void			count_index(int temp, int *i);
 void			uint_njustify(t_params *params);
 void			uint_justify(t_params *params);
 void			justify_chars(t_params *params, char c);
+void			pre_check(t_params *params);
+void			n_justify_hash(t_params *params);
 #endif
