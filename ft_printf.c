@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -98,21 +99,21 @@ int		ft_printf(const char *frmt, ...)
 	return (bytes);
 }
 
-// int		main(void)
-// {
-// 	ft_printf("Me\t#6o\t|%#6o|\n", 2500);
-// 	printf("Them\t#6o\t|%#6o|\n", 2500);
-// 	ft_printf("Me\t#3o\t|%#3o|\n", 2500);
-// 	printf("Them\t#3o\t|%#3o|\n", 2500);
-// 	ft_printf("Me\t#6.3o\t|%#6.3o|\n", 2500);
-// 	printf("Them\t#6.3o\t|%#6.3o|\n", 2500);
-// 	ft_printf("Me\t-#6o\t|%-#6o|\n", 2500);
-// 	printf("Them\t-#6o\t|%-#6o|\n", 2500);
-// 	ft_printf("Me\t-#6.3o\t|%-#6.3o|\n", 2500);
-// 	printf("Them\t-#6.3o\t|%-#6.3o|\n", 2500);
-// 	ft_printf("Me\t-#6.7o\t|%-#6.7o|\n", 2500);
-// 	printf("Them\t-#6.7o\t|%-#6.7o|\n", 2500);
-// 	ft_printf("Me\t#6.7o\t|%#6.7o|\n", 2500);
-// 	printf("Them\t#6.7o\t|%#6.7o|\n", 2500);
-// 	return (0);
-// }
+int		main(void)
+{
+	ft_printf("Me\t#6o\t|%#6o|\n", 2500);
+	printf("Them\t#6o\t|%#6o|\n", 2500);
+	ft_printf("Me\t#3o\t|%#3o|\n", 2500);
+	printf("Them\t#3o\t|%#3o|\n", 2500);
+	ft_printf("Me\t#6.3o\t|%#6.3o|\n", 2500);
+	printf("Them\t#6.3o\t|%#6.3o|\n", 2500);
+	ft_printf("Me\t-#6o\t|%-#6o|\n", 2500);
+	printf("Them\t-#6o\t|%-#6o|\n", 2500);
+	ft_printf("Me\t-#6.3o\t|%-#6.3o|\n", 2500);
+	printf("Them\t-#6.3o\t|%-#6.3o|\n", 2500);
+	ft_printf("Me\t-#6.7o\t|%-#6.7o|\n", 2500);
+	printf("Them\t-#6.7o\t|%-#6.7o|\n", 2500);
+	ft_printf("Me\t#6.7o\t|%#6.7o|\n", 2500);
+	printf("Them\t#6.7o\t|%#6.7o|\n", 2500);
+	return (0);
+}
