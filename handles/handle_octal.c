@@ -35,7 +35,11 @@ void	prepare_octal(t_params *params)
 		if (params->wid_len > params->len && !params->has_num_len)
 			params->spaces = params->wid_len - params->len;
 		else if (params->wid_len + params->zeroes > params->num_len)
-			params->spaces = params->wid_len - params->num_len;
+		{
+			params->spaces = (params->num_len + params->len < params->wid_len)
+				 ? params->wid_len - params->len
+				 	 : params->wid_len - params->len - params->zeroes;
+		}
 		else if (params->num_len >= params->wid_len + params->len)
 			params->spaces = 0;
 	}

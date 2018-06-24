@@ -100,35 +100,8 @@ int		ft_printf(const char *frmt, ...)
 // int main(void)
 // {
 
-// 	ft_printf("%c", 42);
-// 	ft_printf("Kashim a %c histoires à raconter", 1001);
-// 	ft_printf("Il fait au moins %c\n", -8000);
-// 	ft_printf("%c", -0);
-// 	ft_printf("%c", 0);
-// 	ft_printf("%c\n", INT_MAX);
-// 	ft_printf("%c\n", 'c');
-// 	ft_printf("%c\n", '\n');
-// 	ft_printf("%c", 'l');
-// 	ft_printf("%c", 'y');
-// 	ft_printf("%c", ' ');
-// 	ft_printf("%c", 'e');
-// 	ft_printf("%c", 's');
-// 	ft_printf("%c", 't');
-// 	ft_printf("%c", ' ');
-// 	ft_printf("%c", 'f');
-// 	ft_printf("%c", 'a');
-// 	ft_printf("%c", 'n');
-// 	ft_printf("%c", 't');
-// 	ft_printf("%c", 'a');
-// 	ft_printf("%c", 's');
-// 	ft_printf("%c", 't');
-// 	ft_printf("%c", 'i');
-// 	ft_printf("%c", 'q');
-// 	ft_printf("%c", 'u');
-// 	ft_printf("%c", 'e');
-// 	ft_printf("%c\n", '!');
-// 	ft_printf("%c\n", '\r');
-// 	ft_printf("%c\n", '\t');
+// 	printf("Them\t|%15.9o|\n", 424242);
+// 	ft_printf("Me\t|%15.9o|\n", 424242);
 // 	// // ft_printf("%S\n",L"Á±≥");
 // 	// // printf("%lsn",L"Á±≥");
 // 	// //char c = NULL;
