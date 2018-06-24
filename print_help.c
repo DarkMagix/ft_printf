@@ -43,6 +43,7 @@ void justify_chars(t_params *params, char c)
 			while (params->wid_len-- > 1)
 				params->inc += write(1, " ", 1);
 			params->inc++;
+			ft_putchar(c);
 		}
 
 }
