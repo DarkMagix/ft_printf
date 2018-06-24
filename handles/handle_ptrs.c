@@ -37,6 +37,12 @@ void	is_njustify(t_params *params)
 void	setup_ptr(va_list list, t_params *params)
 {
 	params->u = va_arg(list, unsigned long int);
+	if (params->u == 0)
+	  {
+	    write(1, "(nil)", 5);
+	    params->inc += 5;
+	    return ;
+	  }
 	params->buff = ft_uitoa_base(params->u, 16);
 	params->len = ft_strlen(params->buff);
 	if (params->justify)

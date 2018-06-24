@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -97,6 +98,18 @@ int		ft_printf(const char *frmt, ...)
 	free(params);
 	return (bytes);
 }
+//int main(void)
+//{
+//  ft_printf("{%}");
+//  ft_printf("\n");
+//  ft_printf("%");
+  //  printf("{%}");
+  //   printf("%d", printf("%\n"));
+  
+  
+  
+//  return (0);
+//}
 // int main(void)
 // {
 
