@@ -14,11 +14,8 @@
 
 int	print_char(va_list list, t_params *params)
 {
-	if (params->num_len == 0 && params->has_num_len)
-	{
-		write(1, " ", 1);
-		return (1);
-	}
+	if (params->num_len == 0 && params->wid_len == 0)
+		params->inc++;
 	ft_putchar(va_arg(list, int));
 	return (1);
 }
