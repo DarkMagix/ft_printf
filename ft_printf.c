@@ -76,7 +76,7 @@ void	ft_parse(int flag, va_list arg, t_params *params)
 	else if (flag == 'p')
 		setup_ptr(arg, params);
 	else if (flag == 'C')
-		print_wchar(arg);
+		print_wchar(arg, params);
 }
 
 int		ft_printf(const char *frmt, ...)
@@ -102,14 +102,10 @@ int		ft_printf(const char *frmt, ...)
 // 	// ft_printf("%S\n",L"Á±≥");
 // 	// printf("%lsn",L"Á±≥");
 // 	//char c = NULL;
-// 	ft_printf("%d\t\n", ft_printf("{%.c}\n", 97));
-// 	ft_printf("%d\t\n" ,printf("{%.c}\n", 97));
+// 	//int a = 10;
 	
-
-// 	ft_printf("{%*.*d}\n", 3,-5, 4200);
-// 	printf("{%*.*d}\n",3, -5, 4200);
-// 	ft_printf("{%*.*d}\n", 6,-5, 4200);
-// 	printf("{%*.*d}\n",6, -5, 4200);
+// 	printf("{% +d}\n", 42);
+// 	ft_printf("{% +d}\n", 42);
 // 	//printf("|%1.d|\n", 0);
 // // printf("Non Justified u and o\n");
 // // ft_printf("Me\t7u\t|%7u|\n",42);

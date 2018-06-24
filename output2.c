@@ -12,15 +12,19 @@
 
 #include "ft_printf.h"
 
-int		print_wchar(va_list list)
+int		print_wchar(va_list list, t_params *params)
 {
-	int		i;
-	wchar_t	let;
-
-	i = 0;
-	let = va_arg(list, wchar_t);
-	ft_wputchar(let);
-	return (i);
+	if (params->num_len == 0 && params->wid_len == 0)
+		params->inc++;
+	else if (params->wid_len > 0)
+	{
+		while (params->wid_len-- > 1)
+			params->inc += write(1, " ", 1);
+		params->inc++;
+	}
+	params->inc += (params->num_len > 0) ? 1 : 0;
+	ft_putchar(va_arg(list, wint_t));
+	return (1);
 }
 
 int		print_wstr(va_list list, t_params *params)

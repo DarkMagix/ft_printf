@@ -22,6 +22,7 @@ int	print_char(va_list list, t_params *params)
 			params->inc += write(1, " ", 1);
 		params->inc++;
 	}
+	params->inc += (params->num_len > 0) ? 1 : 0;
 	ft_putchar(va_arg(list, int));
 	
 	return (1);

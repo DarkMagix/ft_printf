@@ -84,7 +84,7 @@ int				print_hex(va_list list, t_params *params);
 int				print_sint(va_list list, t_params *params, int flag);
 int				print_uint(va_list list, t_params *params, int flag);
 void			print_words(t_params *params, char *s, int i);
-int				print_wchar(va_list list);
+int				print_wchar(va_list list, t_params *params);
 int				print_length(t_params *params);
 int				print_wstr(va_list list, t_params *params);
 int				print_octal(va_list list, t_params *params, int flag);
