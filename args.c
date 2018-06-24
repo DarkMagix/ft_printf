@@ -51,7 +51,7 @@ int	parse_width(char *str, t_params *params, va_list list)
 	else if (ft_atoi(&str[i]) > 0)
 	{
 		params->wid_len = ft_atoi(&str[i]);
-		params->justify = (params->wid_len < 0) ? true : false;
+		params->justify = (params->wid_len < 0) ? false : true;
 		params->wid_len *= (params->wid_len < 0) ? -1 : 1;
 		skip = params->wid_len;
 		while (skip != 0)
