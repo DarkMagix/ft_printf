@@ -100,9 +100,25 @@ int		ft_printf(const char *frmt, ...)
 }
 //int main(void)
 //{
-//  ft_printf("{%}");
-//  ft_printf("\n");
-//  ft_printf("%");
+  //  ft_printf("%d\n", ft_printf("this is a test %s", "moo"))
+//  char c = 0;
+//  char *str = "pouet";
+//  ft_printf("%p\n", &c);
+  // fprintf(fpin, "%p\n", str);
+//  ft_printf("%p\n", str);
+  //  fprintf(fpin, "%p\n", &str);
+//  ft_printf("%p\n", &str);
+//  str = NULL;
+  //  fprintf(fpin, "0x0\n");
+//  ft_printf("%p\n", str);
+//  str = (char *)malloc(sizeof(char) * 100);
+//  str = strdup("Coucou les haricots !");
+  //  fprintf(fpin, "%p\n", str);
+//  ft_printf("%p\n", str);
+//  free(str);
+  //  fclose(fpin);
+  //  printf("%d\n", printf("{%}"));
+  //  ft_printf("%");
   //  printf("{%}");
   //   printf("%d", printf("%\n"));
   
