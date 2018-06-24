@@ -30,6 +30,7 @@ void	print_nums(t_params *params)
 
 void justify_chars(t_params *params, char c)
 {
+	
 		if (!params->justify)
 		{
 			while (params->wid_len-- > 1)
@@ -43,7 +44,5 @@ void justify_chars(t_params *params, char c)
 			while (params->wid_len-- > 1)
 				params->inc += write(1, " ", 1);
 			params->inc++;
-			ft_putchar(c);
 		}
-
 }
