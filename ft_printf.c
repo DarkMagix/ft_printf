@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -117,5 +116,9 @@ int		ft_printf(const char *frmt, ...)
 // 	printf("Them\t#6.7o\t|%#6.7o|\n", 2500);
 // 	ft_printf("%#o\n", 0);
 // 		printf("%#o\n", 0);
+// 	ft_printf("%#o\n", INT_MAX);
+// 		printf("%#o\n", INT_MAX);
+// 	ft_printf("%#o\n", INT_MIN);//==  020000000000
+// 	printf("%#o\n", INT_MIN);//==  020000000000
 // 	return (0);
 // }
