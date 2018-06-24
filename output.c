@@ -36,8 +36,9 @@ int	print_sint(va_list list, t_params *params, int flag)
 	return (1);
 }
 
-int	print_uint(va_list list, t_params *params)
+int	print_uint(va_list list, t_params *params, int flag)
 {
+	params->modifer = (flag == 'U') ? MODI_l : params->modifer;
 	setup_unint(list, params);
 	return (1);
 }

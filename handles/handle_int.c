@@ -24,24 +24,22 @@ void		handle_extra(t_params *params)
 	(params->spaced && !(IS_NEG(params->i)) && params->spaces == 0) ?
 		params->spaces++ : 0;
 	if (params->sign == '-')
-	    params->spaces--;
-	//	else if (params->sign == '+')
-	//	  params->zeroes
+		params->spaces--;
 }
 
 static void	prepare_int(t_params *params)
 {
-  params->is_neg = (IS_NEG(params->i)) ? true : false;
-  params->i *= (IS_NEG(params->i)) ? -1 : 1;
+	params->is_neg = (IS_NEG(params->i)) ? true : false;
+	params->i *= (IS_NEG(params->i)) ? -1 : 1;
 	params->buff = ft_itoa_base(params->i, 10);
 	params->len = ft_strlen(params->buff);
 	if (params->num_len > params->len && params->justify)
 		params->zeroes = params->num_len - params->len;
 	else if (params->wid_len < params->num_len &&
-		!params->justify && params->num_len)
+	!params->justify && params->num_len)
 		params->zeroes = params->num_len - params->len;
 	else if (params->wid_len > params->len
-		&& !params->justify && params->num_len)
+	&& !params->justify && params->num_len)
 	{
 		if (params->num_len > params->len)
 			params->zeroes = params->num_len - params->len;
@@ -74,10 +72,8 @@ void		setup_int(va_list list, t_params *params)
 	prepare_int(params);
 	if (params->justify && params->pad)
 		params->pad = false;
-	//	printf("\nZeroes: %d Spaces: %d\n", params->zeroes, params->spaces);
 	if (!params->justify)
 	{
-	  //		check_sign(params);
 		print_chars(params, ' ', params->spaces);
 		check_sign(params);
 		print_chars(params, '0', params->zeroes);

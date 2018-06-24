@@ -29,8 +29,9 @@ int		print_wstr(va_list list, t_params *params)
 	return (1);
 }
 
-int		print_octal(va_list list, t_params *params)
+int		print_octal(va_list list, t_params *params, int flag)
 {
+	params->modifer = (flag == 'O') ? MODI_l : params->modifer;
 	setup_octal(list, params);
 	return (params->inc);
 }

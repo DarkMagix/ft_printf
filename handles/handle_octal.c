@@ -23,18 +23,26 @@ void	prepare_octal(t_params *params)
 	if (params->justify)
 		params->spaces = params->wid_len - (params->zeroes + params->len);
 	else
-		(params->pad) ? (params->zeroes +=
-			params->wid_len - (params->zeroes + params->len))
-				: (params->spaces = params->wid_len
-					- (params->zeroes + params->len));
+	{
+		if (params->num_len < params->wid_len + params->zeroes)
+		{
+			params->spaces = (params->num_len >= params->len) ?
+				params->wid_len - params->len
+				: params->wid_len - params->num_len;
+			if (params->len > params->num_len
+			|| params->num_len == params->len + 1)
+				params->spaces--;
+		}
+		if (params->wid_len + params->zeroes > params->num_len)
+			params->spaces = params->wid_len - params->num_len;
+		if (params->num_len >= params->wid_len + params->len)
+			params->spaces = 0;
+	}
 }
 
 void	setup_octal(va_list list, t_params *params)
 {
-	if (params->specifier == 'O')
-		params->modifer = MODI_l;
 	uint_flags(list, params);
-	//	printf("Num Len:\t%d\t Wid Len\t%d\t\n", params->num_len, params->wid_len);
 	prepare_octal(params);
 	if (params->justify)
 	{
