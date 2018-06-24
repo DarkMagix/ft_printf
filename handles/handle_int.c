@@ -23,7 +23,7 @@ void		handle_extra(t_params *params)
 	(params->plus_neg && params->pad) ? params->spaces -= 2 : 0;
 	(params->spaced && !(IS_NEG(params->i))&& params->spaces == 0) ?
 		params->spaces++ : 0;
-	params->spaces += (params->spaced && params->num_len == params->len) ? 1 : 0;
+	params->spaces += (params->spaced && params->plus_neg) ? -1 : 0;
 	if (params->sign == '-')
 		params->spaces--;
 }
@@ -34,6 +34,11 @@ static void	prepare_int(t_params *params)
 	params->i *= (IS_NEG(params->i)) ? -1 : 1;
 	params->buff = ft_itoa_base(params->i, 10);
 	params->len = ft_strlen(params->buff);
+	if (params->wid_len < 0)
+	{
+		params->justify = true;
+		params->wid_len *= -1;
+	}
 	if (params->num_len > params->len && params->justify)
 		params->zeroes = params->num_len - params->len;
 	else if (params->wid_len < params->num_len &&

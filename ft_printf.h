@@ -107,4 +107,5 @@ int				valid_arg(int c);
 void			count_index(int temp, int *i);
 void			uint_njustify(t_params *params);
 void			uint_justify(t_params *params);
+void			justify_chars(t_params *params, char c);
 #endif
