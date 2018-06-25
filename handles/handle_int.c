@@ -35,7 +35,7 @@ void		handle_extra(t_params *params)
 	{
 		params->zeroes = params->wid_len - params->len;
 		if (params->wid_len + params->pad > params->len)
-			(params->sign == '-') ? params->zeroes-- : 0;
+			(params->sign == '-' || params->sign == '+') ? params->zeroes-- : 0;
 	}
 }
 
