@@ -98,12 +98,19 @@ int		ft_printf(const char *frmt, ...)
 	return (bytes);
 }
 
-// int main(void)
-// {
-// 	ft_printf("me\t+10.5d\t|%+10.5d|\n",4242);
-// 	printf("them\t+10.5d\t|%+10.5d|\n",4242);
-// 	ft_printf("me\t05d\t|%05d|\n", -42);
-// 	printf("them\t05d\t|%05d|\n", -42);
-	 
-// 	return (0);
-// }
+int		main(void)
+{
+	ft_printf("me\t+10.5d\t|%+10.5d|\n", 4242);
+	printf("them\t+10.5d\t|%+10.5d|\n", 4242);
+	ft_printf("me\t05d\t|%05d|\n", -42);
+	printf("them\t05d\t|%05d|\n", -42);
+	ft_printf("%%04i 42 == |%04i|\n", 42);
+	printf("%%04i 42 == |%04i|\n", 42);
+	ft_printf("%%05i 42 == |%05i|\n", 42);
+	printf("%%05i 42 == |%05i|\n", 42);
+	ft_printf("%%0i 42 == |%0i|\n", 42);
+	printf("%%0i 42 == |%0i|\n", 42);
+	ft_printf("%%0d 0000042 == |%0d|\n", 0000042);
+	printf("%%0d 0000042 == |%0d|\n", 0000042);
+	return (0);
+}
