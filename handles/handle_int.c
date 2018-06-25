@@ -26,9 +26,10 @@ void		handle_extra(t_params *params)
 	params->spaces += (params->spaced && params->plus_neg) ? -1 : 0;
 	if (params->sign == '-')
 		params->spaces--;
-	(params->plus_neg && params->num_len > params->len) ? params->zeroes++ : 0;
+	if (params->wid_len > params->num_len)
+		(params->plus_neg && params->num_len > params->len) ? params->zeroes++ : 0;
 	params->zeroes += (!params->plus_neg && params->pad
-		&& params->wid_len > params->len) ? -1 : 0;
+		&& params->wid_len > params->len && !params->has_num_len) ? -1 : 0;
 }
 
 void		pre_check(t_params *params)
