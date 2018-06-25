@@ -73,8 +73,8 @@ void			setup_unint(va_list list, t_params *params)
 	}
 	else
 	{
-		if (params->sign && !params->pad && (params->inc++))
-			ft_putchar(params->sign);
+		//if (params->sign && !params->pad)
+			//ft_putchar(params->sign);
 		print_chars(params, ' ', params->spaces);
 		print_chars(params, '0', params->zeroes);
 		print_nums(params);
