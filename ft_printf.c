@@ -98,27 +98,12 @@ int		ft_printf(const char *frmt, ...)
 	return (bytes);
 }
 
-// int		main(void)
+// int main(void)
 // {
-// 	ft_printf("Me\t#6o\t|%#6o|\n", 2500);
-// 	printf("Them\t#6o\t|%#6o|\n", 2500);
-// 	ft_printf("Me\t#3o\t|%#3o|\n", 2500);
-// 	printf("Them\t#3o\t|%#3o|\n", 2500);
-// 	ft_printf("Me\t#6.3o\t|%#6.3o|\n", 2500);
-// 	printf("Them\t#6.3o\t|%#6.3o|\n", 2500);
-// 	ft_printf("Me\t-#6o\t|%-#6o|\n", 2500);
-// 	printf("Them\t-#6o\t|%-#6o|\n", 2500);
-// 	ft_printf("Me\t-#6.3o\t|%-#6.3o|\n", 2500);
-// 	printf("Them\t-#6.3o\t|%-#6.3o|\n", 2500);
-// 	ft_printf("Me\t-#6.7o\t|%-#6.7o|\n", 2500);
-// 	printf("Them\t-#6.7o\t|%-#6.7o|\n", 2500);
-// 	ft_printf("Me\t#6.7o\t|%#6.7o|\n", 2500);
-// 	printf("Them\t#6.7o\t|%#6.7o|\n", 2500);
-// 	ft_printf("%#o\n", 0);
-// 		printf("%#o\n", 0);
-// 	ft_printf("%#o\n", INT_MAX);
-// 		printf("%#o\n", INT_MAX);
-// 	ft_printf("%#o\n", INT_MIN);//==  020000000000
-// 	printf("%#o\n", INT_MIN);//==  020000000000
+// 	ft_printf("me\t+10.5d\t|%+10.5d|\n",4242);
+// 	printf("them\t+10.5d\t|%+10.5d|\n",4242);
+// 	ft_printf("me\t05d\t|%05d|\n", -42);
+// 	printf("them\t05d\t|%05d|\n", -42);
+	 
 // 	return (0);
 // }

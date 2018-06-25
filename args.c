@@ -126,12 +126,12 @@ int	parse_specifier(const char *format, va_list args, t_params *params)
 	init_params(params);
 	while (*format)
 	{
-	  if (*format == '%' && *(format + 1) == '\0')
-	    return (-1);
-	  if (*format == '%' && valid_arg(*(format + 1)))
+		if (*format == '%' && *(format + 1) == '\0')
+			return (-1);
+		if (*format == '%' && valid_arg(*(format + 1)))
 		{
-		        if (valid_arg(*(format + 1)))
-			  	format += read_data(params, (char *)(format + 1), args) + 1;
+			if (valid_arg(*(format + 1)))
+				format += read_data(params, (char *)(format + 1), args) + 1;
 			params->specifier = *format;
 			ft_parse(params->specifier, args, params);
 			written += params->inc;

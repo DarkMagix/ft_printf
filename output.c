@@ -22,10 +22,7 @@ int	print_char(va_list list, t_params *params)
 		params->justify = true;
 		params->wid_len *= -1;
 	}
-	if (params->num_len == 0 && params->wid_len == 0)
-		params->inc++;
 	justify_chars(params, c);
-	params->inc += (params->num_len > 0) ? 1 : 0;
 	return (1);
 }
 
